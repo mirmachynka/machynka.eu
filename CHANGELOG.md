@@ -4,6 +4,10 @@ All notable changes to `machynka-cz` will be documented here.
 
 This project follows semantic versioning once published.
 
+## 1.6.5
+
+- `penzion.machynka.cz` now redirects permanently to `machynka.cz`, keeping the path, so old links to the guesthouse subdomain land on the same page of the main site.
+
 ## 1.6.4
 
 - Moved to `@trebired/frontend` 13.14.0. Select cards now switch on click and from the keyboard, and headings take their level from nesting. This site renders neither, so nothing on it changes.
