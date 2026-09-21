@@ -4,6 +4,10 @@ All notable changes to `machynka-cz` will be documented here.
 
 This project follows semantic versioning once published.
 
+## 1.6.4
+
+- Moved to `@trebired/frontend` 13.14.0. Select cards now switch on click and from the keyboard, and headings take their level from nesting. This site renders neither, so nothing on it changes.
+
 ## 1.6.3
 
 - Moved to `@trebired/frontend` 13.11.1, which changes the graph cards this site does not use. The header is unchanged.
