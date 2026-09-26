@@ -4,7 +4,7 @@ import { readProductIdentity } from "@trebired/utils";
 const product = readProductIdentity({ startDir: import.meta.dir });
 
 export default defineConfig({
-    forVersion: "0.4.0",
+    forVersion: "0.4.2",
     defaults: {
       robots: { follow: true, index: true, maxImagePreview: "large" },
       type: "website",

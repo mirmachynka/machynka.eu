@@ -34,9 +34,6 @@
       "#6zkiijbcfna0": [
         "../../../src/frontend/shared/content_island.tsx"
       ],
-      "#73gud44onpde": [
-        "../../../src/frontend/components/primitives/styles/card_table.scss"
-      ],
       "#7b4qin7h5g8c": [
         "../../../src/frontend/components/domain/contact_section.tsx"
       ],
@@ -213,6 +210,9 @@
       ],
       "#vgmc3zaakwqc": [
         "../../../src/frontend/components/domain/accommodation/sections/gallery.tsx"
+      ],
+      "#wqpip8pcoogo": [
+        "../../frontend/components/surfaces.ts"
       ],
       "#x3jm3224vb0o": [
         "../../../src/frontend/components/domain/map_backdrop.tsx"

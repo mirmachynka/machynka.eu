@@ -7,6 +7,18 @@
 
 [[redirects]]
 from = "https://penzion.machynka.cz/*"
-to = "https://machynka.cz/:splat"
+to = "https://machynka.eu/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "https://machynka.cz/*"
+to = "https://machynka.eu/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "https://www.machynka.cz/*"
+to = "https://machynka.eu/:splat"
 status = 301
 force = true

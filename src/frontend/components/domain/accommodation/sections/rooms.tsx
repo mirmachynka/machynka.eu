@@ -1,3 +1,4 @@
+import { Section } from "@trebired/frontend/react";
 import type { I18nTranslator } from "@trebired/i18n";
 
 import { CardTable } from "#gqbmqapv1gar";
@@ -11,8 +12,8 @@ type RoomsProps = {
 
 export function AccommodationRooms({ baseKey, roomCount, tr }: RoomsProps) {
   return (
-    <section className="accommodation-rooms">
-    <div className="accommodation-rooms-inner">
+    <Section tone="muted">
+    <div className="tbf-container column gap-lg">
     <h2 className="section-title">{tr("accommodationPage.roomsTitle")}</h2>
 
     <CardTable
@@ -35,6 +36,6 @@ export function AccommodationRooms({ baseKey, roomCount, tr }: RoomsProps) {
     )}
     />
     </div>
-    </section>
+    </Section>
   );
 }

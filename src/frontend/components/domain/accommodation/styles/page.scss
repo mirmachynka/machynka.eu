@@ -117,34 +117,6 @@
   color: color-mix(in srgb, white 70%, transparent);
 }
 
-.accommodation-features {
-  display: flex;
-  justify-content: center;
-  padding-block: 6rem;
-  background: var(--white-500);
-}
-
-.accommodation-features-inner,
-.accommodation-rooms-inner {
-  display: grid;
-  gap: 3rem;
-  width: 100%;
-  max-width: 80rem;
-  padding-inline: var(--tbf-container-px);
-}
-
-.accommodation-features-inner .card-table-cols-2 {
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.accommodation-features-inner .card-table-cols-2 .card-table-cell:nth-child(-n + 2) {
-  border-top: none;
-}
-
-.accommodation-features-inner .card-table-cols-2 .card-table-cell:nth-child(2n) {
-  border-left: 1px solid var(--neutral-200);
-}
-
 .accommodation-feature-cell {
   display: flex;
   flex-direction: column;
@@ -172,13 +144,6 @@
   font-weight: 900;
   text-transform: uppercase;
   color: var(--neutral-900);
-}
-
-.accommodation-rooms {
-  display: flex;
-  justify-content: center;
-  padding-block: 6rem;
-  background: var(--neutral-100);
 }
 
 .accommodation-room-cell {
@@ -244,9 +209,6 @@
   }
 
   .accommodation-features,
-  .accommodation-rooms {
-    padding-block: 8rem;
-  }
 
   .accommodation-feature-cell {
     padding: 1.5rem;

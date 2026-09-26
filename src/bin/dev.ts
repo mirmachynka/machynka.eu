@@ -30,7 +30,7 @@ const logger = createLog({
     },
     quiet: false,
     save: false,
-    source: "machynka-cz",
+    source: "machynka-eu",
 });
 
 async function rebuild() {

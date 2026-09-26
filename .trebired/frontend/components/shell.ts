@@ -3,6 +3,26 @@ import { token } from "#i0bvtbidf4kj";
 const border = token.border(token.color("neutral", "200"));
 
 export const shell = {
+  footer: {
+    heading: {
+      color: token.color("white", "500"),
+      fontWeight: "900",
+      letterSpacing: "0.08em",
+    },
+    inner: { gap: "3rem" },
+    maxWidth: "80rem",
+    paddingInline: "var(--tbf-container-px)",
+    root: {
+      bg: token.color("neutral", "900"),
+      py: "4rem",
+    },
+    tone: {
+      inverse: {
+        bg: token.color("neutral", "900"),
+        color: token.color("white", "500"),
+      },
+    },
+  },
   header: {
     actionsGap: "1.5rem",
     brand: { logoHeight: "3.5rem" },

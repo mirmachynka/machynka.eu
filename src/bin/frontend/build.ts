@@ -23,7 +23,7 @@ const logger = createLog({
     },
     quiet: true,
     save: false,
-    source: "machynka-cz",
+    source: "machynka-eu",
 });
 
 const config = await applyProjectConfigsToFrontendBundlerOptions({

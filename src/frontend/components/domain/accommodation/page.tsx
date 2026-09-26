@@ -1,3 +1,4 @@
+import { Section } from "@trebired/frontend/react";
 import { AccommodationRulesSection } from "./rules_section";
 import { AccommodationAboutPanel } from "./sections/about_panel";
 import { AccommodationFeatures } from "./sections/features";
@@ -40,8 +41,8 @@ export function AccommodationPage({ accommodation }: AccommodationPageProps) {
     <AccommodationRooms baseKey={baseKey} roomCount={meta.roomCount} tr={tr} />
     <AccommodationGallery images={accommodation.galleryImages} name={name} tr={tr} />
 
-    <section className="accommodation-info">
-    <div className="accommodation-info-inner">
+    <Section tone="muted">
+    <div className="tbf-container column gap-lg">
     <div className="accommodation-info-grid" id="kontakt">
     <AccommodationAboutPanel accommodation={accommodation} baseKey={baseKey} description={description} name={name} tr={tr} />
     <AccommodationLocationPanel mapAddress={mapAddress} mapEmbedUrl={accommodation.mapEmbedUrl} name={name} tr={tr} />
@@ -59,7 +60,7 @@ export function AccommodationPage({ accommodation }: AccommodationPageProps) {
 
     <AccommodationOtherPanel related={related} tr={tr} />
     </div>
-    </section>
+    </Section>
     </main>
   );
 }

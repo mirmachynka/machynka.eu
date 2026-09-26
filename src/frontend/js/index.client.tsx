@@ -1,9 +1,4 @@
-import {
-  bindFrontendRuntime,
-  configureLocaleRouting,
-  configureSpa,
-  SITE_HEADER_ROOT_SELECTOR,
-} from "@trebired/frontend";
+import { bindFrontendRuntime, configureLocaleRouting, configureSpa, SITE_FOOTER_ROOT_SELECTOR, SITE_HEADER_ROOT_SELECTOR } from "@trebired/frontend";
 import "@trebired/frontend/static-icons";
 import { createBrowserLog } from "@trebired/logger/browser";
 import { LogErrorBoundary, LogProvider } from "@trebired/logger/browser/react";
@@ -20,7 +15,7 @@ configureLocaleRouting(LANG_ROUTING);
 
 const log = createBrowserLog({
     group: "frontend.app",
-    source: "machynka-cz",
+    source: "machynka-eu",
 });
 
 function observed(node: ReactElement) {
@@ -37,7 +32,7 @@ configureSpa({});
 
 void hydrateChromeRoots([
     [document.querySelector(SITE_HEADER_ROOT_SELECTOR), observed(<Header />)],
-    [document.querySelector("footer"), observed(<Footer />)],
+    [document.querySelector(SITE_FOOTER_ROOT_SELECTOR), observed(<Footer />)],
 ]).then(() => {
     bindFrontendRuntime(document, { icons: { mode: "static" } });
     mountContentIsland("live_content");

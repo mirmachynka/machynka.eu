@@ -1,7 +1,7 @@
+import { HairlineCell, HairlinePanel } from "@trebired/frontend/react";
 import type { Key, ReactNode } from "react";
 
 type CardTableProps<T> = {
-  breakpoint?: "md" | "sm";
   className?: string;
   columns?: 2 | 3;
   getKey: (item: T, index: number) => Key;
@@ -11,8 +11,9 @@ type CardTableProps<T> = {
   tone?: "dark" | "light";
 };
 
+const COLUMN_MIN: Record<number, string> = { 2: "30rem", 3: "22rem" };
+
 export function CardTable<T>({
-    breakpoint = "md",
     className,
     columns = 2,
     getKey,
@@ -22,21 +23,17 @@ export function CardTable<T>({
     tone = "light",
   }: CardTableProps<T>) {
   const fillerCount = items.length === 0 ? 0 : (columns - (items.length % columns)) % columns;
-  const wrapperClasses = ["card-table", `card-table-cols-${columns}`, `card-table-bp-${breakpoint}`, `card-table-${tone}`, className]
-  .filter(Boolean)
-  .join(" ");
-  const cellClasses = ["card-table-cell", itemClassName].filter(Boolean).join(" ");
 
   return (
-    <div className={wrapperClasses}>
+    <HairlinePanel className={className} min={COLUMN_MIN[columns]}>
     {items.map((item, index) => (
-          <div key={getKey(item, index)} className={cellClasses}>
+          <HairlineCell key={getKey(item, index)} className={itemClassName} invert={tone === "dark"}>
           {renderItem(item, index)}
-          </div>
+          </HairlineCell>
     ))}
     {Array.from({ length: fillerCount }, (_, fillerIndex) => (
-          <div key={`filler-${items.length + fillerIndex}`} aria-hidden="true" className="card-table-filler" />
+          <HairlineCell key={`filler-${items.length + fillerIndex}`} aria-hidden="true" invert={tone === "dark"} />
     ))}
-    </div>
+    </HairlinePanel>
   );
 }

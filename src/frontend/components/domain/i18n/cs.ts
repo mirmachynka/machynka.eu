@@ -15,12 +15,12 @@ export default defineMessages({
     about: {
       title: "UBYTOVÁNÍ V BUČOVICÍCH",
       text1: "Nabízíme praktické ubytování v Bučovicích s důrazem na pohodlí, čistotu a dobrou dostupnost.",
-      text2: "Hosté si mohou vybrat ze dvou ubytovacích objektů: Apartmány Libuše se 17 pokoji a Penzion Machynka s 18 pokoji.",
+      text2: "Hosté si mohou vybrat ze dvou ubytovacích objektů: Apartmány Libuše se 17 pokoji a Penzion Machynka se 7 pokoji.",
       quote: "Váš komfort je naší prioritou",
       quoteSource: "Rodina Machynkova",
       stats: {
         objects: "2 Objekty",
-        rooms: "35 Pokojů",
+        rooms: "24 Pokojů",
         years: "15+ Let",
       },
     },

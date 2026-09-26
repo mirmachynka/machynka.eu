@@ -51,7 +51,7 @@ export const accommodations: Accommodation[] = [
   {
     id: "penzion",
     path: "/ubytovani/penzion-machynka",
-    rooms: 18,
+    rooms: 7,
     features: [
       { icon: ICON_MAP_PIN, label: "location" },
       { icon: ICON_WIFI, label: "wifi" },

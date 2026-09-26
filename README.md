@@ -2,7 +2,7 @@
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="src/frontend/public/footer-logo.svg">
-  <img src="src/frontend/public/logo.svg" alt="machynka.cz" width="360">
+  <img src="src/frontend/public/logo.svg" alt="machynka.eu" width="360">
 </picture>
 
 **The public accommodation site for MACHYNKA s.r.o. in Bučovice: apartment and guesthouse listings, room and price tables, photo galleries, house rules, and direct contact, in Czech and English.**
@@ -15,9 +15,9 @@
 
 ---
 
-machynka.cz is the public website of MACHYNKA s.r.o. The website owns the published pages, the route and metadata table, the Czech and English copy, and the static build output. MACHYNKA s.r.o. owns the business, the accommodation, the photography, and the contact details the website displays; the operator owns the hosting and the domain. The website does not own booking, payment, availability, guest records, or any server-side state; it is static and holds no data.
+machynka.eu is the public website of MACHYNKA s.r.o. The website owns the published pages, the route and metadata table, the Czech and English copy, and the static build output. MACHYNKA s.r.o. owns the business, the accommodation, the photography, and the contact details the website displays; the operator owns the hosting and the domain. The website does not own booking, payment, availability, guest records, or any server-side state; it is static and holds no data.
 
-machynka.cz is a Trebired product, licensed under the MIT License. It is open source.
+machynka.eu is a Trebired product, licensed under the MIT License. It is open source.
 
 ## Contents
 

@@ -1,8 +1,15 @@
 # Changelog
 
-All notable changes to `machynka-cz` will be documented here.
+All notable changes to `machynka-eu` will be documented here.
 
 This project follows semantic versioning once published.
+
+## 2.0.0
+
+- The site is now `machynka.eu`. The product identity, the contact email and every generated URL follow the new domain, and `machynka.cz`, `www.machynka.cz` and `penzion.machynka.cz` redirect permanently to it, keeping the path.
+- Penzion Machynka lists 7 rooms, not 18. The homepage room total is now added up from the accommodation data instead of being written out by hand, so the headline figure cannot drift from the rooms actually listed.
+- The Libuše apartments' room names drop the trailing property name: "Studio č. 9 Libuše" is just "Studio č. 9" on the page that is already about Libuše.
+- Moved to @trebired/frontend 13.44.0 and took its new components. The hand-written card table, which drew its dividers with nth-child borders to stop neighbours doubling up, is now the package's `HairlinePanel`. Every page section is the package's `Section` with a tone instead of a repeated flex-centre-and-pad shell, and the footer is the package's `SiteFooter`.
 
 ## 1.6.5
 

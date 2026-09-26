@@ -5,6 +5,7 @@ import type { CSSProperties } from "react";
 import { Button } from "#cgroy6iibw7w";
 import { ICON_ARROW_RIGHT } from "#gpkp4b4vfavh";
 import { MapBackdrop } from "#x3jm3224vb0o";
+import { accommodations } from "#2ajuusged5jk";
 import { useLang } from "#n99t4onl5ufo";
 
 export function HeroSection() {
@@ -14,6 +15,7 @@ export function HeroSection() {
   const titleTop = tr("hero.titleTop");
   const titleAccent = tr("hero.titleAccent");
   const titleChars = Math.max(titleTop.length, titleAccent.length);
+  const totalRooms = accommodations.reduce((sum, item) => sum + item.rooms, 0);
 
   return (
     <section className="hero-section">
@@ -43,11 +45,11 @@ export function HeroSection() {
 
     <div className="hero-section-stats">
     <div className="hero-section-stat">
-    <div className="hero-section-stat-value">35</div>
+    <div className="hero-section-stat-value">{totalRooms}</div>
     <div className="hero-section-stat-label">{tr("hero.stats.rooms")}</div>
     </div>
     <div className="hero-section-stat">
-    <div className="hero-section-stat-value">2</div>
+    <div className="hero-section-stat-value">{accommodations.length}</div>
     <div className="hero-section-stat-label">{tr("hero.stats.objects")}</div>
     </div>
     </div>

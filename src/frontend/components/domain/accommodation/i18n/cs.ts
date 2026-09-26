@@ -100,7 +100,7 @@ export default defineMessages({
     },
     accommodations: {
       libuse: {
-        name: "Apartmány Libuše",
+        name: "Apartmány",
         shortName: "Libuše",
         description: "Moderní apartmány s plně vybavenou kuchyní. Ideální pro delší pobyty a rodiny s dětmi.",
         detail:
@@ -135,7 +135,7 @@ export default defineMessages({
         },
         rooms: {
           room1: {
-            name: "Studio č. 9 Libuše",
+            name: "Studio č. 9",
             capacity: "3+0 osob",
             size: "34 m²",
             description:
@@ -143,7 +143,7 @@ export default defineMessages({
               "chodbě. K dispozici je venkovní terasa.",
           },
           room2: {
-            name: "Studio č. 10 Libuše",
+            name: "Studio č. 10",
             capacity: "4+0 osob",
             size: "39 m²",
             description:
@@ -151,7 +151,7 @@ export default defineMessages({
               "se sprchou a prostornou skříní v chodbě.",
           },
           room3: {
-            name: "Apartmán č. 11 Libuše",
+            name: "Apartmán č. 11",
             capacity: "3+2 osob",
             size: "66 m²",
             description:
@@ -159,7 +159,7 @@ export default defineMessages({
               "koutem, sedací soupravou a venkovním posezením.",
           },
           room4: {
-            name: "Studio č. 12 Libuše",
+            name: "Studio č. 12",
             capacity: "4+0 osob",
             size: "47 m²",
             description:

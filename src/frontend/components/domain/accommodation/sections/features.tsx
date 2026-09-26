@@ -1,5 +1,5 @@
 import type { I18nTranslator } from "@trebired/i18n";
-import { Icon } from "@trebired/frontend/react";
+import { Icon, Section } from "@trebired/frontend/react";
 
 import { CardTable } from "#gqbmqapv1gar";
 import type { Accommodation } from "#2ajuusged5jk";
@@ -12,14 +12,13 @@ type FeaturesProps = {
 
 export function AccommodationFeatures({ accommodation, baseKey, tr }: FeaturesProps) {
   return (
-    <section className="accommodation-features">
-    <div className="accommodation-features-inner">
+    <Section>
+    <div className="tbf-container column gap-lg">
     <h2 className="section-title">{tr("accommodationPage.featuresTitle")}</h2>
 
     <CardTable
     items={accommodation.features}
     columns={2}
-    breakpoint="sm"
     getKey={(feature) => feature.label}
     itemClassName="accommodation-feature-cell"
     renderItem={(feature, index) => (
@@ -32,6 +31,6 @@ export function AccommodationFeatures({ accommodation, baseKey, tr }: FeaturesPr
     )}
     />
     </div>
-    </section>
+    </Section>
   );
 }
