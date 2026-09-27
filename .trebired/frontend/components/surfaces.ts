@@ -60,9 +60,8 @@ export const surfaces = {
   scrollbar: {
     root: {
       gutter: "auto",
-      radius: "999px",
       thumb: token.color("neutral", "400"),
-      width: "10px",
+      width: "thin",
     },
   },
   tag: {
