@@ -58,11 +58,7 @@ export const surfaces = {
   logo: { root: { height: "3rem" } },
   rule: { root: { color: accent, gap: "1rem", width: "4px" } },
   scrollbar: {
-    root: {
-      gutter: "auto",
-      thumb: token.color("neutral", "400"),
-      width: "thin",
-    },
+    root: { gutter: "auto" },
   },
   tag: {
     root: {
