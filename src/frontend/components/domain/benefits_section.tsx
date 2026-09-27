@@ -21,9 +21,7 @@ export function BenefitsSection() {
   return (
     <Section tone="inverse">
     <div className="tbf-container column gap-lg">
-    <div className="benefits-section-head">
-    <h2 className="section-title section-title-light">{tr("benefits.title")}</h2>
-    </div>
+    <h2 className="tbf-heading--section section-title-light center">{tr("benefits.title")}</h2>
 
     <CardTable
     items={BENEFIT_ITEMS}
@@ -36,7 +34,7 @@ export function BenefitsSection() {
         <div className="benefit-card-icon">
         <Icon spec={icon} />
         </div>
-        <div className="benefit-card-text-group">
+        <div className="column gap-sm">
         <h3 className="benefit-card-title">{tr(`benefits.items.${key}.title`)}</h3>
         <p className="benefit-card-description">{tr(`benefits.items.${key}.description`)}</p>
         </div>

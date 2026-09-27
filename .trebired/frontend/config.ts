@@ -6,7 +6,7 @@ import { components } from "./components";
 import { palette } from "./palette";
 import { systems } from "./systems";
 import { interactions, runtime, semantics } from "./theme";
-import { breakpoints, typography } from "./typography";
+import { breakpoints } from "./typography";
 
 export default defineConfig({
     forVersion: "13.44.0",
@@ -34,7 +34,7 @@ export default defineConfig({
         specs: ALL_ICON_SPECS,
       },
     },
-    components: { ...components, typography },
+    components,
     design: {
       breakpoints,
       interactions,

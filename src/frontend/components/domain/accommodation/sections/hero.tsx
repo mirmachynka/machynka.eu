@@ -20,14 +20,14 @@ export function AccommodationHero({ accommodation, detail, mapAddress, name, tr 
     <MapBackdrop />
 
     <div className="accommodation-hero-inner">
-    <div className="accommodation-hero-copy">
+    <div className="column gap-lg accommodation-hero-copy">
     <a href="/#ubytovani" className="accommodation-back-link" data-tbf-soft-redirect="">
     <Icon spec={ICON_ARROW_LEFT} />
     {tr("common.backToAccommodation")}
     </a>
     <h1 className="accommodation-hero-title">{name}</h1>
     <p className="accommodation-hero-detail">{detail}</p>
-    <div className="accommodation-hero-actions">
+    <div className="inline-row wrap gap-sm">
     <Button href="#kontakt" variant="primary">
     <span>{tr("common.reserveRoom")}</span>
     <Icon spec={ICON_ARROW_RIGHT} />
@@ -36,10 +36,10 @@ export function AccommodationHero({ accommodation, detail, mapAddress, name, tr 
     </div>
 
     <div className="accommodation-hero-media">
-    <div className="accommodation-hero-image-wrap">
+    <div className="tbf-frame accommodation-hero-image-wrap">
     <img src={accommodation.exteriorImage} alt={name} className="accommodation-hero-image" />
     <div className="accommodation-hero-image-scrim" />
-    <div className="accommodation-hero-address">
+    <div className="column gap-xs2 accommodation-hero-address">
     <p className="accommodation-hero-address-text">{mapAddress}</p>
     <p className="accommodation-hero-address-label">{tr("common.accommodationInBucovice")}</p>
     </div>

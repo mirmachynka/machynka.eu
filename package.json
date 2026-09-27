@@ -13,7 +13,7 @@
     }
   },
   "name": "machynka-eu",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Marketing site for MACHYNKA s.r.o. accommodation in Bu\u010dovice. React frontend, static build, no backend.",
   "type": "module",
   "private": true,

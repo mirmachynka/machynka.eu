@@ -21,7 +21,7 @@ type RulesSectionProps = {
 
 export function AccommodationRulesSection({ intro, tr, title }: RulesSectionProps) {
   return (
-    <div className="accommodation-panel">
+    <div className="column gap-md accommodation-panel">
     <Icon spec={ICON_CLIPBOARD} className="accommodation-panel-icon" />
     <h2 className="accommodation-panel-title">{title}</h2>
     <p className="accommodation-rules-intro">{intro}</p>

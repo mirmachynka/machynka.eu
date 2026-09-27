@@ -100,7 +100,7 @@ export default defineMessages({
     },
     accommodations: {
       libuse: {
-        name: "Apartmány",
+        name: "Apartmány Libuše",
         shortName: "Libuše",
         description: "Moderní apartmány s plně vybavenou kuchyní. Ideální pro delší pobyty a rodiny s dětmi.",
         detail:

@@ -9,24 +9,24 @@ import { useLang } from "#n99t4onl5ufo";
 
 function ContactLinks({ tr }: { tr: I18nTranslator }) {
   return (
-    <div className="contact-section-links">
-    <a href={phoneHref(contactInfo.accommodationPhone)} className="contact-link">
+    <div className="column gap-sm">
+    <a href={phoneHref(contactInfo.accommodationPhone)} className="inline-row gap-sm contact-link">
     <div className="contact-link-icon">
     <Icon spec={ICON_PHONE} />
     </div>
-    <div className="contact-link-body">
-    <div className="contact-link-label">{tr("contactSection.accommodationPhone")}</div>
+    <div className="column grow gap-xs2">
+    <div className="label-caps">{tr("contactSection.accommodationPhone")}</div>
     <div className="contact-link-value">{contactInfo.accommodationPhone}</div>
     </div>
     <Icon spec={ICON_ARROW_RIGHT} className="contact-link-arrow" />
     </a>
 
-    <a href={`mailto:${contactInfo.email}`} className="contact-link">
+    <a href={`mailto:${contactInfo.email}`} className="inline-row gap-sm contact-link">
     <div className="contact-link-icon">
     <Icon spec={ICON_MAIL} />
     </div>
-    <div className="contact-link-body">
-    <div className="contact-link-label">{tr("contactSection.emailLabel")}</div>
+    <div className="column grow gap-xs2">
+    <div className="label-caps">{tr("contactSection.emailLabel")}</div>
     <div className="contact-link-value contact-link-value-email">{contactInfo.email}</div>
     </div>
     <Icon spec={ICON_ARROW_RIGHT} className="contact-link-arrow" />
@@ -37,15 +37,15 @@ function ContactLinks({ tr }: { tr: I18nTranslator }) {
 
 function ContactAddressPanel({ tr }: { tr: I18nTranslator }) {
   return (
-    <div className="contact-panel">
+    <div className="column gap-md contact-panel">
     <h3 className="contact-panel-title">{tr("contactSection.contactAddress")}</h3>
-    <div className="contact-panel-body">
-    <div className="contact-panel-row">
+    <div className="column gap-sm">
+    <div className="inline-row top gap-sm">
     <div className="contact-panel-icon">
     <Icon spec={ICON_MAP_PIN} />
     </div>
-    <div className="contact-panel-column">
-    <div className="contact-panel-address-lines">
+    <div className="column gap-sm">
+    <div className="column gap-xs2">
     <div className="contact-panel-name">{tr("contactSection.label")}</div>
     <div className="contact-panel-detail">{contactInfo.contactAddress.street}</div>
     <div className="contact-panel-detail">
@@ -55,11 +55,11 @@ function ContactAddressPanel({ tr }: { tr: I18nTranslator }) {
     <p className="contact-panel-note">{tr("contactSection.receptionNote")}</p>
     </div>
     </div>
-    <div className="contact-panel-divider">
-    <div className="contact-panel-label">{tr("contactSection.accommodationAddresses")}</div>
+    <div className="border-top padding-top-md">
+    <div className="label-caps">{tr("contactSection.accommodationAddresses")}</div>
     </div>
     {contactInfo.branchAddresses.map((address) => (
-          <div key={address.name} className="contact-panel-row">
+          <div key={address.name} className="inline-row top gap-sm">
           <div className="contact-panel-icon">
           <Icon spec={ICON_MAP_PIN} />
           </div>
@@ -79,14 +79,14 @@ function ContactAddressPanel({ tr }: { tr: I18nTranslator }) {
 
 function ContactOperatorPanel({ tr }: { tr: I18nTranslator }) {
   return (
-    <div className="contact-panel">
+    <div className="column gap-md contact-panel">
     <h3 className="contact-panel-title">{tr("contactSection.operator")}</h3>
-    <div className="contact-panel-row">
+    <div className="inline-row top gap-sm">
     <div className="contact-panel-icon">
     <Icon spec={ICON_BUILDING} />
     </div>
-    <div className="contact-panel-operator">
-    <div className="contact-panel-operator-lines">
+    <div className="column gap-sm">
+    <div className="column gap-xs2">
     <div className="contact-panel-name">{contactInfo.operator.name}</div>
     <div>{tr("contactSection.representedBy", { name: contactInfo.operator.representedBy })}</div>
     <div>{contactInfo.operator.street}</div>
@@ -94,7 +94,7 @@ function ContactOperatorPanel({ tr }: { tr: I18nTranslator }) {
     {contactInfo.operator.city} {contactInfo.operator.postalCode}
     </div>
     </div>
-    <div className="contact-panel-operator-lines">
+    <div className="column gap-xs2">
     <div>
     {tr("contactSection.companyId")}: {contactInfo.operator.companyId}
     </div>
@@ -115,10 +115,10 @@ export function ContactSection() {
   return (
     <Section id="kontakt">
     <div className="tbf-container column gap-lg">
-    <h2 className="section-title contact-section-title">{tr("contactSection.title")}</h2>
+    <h2 className="tbf-heading--section contact-section-title">{tr("contactSection.title")}</h2>
 
-    <div className="contact-section-grid">
-    <div className="contact-section-column">
+    <div className="grid gap-lg contact-section-grid">
+    <div className="column gap-lg">
     <p className="contact-section-text">{tr("contactSection.text")}</p>
 
     <ContactLinks tr={tr} />
@@ -132,7 +132,7 @@ export function ContactSection() {
     </div>
     </div>
 
-    <div className="contact-section-panels">
+    <div className="column gap-md">
     <ContactAddressPanel tr={tr} />
     <ContactOperatorPanel tr={tr} />
 

@@ -58,6 +58,9 @@
       "#bhkb4brq7vk0": [
         "../../frontend/typography.ts"
       ],
+      "#bm90gg6y4zyx": [
+        "../../frontend/components/typography.ts"
+      ],
       "#bo778qhulovu": [
         "../../../src/frontend/components/chrome/styles/footer.scss"
       ],
@@ -166,9 +169,6 @@
       "#pgsley9n980u": [
         "../../../src/frontend/shared/chrome_roots.tsx"
       ],
-      "#plsr0hqod53h": [
-        "../../../src/frontend/components/chrome/styles/lang_switcher.scss"
-      ],
       "#ppwqwx7cdbgx": [
         "../../../src/frontend/components/domain/accommodation/translator.ts"
       ],
@@ -186,9 +186,6 @@
       ],
       "#sl7ifwns5gtm": [
         "../../../src/frontend/components/domain/accommodation/styles/page_info.scss"
-      ],
-      "#szv3ohtjlk5d": [
-        "../../../src/frontend/components/chrome/styles/header.scss"
       ],
       "#t42fgwegj1pz": [
         "../../../src/frontend/components/domain/i18n/cs.ts"

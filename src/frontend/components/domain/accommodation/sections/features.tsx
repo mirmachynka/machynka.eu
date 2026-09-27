@@ -14,13 +14,13 @@ export function AccommodationFeatures({ accommodation, baseKey, tr }: FeaturesPr
   return (
     <Section>
     <div className="tbf-container column gap-lg">
-    <h2 className="section-title">{tr("accommodationPage.featuresTitle")}</h2>
+    <h2 className="tbf-heading--section">{tr("accommodationPage.featuresTitle")}</h2>
 
     <CardTable
     items={accommodation.features}
     columns={2}
     getKey={(feature) => feature.label}
-    itemClassName="accommodation-feature-cell"
+    itemClassName="column gap-md accommodation-feature-cell"
     renderItem={(feature, index) => (
         <>
         <div className="accommodation-feature-icon">

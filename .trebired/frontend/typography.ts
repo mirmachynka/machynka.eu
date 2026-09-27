@@ -4,13 +4,3 @@ export const breakpoints = {
   md: 768,
   lg: 1024,
 };
-
-export const typography = {
-  container: {
-    px: {
-      base: "1rem",
-      lg: "2rem",
-      sm: "1.5rem",
-    },
-  },
-};

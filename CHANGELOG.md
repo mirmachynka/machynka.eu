@@ -4,6 +4,12 @@ All notable changes to `machynka-eu` will be documented here.
 
 This project follows semantic versioning once published.
 
+## 2.1.0
+
+- The language switcher is the package's `LocaleSwitcher` rather than a hand-built popover, its chip sized through `shell.language.trigger`.
+- Section headings are a `heading.variants.section` entry in the frontend config instead of a class with four breakpoint overrides, and every stacked or inline wrapper in the sections, panels, property cards and accommodation pages is a package layout utility. Images and map embeds sit in the package's `frame`, badges and room tags are `pill`s, and small caps labels are `label-caps`.
+- Half the stylesheet is gone: 1878 lines across 14 files down to 1053 across 11, and 182 class names down to 99.
+
 ## 2.0.0
 
 - The site is now `machynka.eu`. The product identity, the contact email and every generated URL follow the new domain, and `machynka.cz`, `www.machynka.cz` and `penzion.machynka.cz` redirect permanently to it, keeping the path.

@@ -24,7 +24,7 @@ export function Header() {
     <SiteHeader
     actions={(
         <>
-        <HeaderPhone className="site-header-phone" />
+        <HeaderPhone className="inline-row fit-content gap-xs font-bold text-sm" />
         <LangSwitcher />
         </>
     )}
@@ -34,7 +34,7 @@ export function Header() {
     links={navItems(tr)}
     menuActions={(
         <>
-        <HeaderPhone className="site-header-mobile-phone" />
+        <HeaderPhone className="inline-row fit-content gap-xs font-bold" />
         <LangSwitcher />
         </>
     )}

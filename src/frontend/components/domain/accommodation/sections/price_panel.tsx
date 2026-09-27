@@ -22,10 +22,10 @@ export function AccommodationPricePanel({ accommodation, baseKey, priceGroupItem
   const groups = priceGroupItemCounts.map((itemCount, index) => ({ groupNumber: index + 1, itemCount }));
 
   return (
-    <div className="accommodation-panel">
+    <div className="column gap-md accommodation-panel">
     <Icon spec={ICON_RECEIPT} className="accommodation-panel-icon" />
     <h2 className="accommodation-panel-title">{tr("accommodationPage.priceTitle")}</h2>
-    <div className="accommodation-panel-block">
+    <div className="column gap-sm">
     {numbers(PRICE_NOTES_COUNT).map((itemNumber) => (
           <p key={itemNumber} className="accommodation-panel-text">
           {tr(`${baseKey}.priceNotes.item${itemNumber}`)}
@@ -35,12 +35,12 @@ export function AccommodationPricePanel({ accommodation, baseKey, priceGroupItem
     <CardTable
     items={groups}
     columns={3}
-    itemClassName="accommodation-price-cell"
+    itemClassName="column gap-sm"
     getKey={(group) => group.groupNumber}
     renderItem={(group) => (
         <>
         <h3 className="accommodation-price-group-title">{tr(`${baseKey}.priceGroups.group${group.groupNumber}.name`)}</h3>
-        <div className="accommodation-panel-block">
+        <div className="column gap-sm">
         {numbers(group.itemCount).map((itemNumber) => (
               <p key={itemNumber} className="accommodation-price-item">
               {tr(`${baseKey}.priceGroups.group${group.groupNumber}.items.item${itemNumber}`)}
@@ -50,7 +50,7 @@ export function AccommodationPricePanel({ accommodation, baseKey, priceGroupItem
         </>
     )}
     />
-    <div className="accommodation-price-actions">
+    <div className="column gap-sm">
     <Button href={phoneHref(reservationPhone)} variant="primary">
     <span>{tr("common.callForPrice")}</span>
     <Icon spec={ICON_PHONE} />

@@ -43,7 +43,7 @@ export function AccommodationPage({ accommodation }: AccommodationPageProps) {
 
     <Section tone="muted">
     <div className="tbf-container column gap-lg">
-    <div className="accommodation-info-grid" id="kontakt">
+    <div className="grid auto-lg gap-md" id="kontakt">
     <AccommodationAboutPanel accommodation={accommodation} baseKey={baseKey} description={description} name={name} tr={tr} />
     <AccommodationLocationPanel mapAddress={mapAddress} mapEmbedUrl={accommodation.mapEmbedUrl} name={name} tr={tr} />
     </div>

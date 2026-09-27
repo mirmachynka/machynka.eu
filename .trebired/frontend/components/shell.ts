@@ -23,6 +23,17 @@ export const shell = {
       },
     },
   },
+  language: {
+    trigger: {
+      fontSize: "0.78rem",
+      fontWeight: "900",
+      gap: "0.55rem",
+      height: "2.25rem",
+      letterSpacing: "0.06em",
+      padding: "0 0.75rem",
+      radius: "0",
+    },
+  },
   header: {
     actionsGap: "1.5rem",
     brand: { logoHeight: "3.5rem" },

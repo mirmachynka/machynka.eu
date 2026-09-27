@@ -11,25 +11,25 @@ export function AboutSection() {
   return (
     <Section id="o-nas">
     <div className="tbf-container column gap-lg">
-    <h2 className="section-title about-section-title">{tr("about.title")}</h2>
+    <h2 className="tbf-heading--section about-section-title">{tr("about.title")}</h2>
 
-    <div className="about-section-grid">
-    <div className="about-section-copy">
-    <div className="about-section-text-group">
+    <div className="grid about-section-grid">
+    <div className="column gap-lg">
+    <div className="column gap-md">
     <p className="about-section-text">{tr("about.text1")}</p>
     <p className="about-section-text">{tr("about.text2")}</p>
     </div>
 
-    <div className="about-section-stats">
-    <div className="about-section-stat">
+    <div className="grid auto-sm gap-sm about-section-stats">
+    <div className="column hor-center gap-sm about-section-stat">
     <Icon spec={ICON_BUILDING} />
     <div className="about-section-stat-label">{tr("about.stats.objects")}</div>
     </div>
-    <div className="about-section-stat">
+    <div className="column hor-center gap-sm about-section-stat">
     <Icon spec={ICON_USERS} />
     <div className="about-section-stat-label">{tr("about.stats.rooms")}</div>
     </div>
-    <div className="about-section-stat">
+    <div className="column hor-center gap-sm about-section-stat">
     <Icon spec={ICON_AWARD} />
     <div className="about-section-stat-label">{tr("about.stats.years")}</div>
     </div>

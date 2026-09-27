@@ -1,33 +1,5 @@
-.section-title {
-  overflow-wrap: break-word;
-  font-size: 1.875rem;
-  font-weight: 900;
-  line-height: 1;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  color: var(--neutral-900);
-}
-
 .section-title-light {
   color: var(--white-500);
-}
-
-@media (min-width: 380px) {
-  .section-title {
-    font-size: 2.25rem;
-  }
-}
-
-@media (min-width: 640px) {
-  .section-title {
-    font-size: 3rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .section-title {
-    font-size: 4.5rem;
-  }
 }
 
 .map-backdrop {

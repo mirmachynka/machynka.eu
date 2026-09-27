@@ -18,13 +18,13 @@ type AboutPanelProps = {
 
 export function AccommodationAboutPanel({ accommodation, baseKey, description, name, tr }: AboutPanelProps) {
   return (
-    <div className="accommodation-panel accommodation-panel-dark">
+    <div className="column gap-md accommodation-panel accommodation-panel-dark">
     <Icon spec={ICON_BUILDING} className="accommodation-panel-icon" />
     <h2 className="accommodation-panel-title accommodation-panel-title-light">{name}</h2>
     <p className="accommodation-panel-text-light">{description}</p>
-    <div className="accommodation-panel-block">
+    <div className="column gap-sm">
     {numbers(STAY_INFO_COUNT).map((itemNumber) => (
-          <div key={itemNumber} className="accommodation-stay-info-row">
+          <div key={itemNumber} className="inline-row top gap-sm">
           <Icon spec={ICON_CLOCK} />
           {tr(`${baseKey}.stayInfo.item${itemNumber}`)}
           </div>
@@ -32,7 +32,7 @@ export function AccommodationAboutPanel({ accommodation, baseKey, description, n
     <p className="contact-panel-note">{tr("common.receptionNote")}</p>
     </div>
     {accommodation.contact && (
-        <div className="accommodation-panel-block">
+        <div className="column gap-sm">
         <a href={phoneHref(accommodation.contact.phone)} className="accommodation-contact-row">
         <Icon spec={ICON_PHONE} />
         {accommodation.contact.phone}

@@ -22,8 +22,8 @@ export function HeroSection() {
     <MapBackdrop />
 
     <div className="hero-section-inner">
-    <div className="hero-section-content">
-    <div className="hero-section-copy">
+    <div className="column gap-lg hero-section-content">
+    <div className="column gap-lg hero-section-copy">
     <h1 className="hero-section-title" style={{ "--hero-title-chars": titleChars } as CSSProperties}>
     <span className="hero-section-title-top">{titleTop}</span>
     <br />
@@ -32,7 +32,7 @@ export function HeroSection() {
 
     <p className="hero-section-text">{tr("hero.text")}</p>
 
-    <div className="hero-section-actions">
+    <div className="inline-row wrap gap-sm hero-section-actions">
     <Button href="/#ubytovani" variant="primary">
     <span>{tr("hero.primary")}</span>
     <Icon spec={ICON_ARROW_RIGHT} />
@@ -43,12 +43,12 @@ export function HeroSection() {
     </div>
     </div>
 
-    <div className="hero-section-stats">
-    <div className="hero-section-stat">
+    <div className="grid cols-2 gap-sm hero-section-stats">
+    <div className="column gap-xs hero-section-stat">
     <div className="hero-section-stat-value">{totalRooms}</div>
     <div className="hero-section-stat-label">{tr("hero.stats.rooms")}</div>
     </div>
-    <div className="hero-section-stat">
+    <div className="column gap-xs hero-section-stat">
     <div className="hero-section-stat-value">{accommodations.length}</div>
     <div className="hero-section-stat-label">{tr("hero.stats.objects")}</div>
     </div>

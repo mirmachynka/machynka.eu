@@ -13,11 +13,11 @@ export function AccommodationGallery({ images, name, tr }: GalleryProps) {
   return (
     <Section>
     <div className="tbf-container column gap-lg">
-    <h2 className="section-title">{tr("accommodationPage.galleryTitle")}</h2>
+    <h2 className="tbf-heading--section">{tr("accommodationPage.galleryTitle")}</h2>
 
-    <div className="accommodation-gallery-grid">
+    <div className="grid auto-md gap-sm">
     {images.map((image, index) => (
-          <ExpandableImage key={image} src={image} alt={name} images={images} index={index} className="accommodation-gallery-item" />
+          <ExpandableImage key={image} src={image} alt={name} images={images} index={index} className="tbf-frame accommodation-gallery-item" />
     ))}
     </div>
     </div>

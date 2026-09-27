@@ -12,7 +12,7 @@ type LocationPanelProps = {
 
 export function AccommodationLocationPanel({ mapAddress, mapEmbedUrl, name, tr }: LocationPanelProps) {
   return (
-    <div className="accommodation-panel">
+    <div className="column gap-md accommodation-panel">
     <Icon spec={ICON_MAP_PIN} className="accommodation-panel-icon" />
     <h2 className="accommodation-panel-title">{tr("accommodationPage.locationTitle")}</h2>
     <p className="accommodation-panel-text">{mapAddress}</p>
