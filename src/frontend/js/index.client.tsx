@@ -38,8 +38,8 @@ function observed(node: ReactElement) {
 configureSpa({});
 
 void hydrateChromeRoots([
-    [document.querySelector(SITE_HEADER_ROOT_SELECTOR), observed(<Header />)],
-    [document.querySelector(SITE_FOOTER_ROOT_SELECTOR), observed(<Footer />)],
+    [SITE_HEADER_ROOT_SELECTOR, observed(<Header />)],
+    [SITE_FOOTER_ROOT_SELECTOR, observed(<Footer />)],
 ]).then(() => {
     bindFrontendRuntime(document, {
         icons: { mode: "static" },

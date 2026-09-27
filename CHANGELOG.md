@@ -14,6 +14,7 @@ This project follows semantic versioning once published.
 
 ### Fixed
 
+- The header and footer stopped responding after a soft navigation. Both are hydrated once at boot, but a soft redirect replaces their markup with the fetched document's, so the React roots were left rendering into nodes no longer in the page: the language menu changed the site's language and its own label stayed on the language you had left. They are re-mounted when the navigation reports back.
 - Changing language did nothing. The switcher posted to `/ui/lang/set`, a route only a server-backed site has; on a static build every change 404'd and then silently stopped, because the runtime treats a failed persist as a refusal. The choice is now kept in the browser and the page re-renders in place, which is what the language menu always claimed to do.
 - Both maps rendered at zero height and so were invisible. The embed had no shape of its own and the rule that used to give it one went with the old stylesheets; it now asks for an aspect ratio.
 - Hover easing was set to 120ms, short enough to read as no easing at all, and the back link had none. Both are on one 220ms timing now.
