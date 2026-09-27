@@ -1,4 +1,4 @@
-import { ExpandableImage, Frame, PageBand } from "@trebired/frontend/react";
+import { ExpandableImage, PageBand } from "@trebired/frontend/react";
 import type { I18nTranslator } from "@trebired/i18n";
 
 type GalleryProps = {
@@ -15,18 +15,17 @@ export function AccommodationGallery({ images, name, tr }: GalleryProps) {
     <div className="column gap-lg">
     <h2 className="tbf-heading--section">{tr("accommodationPage.galleryTitle")}</h2>
 
-    <div className="grid auto-md gap-sm">
+    <div className="grid cols-3 gap-sm">
     {images.map((image, index) => (
-          <Frame key={image} ratio="4 / 3">
           <ExpandableImage
+          key={image}
           src={image}
           alt={name}
           images={images}
           index={index}
           className="width-full"
-          imageClassName="tbf-frame__cover"
+          ratio="4 / 3"
           />
-          </Frame>
     ))}
     </div>
     </div>

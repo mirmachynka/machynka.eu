@@ -9,7 +9,7 @@ import { interactions, runtime, semantics } from "./theme";
 import { breakpoints } from "./typography";
 
 export default defineConfig({
-    forVersion: "14.3.0",
+    forVersion: "14.4.0",
     assets: {
       favicon: {
         default: "src/brand/favicon.svg",
@@ -39,6 +39,7 @@ export default defineConfig({
       breakpoints,
       interactions,
       palette,
+      scales: { radius: { lg: 0, md: 0, sm: 0, xl: 0, xl2: 0, xs: 0 } },
       scrollBehavior: "smooth",
       semantics,
     },

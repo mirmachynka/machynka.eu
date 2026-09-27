@@ -11,6 +11,10 @@ export const shell = {
     },
     columns: { min: "12rem" },
     inner: { gap: "3rem" },
+    link: {
+      hoverColor: token.color("white", "500"),
+      hoverDecorationLine: "none",
+    },
     maxWidth: "80rem",
     root: {
       bg: token.color("neutral", "900"),
@@ -27,13 +31,13 @@ export const shell = {
   },
   language: {
     trigger: {
+      borderColor: token.color("neutral", "200"),
       fontSize: "0.78rem",
       fontWeight: "900",
       gap: "0.55rem",
       height: "2.25rem",
       letterSpacing: "0.06em",
       padding: "0 0.75rem",
-      radius: "0",
     },
   },
   header: {
@@ -45,7 +49,6 @@ export const shell = {
       hoverColor: token.color("neutral", "900"),
       letterSpacing: "0.02em",
       padding: "0.5rem 1rem",
-      radius: "0",
       textTransform: "uppercase",
     },
     maxWidth: "80rem",

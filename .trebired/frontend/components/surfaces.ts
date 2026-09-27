@@ -28,13 +28,12 @@ export const surfaces = {
       bg: white,
       border: `1px solid ${token.color("neutral", "200")}`,
       padding: "clamp(1.5rem, 3vw, 2.5rem)",
-      radius: "0",
     },
     states: { hover: { border: ink } },
     tones: {
-      accent: { bg: accent, color: white },
-      inverse: { bg: ink, color: token.color("neutral", "300"), textMuted: token.color("neutral", "400") },
-      muted: { bg: token.color("neutral", "100"), color: ink },
+      accent: { bg: accent, border: accent, color: white },
+      inverse: { bg: ink, border: ink, color: token.color("neutral", "300"), textMuted: token.color("neutral", "400") },
+      muted: { bg: token.color("neutral", "100"), border: token.color("neutral", "100"), color: ink },
     },
   },
   frame: {
@@ -47,14 +46,13 @@ export const surfaces = {
     },
     badge: { offset: "1.5rem" },
     caption: { bg: accent, color: white, padding: "1.25rem" },
-    root: { bg: ink, border: "0", radius: "0" },
+    root: { bg: ink, border: "0" },
   },
   hairline: {
     cell: { padding: "1.5rem" },
     root: {
-      bg: token.color("neutral", "200"),
+      bg: "color-mix(in srgb, currentColor 18%, transparent)",
       border: "0",
-      radius: "0",
     },
   },
   logo: { root: { height: "3rem" } },
@@ -72,13 +70,11 @@ export const surfaces = {
       bg: token.color("neutral", "100"),
       color: ink,
       fontWeight: "900",
-      radius: "0",
       textTransform: "uppercase",
     },
     tones: { accent: { bg: accent, color: white }, inverse: { bg: ink, color: white } },
   },
   tile: {
-    root: { radius: "0" },
     sizes: { lg: { glyph: "1.5rem", size: "3.5rem" }, sm: { glyph: "1rem", size: "2.5rem" } },
     slots: { glyph: { accent } },
     tones: {
