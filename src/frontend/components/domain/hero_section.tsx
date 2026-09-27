@@ -1,5 +1,5 @@
 import { createLocalTranslator } from "@trebired/i18n";
-import { Icon } from "@trebired/frontend/react";
+import { AccentRule, Icon } from "@trebired/frontend/react";
 import type { CSSProperties } from "react";
 
 import { Button } from "#cgroy6iibw7w";
@@ -21,7 +21,7 @@ export function HeroSection() {
     <section data-home-hero="">
     <MapBackdrop />
 
-    <div  data-home-hero-inner="">
+    <div data-home-hero-inner="">
     <div className="column gap-lg" data-home-hero-content="">
     <div className="column gap-lg" data-home-hero-copy="">
     <h1 data-home-hero-title="" style={{ "--hero-title-chars": titleChars } as CSSProperties}>
@@ -44,14 +44,14 @@ export function HeroSection() {
     </div>
 
     <div className="grid cols-2 gap-sm" data-stats="">
-    <div className="column gap-xs" data-stat="">
+    <AccentRule className="column gap-xs" data-stat="">
     <div>{totalRooms}</div>
-    <div>{tr("hero.stats.rooms")}</div>
-    </div>
-    <div className="column gap-xs" data-stat="">
+    <div className="label-caps">{tr("hero.stats.rooms")}</div>
+    </AccentRule>
+    <AccentRule className="column gap-xs" data-stat="">
     <div>{accommodations.length}</div>
-    <div>{tr("hero.stats.objects")}</div>
-    </div>
+    <div className="label-caps">{tr("hero.stats.objects")}</div>
+    </AccentRule>
     </div>
     </div>
     </div>

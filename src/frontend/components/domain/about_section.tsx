@@ -1,49 +1,55 @@
 import { createLocalTranslator } from "@trebired/i18n";
-import { Icon } from "@trebired/frontend/react";
+import { AccentRule, Card, CardBody, Icon, IconTile, PageBand } from "@trebired/frontend/react";
 
 import { ICON_AWARD, ICON_BUILDING, ICON_USERS } from "#gpkp4b4vfavh";
 import { useLang } from "#n99t4onl5ufo";
+
+const FACTS = [
+  { icon: ICON_BUILDING, key: "objects" },
+  { icon: ICON_USERS, key: "rooms" },
+  { icon: ICON_AWARD, key: "years" },
+] as const;
 
 export function AboutSection() {
   const lang = useLang();
   const tr = createLocalTranslator(import.meta.url, lang);
 
   return (
-    <section id="o-nas" data-band="">
+    <PageBand id="o-nas">
     <div className="column gap-lg">
     <h2 className="tbf-heading--section">{tr("about.title")}</h2>
 
-    <div className="grid" data-split="">
+    <div className="grid gap-lg">
     <div className="column gap-lg">
-    <div className="column gap-md">
-    <p className="text-muted" data-copy="">{tr("about.text1")}</p>
-    <p className="text-muted" data-copy="">{tr("about.text2")}</p>
+    <div className="tbf-prose">
+    <p>{tr("about.text1")}</p>
+    <p>{tr("about.text2")}</p>
     </div>
 
     <div className="grid auto-sm gap-sm">
-    <div className="column hor-center gap-sm" data-fact="">
-    <Icon spec={ICON_BUILDING} />
-    <div>{tr("about.stats.objects")}</div>
-    </div>
-    <div className="column hor-center gap-sm" data-fact="">
-    <Icon spec={ICON_USERS} />
-    <div>{tr("about.stats.rooms")}</div>
-    </div>
-    <div className="column hor-center gap-sm" data-fact="">
-    <Icon spec={ICON_AWARD} />
-    <div>{tr("about.stats.years")}</div>
-    </div>
+    {FACTS.map((fact) => (
+          <Card key={fact.key} tone="muted">
+          <CardBody className="column center gap-sm hor-center">
+          <IconTile>
+          <Icon spec={fact.icon} />
+          </IconTile>
+          <div className="tbf-heading--tile">{tr(`about.stats.${fact.key}`)}</div>
+          </CardBody>
+          </Card>
+    ))}
     </div>
     </div>
 
-    <div data-quote-card="">
-    <div className="column gap-md" data-quote-rule="">
-    <p data-quote="">"{tr("about.quote")}"</p>
-    <p className="label-caps" data-quote-source="">{tr("about.quoteSource")}</p>
+    <Card tone="inverse">
+    <CardBody>
+    <AccentRule className="column gap-md">
+    <p className="tbf-heading--quote">"{tr("about.quote")}"</p>
+    <p className="label-caps">{tr("about.quoteSource")}</p>
+    </AccentRule>
+    </CardBody>
+    </Card>
     </div>
     </div>
-    </div>
-    </div>
-    </section>
+    </PageBand>
   );
 }

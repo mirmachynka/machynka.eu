@@ -4,14 +4,14 @@
   justify-content: center;
   min-height: calc(100vh - 5rem);
   overflow: hidden;
-  padding-inline: var(--band-gutter, 1rem);
+  padding-inline: var(--tbf-surf-band-root-px);
   background: var(--neutral-900);
 }
 
 [data-home-hero-inner] {
   position: relative;
   display: flex;
-  width: min(var(--band-max, 80rem), 100%);
+  width: min(var(--tbf-surf-band-root-max), 100%);
   min-height: calc(100vh - 5rem);
   align-items: center;
 }
@@ -56,11 +56,6 @@
   max-width: 28rem;
 }
 
-[data-stat] {
-  border-left: 4px solid var(--primary-500);
-  padding-left: 0.75rem;
-}
-
 [data-stat] > div:first-child {
   font-size: 1.875rem;
   font-weight: 900;
@@ -68,13 +63,51 @@
   color: var(--white-500);
 }
 
-[data-stat] > div + div {
-  overflow-wrap: break-word;
-  font-size: 0.625rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--neutral-500);
+[data-hero] {
+  position: relative;
+  min-height: 70vh;
+  overflow: hidden;
+}
+
+[data-hero-inner] {
+  position: relative;
+  z-index: 10;
+  gap: 3rem;
+}
+
+[data-back]:hover {
+  color: var(--white-500);
+}
+
+[data-backdrop] {
+  position: absolute;
+  inset: 0;
+  width: auto;
+  pointer-events: none;
+}
+
+[data-backdrop-image] {
+  height: 100%;
+  object-fit: cover;
+  object-position: 55% 50%;
+  opacity: 0.8;
+}
+
+[data-backdrop-scrim] {
+  position: absolute;
+  inset: 0;
+  background: color-mix(in oklch, var(--neutral-900), transparent 72%);
+}
+
+[data-backdrop-glow] {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 18% 42%,
+    color-mix(in oklch, var(--neutral-900), transparent 62%) 0,
+    color-mix(in oklch, var(--neutral-900), transparent 84%) 36%,
+    transparent 68%
+  );
 }
 
 @media (min-width: 380px) {
@@ -96,17 +129,14 @@
     font-size: 1.25rem;
   }
 
-  [data-stat] {
-    padding-left: 1rem;
-  }
-
   [data-stat] > div:first-child {
     font-size: 3rem;
   }
+}
 
-  [data-stat] > div + div {
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
+@media (min-width: 768px) {
+  [data-backdrop-image] {
+    object-position: 95% 50%;
   }
 }
 
@@ -122,6 +152,18 @@
 
   [data-home-hero-copy] {
     max-width: 48rem;
+  }
+
+  [data-hero-inner] {
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 0.55fr);
+    align-items: start;
+    gap: 4rem;
+  }
+
+  [data-hero-media] {
+    justify-self: end;
+    width: 100%;
+    max-width: 520px;
   }
 }
 

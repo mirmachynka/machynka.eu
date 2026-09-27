@@ -1,5 +1,5 @@
 import { createLocalTranslator } from "@trebired/i18n";
-import { Icon, SiteFooter } from "@trebired/frontend/react";
+import { Icon, SiteFooter, TextLink } from "@trebired/frontend/react";
 
 import { contactInfo, phoneHref } from "#aequr96wfpxz";
 import { ICON_MAIL, ICON_MAP_PIN, ICON_PHONE } from "#gpkp4b4vfavh";
@@ -17,13 +17,13 @@ export function Footer() {
     tone="inverse"
     brand={(
         <>
-        <a href="/" className="inline-row fit-content" data-brand="" data-tbf-soft-redirect="">
-        <img src="/footer-logo.svg" alt="MACHYNKA s.r.o." className="tbf-logo" data-footer-logo="" />
+        <a href="/" className="inline-row fit-content" data-tbf-soft-redirect="">
+        <img src="/footer-logo.svg" alt="MACHYNKA s.r.o." className="tbf-logo" />
         </a>
-        <a href={phoneHref(contactInfo.accommodationPhone)} className="inline-row fit-content gap-xs font-bold" data-strong="">
+        <TextLink href={phoneHref(contactInfo.accommodationPhone)} className="inline-row fit-content gap-xs font-bold">
         <Icon spec={ICON_PHONE} />
         {contactInfo.accommodationPhone}
-        </a>
+        </TextLink>
         </>
     )}
     columns={[
@@ -41,10 +41,10 @@ export function Footer() {
             <Icon spec={ICON_MAP_PIN} />
             <span>{address.street}, {address.postalCode} {address.city}</span>
             </span>
-            <a href={`mailto:${contactInfo.email}`} className="inline-row fit-content gap-xs" data-hover-bright="">
+            <TextLink href={`mailto:${contactInfo.email}`} className="inline-row wrap fit-content gap-xs">
             <Icon spec={ICON_MAIL} />
             {contactInfo.email}
-            </a>
+            </TextLink>
             </div>
           ),
         },

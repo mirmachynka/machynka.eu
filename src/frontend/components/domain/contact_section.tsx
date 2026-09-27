@@ -1,5 +1,5 @@
 import { createLocalTranslator, type I18nTranslator } from "@trebired/i18n";
-import { Icon, MapEmbed } from "@trebired/frontend/react";
+import { ActionRow, Card, CardBody, Icon, IconTile, MapEmbed, PageBand } from "@trebired/frontend/react";
 
 import { Button } from "#cgroy6iibw7w";
 
@@ -8,42 +8,48 @@ import { ICON_ARROW_RIGHT, ICON_BUILDING, ICON_MAIL, ICON_MAP_PIN, ICON_PHONE } 
 import { useLang } from "#n99t4onl5ufo";
 
 function ContactLinks({ tr }: { tr: I18nTranslator }) {
+  const links = [
+    {
+      href: phoneHref(contactInfo.accommodationPhone),
+      icon: ICON_PHONE,
+      label: tr("contactSection.accommodationPhone"),
+      value: contactInfo.accommodationPhone,
+    },
+    {
+      href: `mailto:${contactInfo.email}`,
+      icon: ICON_MAIL,
+      label: tr("contactSection.emailLabel"),
+      value: contactInfo.email,
+    },
+  ];
+
   return (
     <div className="column gap-sm">
-    <a href={phoneHref(contactInfo.accommodationPhone)} className="inline-row gap-sm" data-action-row="">
-    <div data-tile="plain">
-    <Icon spec={ICON_PHONE} />
-    </div>
-    <div className="column grow gap-xs2">
-    <div className="label-caps">{tr("contactSection.accommodationPhone")}</div>
-    <div data-action-value="">{contactInfo.accommodationPhone}</div>
-    </div>
-    <Icon spec={ICON_ARROW_RIGHT} data-action-arrow="" />
-    </a>
-
-    <a href={`mailto:${contactInfo.email}`} className="inline-row gap-sm" data-action-row="">
-    <div data-tile="plain">
-    <Icon spec={ICON_MAIL} />
-    </div>
-    <div className="column grow gap-xs2">
-    <div className="label-caps">{tr("contactSection.emailLabel")}</div>
-    <div data-action-value="email">{contactInfo.email}</div>
-    </div>
-    <Icon spec={ICON_ARROW_RIGHT} data-action-arrow="" />
-    </a>
+    {links.map((link) => (
+          <ActionRow key={link.href} href={link.href} arrow={<Icon spec={ICON_ARROW_RIGHT} />}>
+          <IconTile size="lg" tone="surface">
+          <Icon spec={link.icon} />
+          </IconTile>
+          <div className="column grow gap-xs2">
+          <div className="label-caps">{link.label}</div>
+          <div className="tbf-action-row__value">{link.value}</div>
+          </div>
+          </ActionRow>
+    ))}
     </div>
   );
 }
 
 function ContactAddressPanel({ tr }: { tr: I18nTranslator }) {
   return (
-    <div className="column gap-md" data-panel="dark">
+    <Card tone="inverse">
+    <CardBody className="column gap-md">
     <h3 className="tbf-heading--panel">{tr("contactSection.contactAddress")}</h3>
     <div className="column gap-sm">
     <div className="inline-row top gap-sm">
-    <div data-tile="inset">
+    <IconTile size="sm" glyph="accent" tone="inverse">
     <Icon spec={ICON_MAP_PIN} />
-    </div>
+    </IconTile>
     <div className="column gap-sm">
     <div className="column gap-xs2">
     <div className="font-bold">{tr("contactSection.label")}</div>
@@ -52,7 +58,9 @@ function ContactAddressPanel({ tr }: { tr: I18nTranslator }) {
     {contactInfo.contactAddress.postalCode} {contactInfo.contactAddress.city}
     </div>
     </div>
-    <p data-note="">{tr("contactSection.receptionNote")}</p>
+    <Card tone="accent">
+    <CardBody className="text-sm font-bold">{tr("contactSection.receptionNote")}</CardBody>
+    </Card>
     </div>
     </div>
     <div className="border-top padding-top-md">
@@ -60,9 +68,9 @@ function ContactAddressPanel({ tr }: { tr: I18nTranslator }) {
     </div>
     {contactInfo.branchAddresses.map((address) => (
           <div key={address.name} className="inline-row top gap-sm">
-          <div data-tile="inset">
+          <IconTile size="sm" glyph="accent" tone="inverse">
           <Icon spec={ICON_MAP_PIN} />
-          </div>
+          </IconTile>
           <div>
           <div className="font-bold">{address.name}</div>
           <div className="text-sm text-muted">{address.street}</div>
@@ -73,18 +81,20 @@ function ContactAddressPanel({ tr }: { tr: I18nTranslator }) {
           </div>
     ))}
     </div>
-    </div>
+    </CardBody>
+    </Card>
   );
 }
 
 function ContactOperatorPanel({ tr }: { tr: I18nTranslator }) {
   return (
-    <div className="column gap-md" data-panel="dark">
+    <Card tone="inverse">
+    <CardBody className="column gap-md">
     <h3 className="tbf-heading--panel">{tr("contactSection.operator")}</h3>
     <div className="inline-row top gap-sm">
-    <div data-tile="inset">
+    <IconTile size="sm" glyph="accent" tone="inverse">
     <Icon spec={ICON_BUILDING} />
-    </div>
+    </IconTile>
     <div className="column gap-sm">
     <div className="column gap-xs2">
     <div className="font-bold">{contactInfo.operator.name}</div>
@@ -104,7 +114,8 @@ function ContactOperatorPanel({ tr }: { tr: I18nTranslator }) {
     </div>
     </div>
     </div>
-    </div>
+    </CardBody>
+    </Card>
   );
 }
 
@@ -113,23 +124,20 @@ export function ContactSection() {
   const tr = createLocalTranslator(import.meta.url, lang);
 
   return (
-    <section id="kontakt" data-band="">
+    <PageBand id="kontakt">
     <div className="column gap-lg">
     <h2 className="tbf-heading--section">{tr("contactSection.title")}</h2>
 
-    <div className="grid" data-split="">
+    <div className="grid gap-lg">
     <div className="column gap-lg">
-    <p className="text-muted" data-copy="narrow">{tr("contactSection.text")}</p>
+    <p className="text-muted">{tr("contactSection.text")}</p>
 
     <ContactLinks tr={tr} />
 
-    <div data-map="plain">
     <MapEmbed
     src={contactInfo.contactAddress.mapEmbedUrl}
-    data-map-frame=""
     title={`${tr("contactSection.contactAddress")}: ${contactInfo.contactAddress.street}`}
     />
-    </div>
     </div>
 
     <div className="column gap-md">
@@ -143,6 +151,6 @@ export function ContactSection() {
     </div>
     </div>
     </div>
-    </section>
+    </PageBand>
   );
 }

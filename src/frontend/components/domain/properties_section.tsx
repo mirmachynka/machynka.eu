@@ -1,5 +1,16 @@
 import { createLocalTranslator, type I18nTranslator } from "@trebired/i18n";
-import { Icon } from "@trebired/frontend/react";
+import {
+  Card,
+  CardBody,
+  Frame,
+  FrameAction,
+  FrameCover,
+  FrameScrim,
+  Icon,
+  IconTile,
+  PageBand,
+  Tag,
+} from "@trebired/frontend/react";
 
 import { createAccommodationTranslator } from "./accommodation/translator";
 import { ICON_ARROW_UP_RIGHT } from "#gpkp4b4vfavh";
@@ -11,29 +22,33 @@ function PropertyCard({ property, ta, tr }: { property: Accommodation; ta: I18nT
   const description = ta(`accommodations.${property.id}.description`);
 
   return (
-    <a href={property.path} className="column" data-tile-card="" data-tbf-soft-redirect="">
-    <div className="tbf-frame" data-media="">
-    <img src={property.exteriorImage} alt={name} loading="lazy" className="width-full" data-cover="" />
-    <div data-scrim="" />
-    <div className="pill" data-badge="">{tr("properties.roomsCount", { count: property.rooms })}</div>
-    <div data-corner-arrow="">
+    <Card as="a" className="column" href={property.path} softRedirect>
+    <Frame ratio="16 / 10">
+    <FrameCover src={property.exteriorImage} alt={name} loading="lazy" />
+    <FrameScrim />
+    <Tag className="tbf-frame__badge" tone="accent">
+    {tr("properties.roomsCount", { count: property.rooms })}
+    </Tag>
+    <FrameAction>
     <Icon spec={ICON_ARROW_UP_RIGHT} />
-    </div>
-    </div>
+    </FrameAction>
+    </Frame>
 
-    <div className="column gap-lg" data-card-body="">
+    <CardBody className="column gap-lg">
     <div className="column gap-sm">
     <h3 className="tbf-heading--panel">{name}</h3>
     <p className="text-muted">{description}</p>
     </div>
 
-    <div className="grid auto-sm gap-sm" data-feature-grid="">
+    <div className="grid auto-sm gap-sm">
     {property.features.map((feature, featureIndex) => (
-          <div key={feature.label} className="column hor-center gap-xs" data-feature="">
-          <div data-tile="mute">
+          <div key={feature.label} className="column center hor-center gap-xs">
+          <IconTile tone="muted">
           <Icon spec={feature.icon} />
-          </div>
-          <span>{ta(`accommodations.${property.id}.features.feature${featureIndex + 1}`)}</span>
+          </IconTile>
+          <span className="label-caps">
+          {ta(`accommodations.${property.id}.features.feature${featureIndex + 1}`)}
+          </span>
           </div>
     ))}
     </div>
@@ -41,8 +56,8 @@ function PropertyCard({ property, ta, tr }: { property: Accommodation; ta: I18nT
     <div className="inline-row wrap between gap-sm border-top padding-top-md">
     <span className="text-sm text-muted">{property.address}</span>
     </div>
-    </div>
-    </a>
+    </CardBody>
+    </Card>
   );
 }
 
@@ -52,7 +67,7 @@ export function PropertiesSection() {
   const ta = createAccommodationTranslator(lang);
 
   return (
-    <section id="ubytovani" data-band="muted">
+    <PageBand id="ubytovani" tone="muted">
     <div className="column gap-lg">
     <h2 className="tbf-heading--section">{tr("properties.title")}</h2>
 
@@ -62,6 +77,6 @@ export function PropertiesSection() {
     ))}
     </div>
     </div>
-    </section>
+    </PageBand>
   );
 }

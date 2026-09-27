@@ -1,5 +1,5 @@
 import { createLocalTranslator } from "@trebired/i18n";
-import { Icon } from "@trebired/frontend/react";
+import { Icon, IconTile, PageBand } from "@trebired/frontend/react";
 
 import { CardTable } from "#gqbmqapv1gar";
 import { ICON_BED, ICON_MAP_PIN, ICON_WIFI, ICON_COOKING, ICON_SHIELD_CHECK, ICON_SPARKLES } from "#gpkp4b4vfavh";
@@ -19,9 +19,9 @@ export function BenefitsSection() {
   const tr = createLocalTranslator(import.meta.url, lang);
 
   return (
-    <section data-band="inverse">
+    <PageBand tone="inverse">
     <div className="column gap-lg">
-    <h2 className="tbf-heading--section center" data-on-dark="">{tr("benefits.title")}</h2>
+    <h2 className="tbf-heading--section">{tr("benefits.title")}</h2>
 
     <CardTable
     items={BENEFIT_ITEMS}
@@ -31,17 +31,17 @@ export function BenefitsSection() {
     getKey={(item) => item.key}
     renderItem={({ key, icon }) => (
         <>
-        <div data-tile="contrast">
+        <IconTile size="lg" tone="inverse">
         <Icon spec={icon} />
-        </div>
+        </IconTile>
         <div className="column gap-sm">
-        <h3 className="tbf-heading--tile" data-on-dark="">{tr(`benefits.items.${key}.title`)}</h3>
-        <p className="text-sm">{tr(`benefits.items.${key}.description`)}</p>
+        <h3 className="tbf-heading--tile">{tr(`benefits.items.${key}.title`)}</h3>
+        <p className="text-sm text-muted">{tr(`benefits.items.${key}.description`)}</p>
         </div>
         </>
     )}
     />
     </div>
-    </section>
+    </PageBand>
   );
 }

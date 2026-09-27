@@ -1,5 +1,3 @@
-import { token } from "#i0bvtbidf4kj";
-
 export const typography = {
   container: {
     px: {
@@ -8,8 +6,22 @@ export const typography = {
       sm: "1.5rem",
     },
   },
+  label: {
+    caps: {
+      fontSize: "0.7rem",
+      fontWeight: "900",
+      letterSpacing: "0.1em",
+    },
+  },
   heading: {
     variants: {
+      quote: {
+        fontSize: "3rem",
+        fontSizeSm: "1.875rem",
+        fontSizeXs2: "1.5rem",
+        fontWeight: "900",
+        lineHeight: "1.3",
+      },
       panel: {
         fontSize: "1.25rem",
         fontWeight: "900",
@@ -32,7 +44,6 @@ export const typography = {
         textTransform: "uppercase",
       },
       section: {
-        color: token.color("neutral", "900"),
         fontSize: "4.5rem",
         fontSizeLg: "3rem",
         fontSizeSm: "2.25rem",

@@ -9,11 +9,13 @@ export const shell = {
       fontWeight: "900",
       letterSpacing: "0.08em",
     },
+    columns: { min: "12rem" },
     inner: { gap: "3rem" },
     maxWidth: "80rem",
-    paddingInline: "var(--tbf-container-px)",
     root: {
       bg: token.color("neutral", "900"),
+      border: `1px solid ${token.color("neutral", "800")}`,
+      px: "var(--tbf-container-px)",
       py: "4rem",
     },
     tone: {

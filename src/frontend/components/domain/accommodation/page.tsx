@@ -7,6 +7,7 @@ import { AccommodationLocationPanel } from "./sections/location_panel";
 import { AccommodationOtherPanel } from "./sections/other_panel";
 import { AccommodationPricePanel } from "./sections/price_panel";
 import { AccommodationRooms } from "./sections/rooms";
+import { PageBand } from "@trebired/frontend/react";
 import { createAccommodationTranslator } from "./translator";
 import { accommodations, type Accommodation } from "#2ajuusged5jk";
 import { contactInfo } from "#aequr96wfpxz";
@@ -34,13 +35,13 @@ export function AccommodationPage({ accommodation }: AccommodationPageProps) {
   const detail = tr(`${baseKey}.detail`);
 
   return (
-    <main className="column" data-page="">
+    <main className="column">
     <AccommodationHero accommodation={accommodation} detail={detail} mapAddress={mapAddress} name={name} tr={tr} />
     <AccommodationFeatures accommodation={accommodation} baseKey={baseKey} tr={tr} />
     <AccommodationRooms baseKey={baseKey} roomCount={meta.roomCount} tr={tr} />
     <AccommodationGallery images={accommodation.galleryImages} name={name} tr={tr} />
 
-    <section data-band="muted">
+    <PageBand tone="muted">
     <div className="column gap-lg">
     <div className="grid auto-lg gap-md" id="kontakt">
     <AccommodationAboutPanel accommodation={accommodation} baseKey={baseKey} description={description} name={name} tr={tr} />
@@ -59,7 +60,7 @@ export function AccommodationPage({ accommodation }: AccommodationPageProps) {
 
     <AccommodationOtherPanel related={related} tr={tr} />
     </div>
-    </section>
+    </PageBand>
     </main>
   );
 }

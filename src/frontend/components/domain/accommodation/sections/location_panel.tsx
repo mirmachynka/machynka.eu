@@ -1,4 +1,4 @@
-import { Icon, MapEmbed } from "@trebired/frontend/react";
+import { Card, CardBody, Icon, IconTile, MapEmbed } from "@trebired/frontend/react";
 import type { I18nTranslator } from "@trebired/i18n";
 
 import { ICON_MAP_PIN } from "#gpkp4b4vfavh";
@@ -12,13 +12,15 @@ type LocationPanelProps = {
 
 export function AccommodationLocationPanel({ mapAddress, mapEmbedUrl, name, tr }: LocationPanelProps) {
   return (
-    <div className="column gap-md" data-panel="">
-    <Icon spec={ICON_MAP_PIN} data-panel-icon="" />
+    <Card>
+    <CardBody className="column gap-md">
+    <IconTile glyph="accent" tone="muted">
+    <Icon spec={ICON_MAP_PIN} />
+    </IconTile>
     <h2 className="tbf-heading--panel">{tr("accommodationPage.locationTitle")}</h2>
-    <p>{mapAddress}</p>
-    <div data-map="">
-    <MapEmbed src={mapEmbedUrl} data-map-frame="" title={tr("accommodationPage.mapTitle", { name })} />
-    </div>
-    </div>
+    <p className="text-muted">{mapAddress}</p>
+    <MapEmbed src={mapEmbedUrl} title={tr("accommodationPage.mapTitle", { name })} />
+    </CardBody>
+    </Card>
   );
 }

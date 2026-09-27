@@ -1,4 +1,4 @@
-import { Icon } from "@trebired/frontend/react";
+import { Card, CardBody, Icon, IconTile } from "@trebired/frontend/react";
 import type { I18nTranslator } from "@trebired/i18n";
 
 import { Button } from "#cgroy6iibw7w";
@@ -22,12 +22,15 @@ export function AccommodationPricePanel({ accommodation, baseKey, priceGroupItem
   const groups = priceGroupItemCounts.map((itemCount, index) => ({ groupNumber: index + 1, itemCount }));
 
   return (
-    <div className="column gap-md" data-panel="">
-    <Icon spec={ICON_RECEIPT} data-panel-icon="" />
+    <Card>
+    <CardBody className="column gap-md">
+    <IconTile glyph="accent" tone="muted">
+    <Icon spec={ICON_RECEIPT} />
+    </IconTile>
     <h2 className="tbf-heading--panel">{tr("accommodationPage.priceTitle")}</h2>
     <div className="column gap-sm">
     {numbers(PRICE_NOTES_COUNT).map((itemNumber) => (
-          <p key={itemNumber}>
+          <p key={itemNumber} className="text-muted">
           {tr(`${baseKey}.priceNotes.item${itemNumber}`)}
           </p>
     ))}
@@ -56,6 +59,7 @@ export function AccommodationPricePanel({ accommodation, baseKey, priceGroupItem
     <Icon spec={ICON_PHONE} />
     </Button>
     </div>
-    </div>
+    </CardBody>
+    </Card>
   );
 }

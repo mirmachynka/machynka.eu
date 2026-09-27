@@ -1,4 +1,4 @@
-import { Icon } from "@trebired/frontend/react";
+import { Frame, FrameCaption, FrameCover, FrameScrim, Icon, PageBand } from "@trebired/frontend/react";
 import type { I18nTranslator } from "@trebired/i18n";
 
 import { Button } from "#cgroy6iibw7w";
@@ -16,7 +16,7 @@ type HeroProps = {
 
 export function AccommodationHero({ accommodation, detail, mapAddress, name, tr }: HeroProps) {
   return (
-    <section data-band="inverse" data-hero="">
+    <PageBand tone="inverse" data-hero="">
     <MapBackdrop />
 
     <div className="grid" data-hero-inner="">
@@ -31,7 +31,7 @@ export function AccommodationHero({ accommodation, detail, mapAddress, name, tr 
     {tr("common.backToAccommodation")}
     </a>
     <h1 className="tbf-heading--page">{name}</h1>
-    <p className="text-muted" data-lead="">{detail}</p>
+    <p className="text-muted">{detail}</p>
     <div className="inline-row wrap gap-sm">
     <Button href="#kontakt" variant="primary">
     <span>{tr("common.reserveRoom")}</span>
@@ -41,16 +41,16 @@ export function AccommodationHero({ accommodation, detail, mapAddress, name, tr 
     </div>
 
     <div data-hero-media="">
-    <div className="tbf-frame" data-portrait="">
-    <img src={accommodation.exteriorImage} alt={name} className="width-full" data-cover="" />
-    <div data-scrim=""></div>
-    <div className="column gap-xs2" data-address="">
-    <p>{mapAddress}</p>
-    <p className="label-caps" data-on-primary="">{tr("common.accommodationInBucovice")}</p>
+    <Frame ratio="4 / 5">
+    <FrameCover src={accommodation.exteriorImage} alt={name} />
+    <FrameScrim />
+    <FrameCaption className="column gap-xs2">
+    <p className="font-bold">{mapAddress}</p>
+    <p className="label-caps">{tr("common.accommodationInBucovice")}</p>
+    </FrameCaption>
+    </Frame>
     </div>
     </div>
-    </div>
-    </div>
-    </section>
+    </PageBand>
   );
 }

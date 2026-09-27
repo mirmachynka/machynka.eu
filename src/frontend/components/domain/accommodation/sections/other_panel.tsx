@@ -1,4 +1,4 @@
-import { Icon } from "@trebired/frontend/react";
+import { Card, CardBody, Icon, TextLink } from "@trebired/frontend/react";
 import type { I18nTranslator } from "@trebired/i18n";
 
 import type { Accommodation } from "#2ajuusged5jk";
@@ -11,22 +11,23 @@ type OtherPanelProps = {
 
 export function AccommodationOtherPanel({ related, tr }: OtherPanelProps) {
   return (
-    <div className="column gap-md" data-panel="">
+    <Card>
+    <CardBody className="column gap-md">
     <h2 className="tbf-heading--panel">{tr("accommodationPage.otherOption")}</h2>
     <div className="column gap-sm">
     {related.map((item) => (
-          <a
+          <TextLink
           key={item.path}
-          className="inline-row between gap-sm border-top padding-top-md"
-          data-row-link=""
-          data-tbf-soft-redirect=""
+          className="inline-row between gap-sm border-top padding-top-md font-bold"
           href={item.path}
+          softRedirect
           >
           <span>{tr(`accommodations.${item.id}.name`)}</span>
           <Icon spec={ICON_ARROW_RIGHT} />
-          </a>
+          </TextLink>
     ))}
     </div>
-    </div>
+    </CardBody>
+    </Card>
   );
 }
