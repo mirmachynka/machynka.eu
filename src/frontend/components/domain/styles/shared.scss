@@ -1,3 +1,40 @@
+[data-band] {
+  display: grid;
+  grid-template-columns:
+  1fr
+  min(var(--band-max, 80rem), 100% - var(--band-gutter, 1rem) * 2)
+  1fr;
+  grid-template-rows: var(--band-inset, 6rem) auto var(--band-inset, 6rem);
+  background: var(--white-500);
+}
+
+[data-band] > * {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+[data-band="muted"] {
+  background: var(--neutral-100);
+}
+
+[data-band="inverse"] {
+  background: var(--neutral-900);
+  color: var(--white-500);
+}
+
+@media (min-width: 640px) {
+  [data-band] {
+    --band-inset: 8rem;
+    --band-gutter: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  [data-band] {
+    --band-gutter: 2rem;
+  }
+}
+
 [data-tile] {
   display: flex;
   height: var(--icon-tile-size, 3rem);

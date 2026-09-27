@@ -21,7 +21,7 @@ export function HeroSection() {
     <section data-home-hero="">
     <MapBackdrop />
 
-    <div className="tbf-container" data-home-hero-inner="">
+    <div  data-home-hero-inner="">
     <div className="column gap-lg" data-home-hero-content="">
     <div className="column gap-lg" data-home-hero-copy="">
     <h1 data-home-hero-title="" style={{ "--hero-title-chars": titleChars } as CSSProperties}>

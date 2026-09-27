@@ -1,5 +1,5 @@
 import { createLocalTranslator } from "@trebired/i18n";
-import { Icon, Section } from "@trebired/frontend/react";
+import { Icon } from "@trebired/frontend/react";
 
 import { ICON_AWARD, ICON_BUILDING, ICON_USERS } from "#gpkp4b4vfavh";
 import { useLang } from "#n99t4onl5ufo";
@@ -9,8 +9,8 @@ export function AboutSection() {
   const tr = createLocalTranslator(import.meta.url, lang);
 
   return (
-    <Section id="o-nas">
-    <div className="tbf-container column gap-lg">
+    <section id="o-nas" data-band="">
+    <div className="column gap-lg">
     <h2 className="tbf-heading--section">{tr("about.title")}</h2>
 
     <div className="grid" data-split="">
@@ -44,6 +44,6 @@ export function AboutSection() {
     </div>
     </div>
     </div>
-    </Section>
+    </section>
   );
 }

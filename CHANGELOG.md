@@ -4,6 +4,10 @@ All notable changes to `machynka-eu` will be documented here.
 
 This project follows semantic versioning once published.
 
+## 2.3.0
+
+- Page bands lay themselves out with grid tracks rather than padding or margins: a gutter column either side of `min(80rem, 100% - gutter * 2)` holds the width, and a row either side of the content holds the inset. Nothing on the page is spaced with a margin.
+
 ## 2.2.0
 
 - The language switcher is the package's `LocaleSwitcher` rather than a hand-built popover, its chip sized through `shell.language.trigger`.

@@ -1,4 +1,4 @@
-import { Icon, Section } from "@trebired/frontend/react";
+import { Icon } from "@trebired/frontend/react";
 import type { I18nTranslator } from "@trebired/i18n";
 
 import { Button } from "#cgroy6iibw7w";
@@ -16,10 +16,10 @@ type HeroProps = {
 
 export function AccommodationHero({ accommodation, detail, mapAddress, name, tr }: HeroProps) {
   return (
-    <Section data-hero="" tone="inverse">
+    <section data-band="inverse" data-hero="">
     <MapBackdrop />
 
-    <div className="tbf-container grid" data-hero-inner="">
+    <div className="grid" data-hero-inner="">
     <div className="column gap-lg">
     <a
     href="/#ubytovani"
@@ -51,6 +51,6 @@ export function AccommodationHero({ accommodation, detail, mapAddress, name, tr 
     </div>
     </div>
     </div>
-    </Section>
+    </section>
   );
 }

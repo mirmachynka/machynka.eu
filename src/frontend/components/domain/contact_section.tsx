@@ -1,5 +1,5 @@
 import { createLocalTranslator, type I18nTranslator } from "@trebired/i18n";
-import { Icon, MapEmbed, Section } from "@trebired/frontend/react";
+import { Icon, MapEmbed } from "@trebired/frontend/react";
 
 import { Button } from "#cgroy6iibw7w";
 
@@ -113,8 +113,8 @@ export function ContactSection() {
   const tr = createLocalTranslator(import.meta.url, lang);
 
   return (
-    <Section id="kontakt">
-    <div className="tbf-container column gap-lg">
+    <section id="kontakt" data-band="">
+    <div className="column gap-lg">
     <h2 className="tbf-heading--section">{tr("contactSection.title")}</h2>
 
     <div className="grid" data-split="">
@@ -143,6 +143,6 @@ export function ContactSection() {
     </div>
     </div>
     </div>
-    </Section>
+    </section>
   );
 }

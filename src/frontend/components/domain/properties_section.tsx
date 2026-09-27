@@ -1,5 +1,5 @@
 import { createLocalTranslator, type I18nTranslator } from "@trebired/i18n";
-import { Icon, Section } from "@trebired/frontend/react";
+import { Icon } from "@trebired/frontend/react";
 
 import { createAccommodationTranslator } from "./accommodation/translator";
 import { ICON_ARROW_UP_RIGHT } from "#gpkp4b4vfavh";
@@ -52,8 +52,8 @@ export function PropertiesSection() {
   const ta = createAccommodationTranslator(lang);
 
   return (
-    <Section id="ubytovani" tone="muted">
-    <div className="tbf-container column gap-lg">
+    <section id="ubytovani" data-band="muted">
+    <div className="column gap-lg">
     <h2 className="tbf-heading--section">{tr("properties.title")}</h2>
 
     <div className="grid gap-md">
@@ -62,6 +62,6 @@ export function PropertiesSection() {
     ))}
     </div>
     </div>
-    </Section>
+    </section>
   );
 }

@@ -1,5 +1,5 @@
 import { createLocalTranslator } from "@trebired/i18n";
-import { Icon, Section } from "@trebired/frontend/react";
+import { Icon } from "@trebired/frontend/react";
 
 import { CardTable } from "#gqbmqapv1gar";
 import { ICON_BED, ICON_MAP_PIN, ICON_WIFI, ICON_COOKING, ICON_SHIELD_CHECK, ICON_SPARKLES } from "#gpkp4b4vfavh";
@@ -19,8 +19,8 @@ export function BenefitsSection() {
   const tr = createLocalTranslator(import.meta.url, lang);
 
   return (
-    <Section tone="inverse">
-    <div className="tbf-container column gap-lg">
+    <section data-band="inverse">
+    <div className="column gap-lg">
     <h2 className="tbf-heading--section center" data-on-dark="">{tr("benefits.title")}</h2>
 
     <CardTable
@@ -42,6 +42,6 @@ export function BenefitsSection() {
     )}
     />
     </div>
-    </Section>
+    </section>
   );
 }

@@ -6,7 +6,7 @@ import { PropertiesSection } from "#ko1s2pcqme9v";
 
 export function HomePage() {
   return (
-    <main>
+    <main className="column" data-page="">
     <HeroSection />
     <AboutSection />
     <PropertiesSection />
