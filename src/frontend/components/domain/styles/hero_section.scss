@@ -128,6 +128,17 @@
   );
 }
 
+@media (max-width: 639px) {
+  [data-hero-actions] {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  [data-hero-actions] > * {
+    width: 100%;
+  }
+}
+
 @media (min-width: 380px) {
   [data-stat] > div:first-child {
     font-size: 2.25rem;

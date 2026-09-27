@@ -35,7 +35,7 @@ export function PageHero({ actions, back, lead, media, size = "full", title }: P
       ) : null}
     <h1 className="tbf-heading--page">{title}</h1>
     <p className="text-muted" data-hero-lead="">{lead}</p>
-    {actions ? <div className="inline-row wrap gap-sm">{actions}</div> : null}
+    {actions ? <div className="inline-row wrap gap-sm" data-hero-actions="">{actions}</div> : null}
     </div>
 
     {media ? <div data-hero-media="">{media}</div> : null}

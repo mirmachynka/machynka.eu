@@ -32,7 +32,7 @@ export function HeroSection() {
 
     <p className="text-muted" data-hero-lead="" data-home-hero-text="">{tr("hero.text")}</p>
 
-    <div className="inline-row wrap gap-sm">
+    <div className="inline-row wrap gap-sm" data-hero-actions="">
     <Button href="/#ubytovani" variant="primary">
     <span>{tr("hero.primary")}</span>
     <Icon spec={ICON_ARROW_RIGHT} />
