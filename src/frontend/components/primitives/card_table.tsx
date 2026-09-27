@@ -7,11 +7,15 @@ type CardTableProps<T> = {
   getKey: (item: T, index: number) => Key;
   itemClassName?: string;
   items: readonly T[];
+  min?: string;
   renderItem: (item: T, index: number) => ReactNode;
   tone?: "dark" | "light";
 };
 
-const COLUMN_MIN: Record<number, string> = { 2: "30rem", 3: "22rem" };
+const COLUMN_MIN: Record<number, string> = {
+  2: "clamp(9rem, 42vw, 30rem)",
+  3: "clamp(9rem, 42vw, 22rem)",
+};
 
 export function CardTable<T>({
     className,
@@ -19,13 +23,14 @@ export function CardTable<T>({
     getKey,
     itemClassName,
     items,
+    min,
     renderItem,
     tone = "light",
   }: CardTableProps<T>) {
   const fillerCount = items.length === 0 ? 0 : (columns - (items.length % columns)) % columns;
 
   return (
-    <HairlinePanel className={className} min={COLUMN_MIN[columns]}>
+    <HairlinePanel className={className} min={min || COLUMN_MIN[columns]}>
     {items.map((item, index) => (
           <HairlineCell key={getKey(item, index)} className={itemClassName} invert={tone === "dark"}>
           {renderItem(item, index)}

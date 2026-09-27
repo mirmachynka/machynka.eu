@@ -18,6 +18,7 @@ export function AccommodationRooms({ baseKey, roomCount, tr }: RoomsProps) {
 
     <CardTable
     items={numbers(roomCount)}
+    min="min(30rem, 100%)"
     getKey={(roomNumber) => roomNumber}
     itemClassName="column gap-lg"
     renderItem={(roomNumber) => (

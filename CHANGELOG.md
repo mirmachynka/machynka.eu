@@ -1,5 +1,12 @@
 # Changelog
 
+## 3.2.0
+
+- Text no longer runs off the side of a phone. A card table asked for a 30rem column, which laid out a 480px track inside a 358px screen; the page clips horizontal overflow, so the text was cut rather than wrapped. Columns now stay inside the width they are given, and the rules, prices and room descriptions read in full.
+- The cards that hold a symbol and a short label sit two across on a phone instead of one per row: what we offer, what an accommodation has, and the facilities on each property card. Photographs in the gallery pair up rather than stacking one per screen.
+- Room cards keep a single column on a phone. They carry a paragraph each, and two of them across a phone left four words to a line.
+- The brand page stacks its logo grounds on a phone rather than squeezing two canvases side by side, and each brand colour now states its hex.
+
 ## 3.1.1
 
 - Switching language keeps your place on the page. It was navigating to the other language's URL, which reloaded the route and sent you back to the top; the text is already in the page, so it now swaps in place and only the address bar changes.

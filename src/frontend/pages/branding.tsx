@@ -19,9 +19,9 @@ const MARKS = [
 ] as const;
 
 const PALETTE = [
-  { key: "ink", value: "var(--neutral-900)" },
-  { key: "accent", value: "var(--primary-500)" },
-  { key: "paper", value: "var(--white-500)" },
+  { hex: "#171717", key: "ink", value: "var(--neutral-900)" },
+  { hex: "#D40924", key: "accent", value: "var(--primary-500)" },
+  { hex: "#FFFFFF", key: "paper", value: "var(--white-500)" },
 ] as const;
 
 function BrandingMarks({ tr }: { tr: I18nTranslator }) {
@@ -29,7 +29,7 @@ function BrandingMarks({ tr }: { tr: I18nTranslator }) {
     <PageBand>
     <div className="column gap-lg">
     <h2 className="tbf-heading--section">{tr("branding.marksTitle")}</h2>
-    <div className="grid cols-2 gap-md">
+    <div className="grid gap-md">
     {MARKS.map((mark) => (
           <BrandCanvas
           key={mark.key}
@@ -91,7 +91,10 @@ function BrandingPalette({ tr }: { tr: I18nTranslator }) {
               "--tbf-surf-frame-root-border": `1px dashed ${SWATCH_GUIDE}`,
             } as CSSProperties}
           />
+          <div className="column gap-xs2">
           <span className="tbf-heading--tile">{tr(`branding.palette.${swatch.key}`)}</span>
+          <span className="text-sm text-muted">{swatch.hex}</span>
+          </div>
           </HairlineCell>
     ))}
     </HairlinePanel>
