@@ -6,7 +6,6 @@ import {
   setCurrentLocale,
   SITE_FOOTER_ROOT_SELECTOR,
   SITE_HEADER_ROOT_SELECTOR,
-  softRedirect,
 } from "@trebired/frontend";
 import "@trebired/frontend/static-icons";
 import { createBrowserLog } from "@trebired/logger/browser";
@@ -42,9 +41,10 @@ function observed(node: ReactElement) {
 configureSpa({});
 
 function switchLocale(lang: string) {
-  setCurrentLocale(lang);
   const target = langHref(currentRoutePath(), lang as Lang);
-  return softRedirect(`${target}${window.location.hash}`);
+  const { hash, search } = window.location;
+  window.history.replaceState(window.history.state, "", `${target}${search}${hash}`);
+  return setCurrentLocale(lang);
 }
 
 void hydrateChromeRoots([

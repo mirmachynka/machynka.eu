@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.1.1
+
+- Switching language keeps your place on the page. It was navigating to the other language's URL, which reloaded the route and sent you back to the top; the text is already in the page, so it now swaps in place and only the address bar changes.
+- The address bar always names a language. Opening an unprefixed link no longer leaves you on a URL without one: it is rewritten to the prefixed form before the page paints, keeping any saved preference, so the older links those paths exist for still cost no extra request.
+
 ## 3.1.0
 
 - Every language has its own URL. Each page is prerendered at `/cs/...` and `/en/...`, and the language menu navigates between them instead of swapping the text in place, so the address bar names the language on screen and a page can be linked or shared in either one. Internal links carry the language they were rendered in, so following one never changes it.
