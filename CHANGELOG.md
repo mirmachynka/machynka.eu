@@ -4,6 +4,27 @@ All notable changes to `machynka-eu` will be documented here.
 
 This project follows semantic versioning once published.
 
+## 3.0.0
+
+- The site keeps one stylesheet, and it is the hero. Everything else — bands, cards, panels, tags, icon chips, action rows, the accent rule, media frames and their captions — is a package component configured through `.trebired/frontend/`, so the brand is stated once as tokens rather than restated per component as CSS. What survives is the hero: a title that sizes itself off its own character count through a container query, and the town map behind it. Down from 10 files and 758 lines to 1 and 192.
+- Page bands hold their width with plain padding instead of grid gutter tracks, and every component is square by the radius scale rather than by being told so one at a time.
+- Added `/znacka`, the brand page: the mark on light, muted and dark grounds with its clear space drawn and measured, its smallest size, the three brand colours, and what not to do with it. Red is not one of the grounds — the roof of the mark is the same red, so that pairing is listed under what to avoid. The page shares the hero the accommodation pages use, at its compact size.
+- `Domů` and `Značka` join the header navigation, which now matches the footer's.
+- The contact address is `miroslav@machynka.cz` and stays there: the mailbox never moved with the domain, so the address is written out rather than derived from it. The footer says plainly that machynka.cz is the old, unofficial and broken site, that this is the official one, and that the address on the old domain still works.
+
+### Fixed
+
+- Changing language did nothing. The switcher posted to `/ui/lang/set`, a route only a server-backed site has; on a static build every change 404'd and then silently stopped, because the runtime treats a failed persist as a refusal. The choice is now kept in the browser and the page re-renders in place, which is what the language menu always claimed to do.
+- Both maps rendered at zero height and so were invisible. The embed had no shape of its own and the rule that used to give it one went with the old stylesheets; it now asks for an aspect ratio.
+- Hover easing was set to 120ms, short enough to read as no easing at all, and the back link had none. Both are on one 220ms timing now.
+- A text link hovered to white, which was right on the dark footer and invisible the moment the same component sat on a white card. It hovers to the brand red, which holds on either.
+- The home hero was a plain dark section rather than an inverse band, so it never rescoped muted text and its lead rendered in the light theme's grey on near-black while every other hero lead was legible. All three heroes now share one colour and one scale.
+- The scrollbar is the browser's again. The site had been recolouring the thumb since before the stylesheets were consolidated, and that was carried across rather than questioned.
+
+### Changed
+
+- Moved to `@trebired/frontend` 14.8.1, which took nine releases of the pieces this rewrite needed: the page band, card tones, the icon tile, the accent rule, the action row, the tag, the brand canvas, the frame's cover, scrim, caption and corner control, and a grid that can stretch its items.
+
 ## 2.3.0
 
 - Page bands lay themselves out with grid tracks rather than padding or margins: a gutter column either side of `min(80rem, 100% - gutter * 2)` holds the width, and a row either side of the content holds the inset. Nothing on the page is spaced with a margin.

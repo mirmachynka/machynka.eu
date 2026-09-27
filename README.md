@@ -5,6 +5,8 @@
   <img src="src/frontend/public/logo.svg" alt="machynka.eu" width="360">
 </picture>
 
+<br>
+
 **The public accommodation site for MACHYNKA s.r.o. in Bučovice: apartment and guesthouse listings, room and price tables, photo galleries, house rules, and direct contact, in Czech and English.**
 
 [![License](https://img.shields.io/badge/license-MIT-black)](LICENSE)
@@ -70,7 +72,7 @@ Every component that owns copy has an `i18n/cs.ts` and `i18n/en.ts` beside it. C
 
 ### Design tokens
 
-Button, popover, palette, icon, and theme values come from `.trebired/frontend/config.ts` and generate `dist/css/frontend.css`. Application SCSS styles layout and product-specific elements only. Component appearance that `@trebired/frontend` owns is configured, never overridden in application CSS.
+Button, popover, palette, icon, and theme values come from `.trebired/frontend/config.ts` and generate `dist/css/frontend.css`. The application ships one stylesheet, for the hero, and defines no CSS classes: layout and spacing are package utilities, and everything a utility cannot express hangs off a data attribute on the element that owns it. Component appearance that `@trebired/frontend` owns is configured, never overridden in application CSS.
 
 ## Configuration
 

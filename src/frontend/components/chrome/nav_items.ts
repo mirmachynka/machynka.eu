@@ -7,12 +7,14 @@ export type NavItem = {
 
 export function navItems(tr: I18nTranslator): NavItem[] {
   return [
+    { href: "/", label: tr("nav.home") },
     { href: "/#ubytovani", label: tr("nav.accommodation") },
     { href: "/#o-nas", label: tr("nav.about") },
     { href: "/#kontakt", label: tr("nav.contact") },
+    { href: "/znacka", label: tr("nav.brand") },
   ];
 }
 
 export function footerNavItems(tr: I18nTranslator): NavItem[] {
-  return [...navItems(tr), { href: "/znacka", label: tr("nav.brand") }];
+  return navItems(tr);
 }

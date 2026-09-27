@@ -9,6 +9,7 @@ export default defineMessages({
       open: "Open menu",
     },
     nav: {
+      home: "Home",
       accommodation: "Accommodation",
       about: "About",
       brand: "Brand",

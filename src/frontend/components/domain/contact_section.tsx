@@ -40,43 +40,55 @@ function ContactLinks({ tr }: { tr: I18nTranslator }) {
   );
 }
 
-function ContactAddressPanel({ tr }: { tr: I18nTranslator }) {
+function AddressRow({ city, name, postalCode, street }: {
+    city: string;
+    name: string;
+    postalCode: string;
+    street: string;
+}) {
   return (
-    <Card tone="inverse">
-    <CardBody className="column gap-md">
-    <h3 className="tbf-heading--panel">{tr("contactSection.contactAddress")}</h3>
-    <div className="column gap-sm">
     <div className="inline-row top gap-sm">
     <IconTile size="sm" glyph="accent" tone="inverse">
     <Icon spec={ICON_MAP_PIN} />
     </IconTile>
-    <div className="column gap-sm">
     <div className="column gap-xs2">
-    <div className="font-bold">{tr("contactSection.label")}</div>
-    <div className="text-sm text-muted">{contactInfo.contactAddress.street}</div>
-    <div className="text-sm text-muted">
-    {contactInfo.contactAddress.postalCode} {contactInfo.contactAddress.city}
+    <div className="font-bold">{name}</div>
+    <div className="text-sm text-muted">{street}</div>
+    <div className="text-sm text-muted">{postalCode} {city}</div>
     </div>
     </div>
+  );
+}
+
+function ContactAddressPanel({ tr }: { tr: I18nTranslator }) {
+  const address = contactInfo.contactAddress;
+
+  return (
+    <Card tone="inverse">
+    <CardBody className="column gap-md">
+    <div className="column gap-sm">
+    <h3 className="tbf-heading--panel">{tr("contactSection.contactAddress")}</h3>
+    <AddressRow
+    city={address.city}
+    name={tr("contactSection.label")}
+    postalCode={address.postalCode}
+    street={address.street}
+    />
     <Card tone="accent">
     <CardBody className="text-sm font-bold" padding="sm">{tr("contactSection.receptionNote")}</CardBody>
     </Card>
     </div>
-    </div>
-    <div className="label-caps">{tr("contactSection.accommodationAddresses")}</div>
-    {contactInfo.branchAddresses.map((address) => (
-          <div key={address.name} className="inline-row top gap-sm">
-          <IconTile size="sm" glyph="accent" tone="inverse">
-          <Icon spec={ICON_MAP_PIN} />
-          </IconTile>
-          <div>
-          <div className="font-bold">{address.name}</div>
-          <div className="text-sm text-muted">{address.street}</div>
-          <div className="text-sm text-muted">
-          {address.city} {address.postalCode}
-          </div>
-          </div>
-          </div>
+
+    <div className="column gap-sm">
+    <h4 className="tbf-heading--panel">{tr("contactSection.accommodationAddresses")}</h4>
+    {contactInfo.branchAddresses.map((branch) => (
+          <AddressRow
+          key={branch.name}
+          city={branch.city}
+          name={branch.name}
+          postalCode={branch.postalCode}
+          street={branch.street}
+          />
     ))}
     </div>
     </CardBody>

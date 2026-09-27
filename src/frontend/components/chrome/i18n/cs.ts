@@ -9,6 +9,7 @@ export default defineMessages({
       open: "Otevřít menu",
     },
     nav: {
+      home: "Domů",
       accommodation: "Ubytování",
       about: "O nás",
       brand: "Značka",
