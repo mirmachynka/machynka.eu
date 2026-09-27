@@ -3,7 +3,7 @@
 <p>
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="src/frontend/public/footer-logo.svg">
-  <img src="src/frontend/public/logo.svg" alt="machynka.eu" width="360">
+  <img src="src/frontend/public/logo.svg" alt="machynka.eu" width="360" align="top">
 </picture>
 </p>
 
