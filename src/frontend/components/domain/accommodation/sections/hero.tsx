@@ -23,7 +23,7 @@ export function AccommodationHero({ accommodation, detail, mapAddress, name, tr 
     <div className="column gap-lg">
     <a
     href="/#ubytovani"
-    className="inline-row fit-content gap-xs text-sm font-bold text-muted"
+    className="inline-row fit-content gap-xs label-caps"
     data-back=""
     data-tbf-soft-redirect=""
     >

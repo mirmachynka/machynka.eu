@@ -1,8 +1,8 @@
 import { createLocalTranslator, type I18nTranslator } from "@trebired/i18n";
 import { Icon, SiteFooter, TextLink } from "@trebired/frontend/react";
 
-import { contactInfo, phoneHref } from "#aequr96wfpxz";
-import { ICON_MAIL, ICON_MAP_PIN, ICON_PHONE } from "#gpkp4b4vfavh";
+import { contactInfo } from "#aequr96wfpxz";
+import { ICON_MAIL, ICON_MAP_PIN } from "#gpkp4b4vfavh";
 import { useLang } from "#n99t4onl5ufo";
 import { footerNavItems } from "./nav_items";
 
@@ -10,7 +10,7 @@ function FooterNote({ tr }: { tr: I18nTranslator }) {
   return (
     <div className="column gap-xs">
     <p>© 2026 MACHYNKA s.r.o. {tr("footer.rights")}</p>
-    <p className="text-sm">{tr("footer.legacyNotice")}</p>
+    <p className="text-sm">{tr("footer.legacyNotice", { email: contactInfo.email })}</p>
     </div>
   );
 }
@@ -29,10 +29,6 @@ export function Footer() {
         <a href="/" className="inline-row fit-content" data-tbf-soft-redirect="">
         <img src="/footer-logo.svg" alt="MACHYNKA s.r.o." className="tbf-logo" />
         </a>
-        <TextLink href={phoneHref(contactInfo.accommodationPhone)} className="inline-row fit-content gap-xs font-bold">
-        <Icon spec={ICON_PHONE} />
-        {contactInfo.accommodationPhone}
-        </TextLink>
         </>
     )}
     columns={[

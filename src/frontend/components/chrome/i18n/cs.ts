@@ -18,7 +18,9 @@ export default defineMessages({
       text: "Pohodlné ubytování v Bučovicích pro pracovní cesty, návštěvy města i delší pobyty.",
       navigation: "Navigace",
       contactLabel: "Kontakt",
-      legacyNotice: "Toto je nový oficiální web společnosti MACHYNKA s.r.o. Starý web machynka.cz je neoficiální, zastaralý a nefunkční.",
+      legacyNotice: "Toto je nový oficiální web společnosti MACHYNKA s.r.o."
+      +" Starý web machynka.cz je neoficiální, zastaralý a nefunkční."
+      +" E-mailová adresa {{email}} ale platí dál, používejte ji i nadále.",
       rights: "Všechna práva vyhrazena.",
     },
 });

@@ -9,7 +9,7 @@ import { interactions, runtime, semantics } from "./theme";
 import { breakpoints } from "./typography";
 
 export default defineConfig({
-    forVersion: "14.5.1",
+    forVersion: "14.6.0",
     assets: {
       favicon: {
         default: "src/brand/favicon.svg",

@@ -33,7 +33,7 @@ export function AccommodationAboutPanel({ accommodation, baseKey, description, n
           </div>
     ))}
     <Card tone="accent">
-    <CardBody className="text-sm font-bold">{tr("common.receptionNote")}</CardBody>
+    <CardBody className="text-sm font-bold" padding="sm">{tr("common.receptionNote")}</CardBody>
     </Card>
     </div>
     {accommodation.contact && (

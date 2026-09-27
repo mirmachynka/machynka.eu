@@ -59,7 +59,7 @@ function ContactAddressPanel({ tr }: { tr: I18nTranslator }) {
     </div>
     </div>
     <Card tone="accent">
-    <CardBody className="text-sm font-bold">{tr("contactSection.receptionNote")}</CardBody>
+    <CardBody className="text-sm font-bold" padding="sm">{tr("contactSection.receptionNote")}</CardBody>
     </Card>
     </div>
     </div>

@@ -51,7 +51,7 @@ export const surfaces = {
   hairline: {
     cell: { padding: "1.5rem" },
     root: {
-      bg: "color-mix(in srgb, currentColor 18%, transparent)",
+      bg: "color-mix(in srgb, currentColor 10%, transparent)",
       border: "0",
     },
   },
