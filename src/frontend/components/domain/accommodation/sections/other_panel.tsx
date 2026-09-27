@@ -2,6 +2,8 @@ import { Card, CardBody, Icon, TextLink } from "@trebired/frontend/react";
 import type { I18nTranslator } from "@trebired/i18n";
 
 import type { Accommodation } from "#2ajuusged5jk";
+import { langHref } from "./../../../../shared/lang/href";
+import { useLang } from "#n99t4onl5ufo";
 import { ICON_ARROW_RIGHT } from "#gpkp4b4vfavh";
 
 type OtherPanelProps = {
@@ -10,6 +12,8 @@ type OtherPanelProps = {
 };
 
 export function AccommodationOtherPanel({ related, tr }: OtherPanelProps) {
+  const lang = useLang();
+
   return (
     <Card>
     <CardBody className="column gap-md">
@@ -19,7 +23,7 @@ export function AccommodationOtherPanel({ related, tr }: OtherPanelProps) {
           <TextLink
           key={item.path}
           className="inline-row between gap-sm border-top padding-top-md font-bold"
-          href={item.path}
+          href={langHref(item.path, lang)}
           softRedirect
           >
           <span>{tr(`accommodations.${item.id}.name`)}</span>

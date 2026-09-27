@@ -4,12 +4,12 @@ import { readProductIdentity } from "@trebired/utils";
 const product = readProductIdentity({ startDir: import.meta.dir });
 
 export default defineConfig({
-    forVersion: "0.4.2",
+    forVersion: "0.5.0",
     defaults: {
       robots: { follow: true, index: true, maxImagePreview: "large" },
       type: "website",
     },
-    localeStrategy: "prefix",
+    localeStrategy: "prefix-all",
     robotsTxt: { sitemap: true },
     site: {
       defaultLocale: "cs",

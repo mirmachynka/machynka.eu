@@ -46,6 +46,7 @@
   "#m7bw89v4qsjy": "./src/frontend/components/domain/accommodation/numbers.ts",
   "#m9mr2q3w3i80": "./src/types/assets.d.ts",
   "#mmqy5cbhqaf7": "./src/types/product.d.ts",
+  "#n8nbt6j55a1p": "./src/frontend/shared/lang/href.ts",
   "#n99t4onl5ufo": "./src/frontend/shared/lang/use.ts",
   "#nc704bovl0t8": "./src/frontend/components/domain/benefits_section.tsx",
   "#p1ba2rs26ml3": "./src/bin/frontend/ssr.ts",

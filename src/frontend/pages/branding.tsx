@@ -4,6 +4,7 @@ import { BrandCanvas, Card, CardBody, Frame, HairlineCell, HairlinePanel, PageBa
 
 import { PageHero } from "./../components/chrome/page_hero";
 
+import { langHref } from "./../shared/lang/href";
 import { useLang } from "#n99t4onl5ufo";
 
 const CLEAR_SPACE = "1.25rem";
@@ -121,7 +122,7 @@ export function BrandingPage() {
   return (
     <main className="column">
     <PageHero
-    back={{ href: "/", label: tr("branding.back") }}
+    back={{ href: langHref("/", lang), label: tr("branding.back") }}
     lead={tr("branding.lead")}
     size="compact"
     title={tr("branding.title")}

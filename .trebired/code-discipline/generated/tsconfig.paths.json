@@ -142,6 +142,9 @@
       "#mmqy5cbhqaf7": [
         "../../../src/types/product.d.ts"
       ],
+      "#n8nbt6j55a1p": [
+        "../../../src/frontend/shared/lang/href.ts"
+      ],
       "#n99t4onl5ufo": [
         "../../../src/frontend/shared/lang/use.ts"
       ],

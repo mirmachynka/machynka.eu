@@ -5,6 +5,7 @@ import { contactInfo } from "#aequr96wfpxz";
 import { ICON_MAIL, ICON_MAP_PIN } from "#gpkp4b4vfavh";
 import { useLang } from "#n99t4onl5ufo";
 import { footerNavItems } from "./nav_items";
+import { langHref } from "./../../shared/lang/href";
 
 function FooterNote({ tr }: { tr: I18nTranslator }) {
   return (
@@ -26,7 +27,7 @@ export function Footer() {
     tone="inverse"
     brand={(
         <>
-        <a href="/" className="inline-row fit-content" data-tbf-soft-redirect="">
+        <a href={langHref("/", lang)} className="inline-row fit-content" data-tbf-soft-redirect="">
         <img src="/footer-logo.svg" alt="MACHYNKA s.r.o." className="tbf-logo" />
         </a>
         </>
@@ -35,7 +36,7 @@ export function Footer() {
         {
           heading: tr("footer.navigation"),
           key: "navigation",
-          links: footerNavItems(tr).map((link) => ({ href: link.href, label: link.label })),
+          links: footerNavItems(tr, lang).map((link) => ({ href: link.href, label: link.label })),
         },
         {
           heading: tr("footer.contactLabel"),

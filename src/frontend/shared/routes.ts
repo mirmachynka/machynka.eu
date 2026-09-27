@@ -1,5 +1,5 @@
 import { hasOwn } from "@trebired/utils";
-import { matchLocale } from "@trebired/frontend";
+import { matchLocale, stripLocalePrefix } from "@trebired/frontend";
 
 import { DEFAULT_LANG, LANG_ROUTING, type SupportedLang } from "./lang/policy";
 
@@ -79,7 +79,7 @@ function stripTrailingSlash(path: string): string {
 }
 
 export function canonicalPath(path: string): string {
-  const normalized = stripTrailingSlash(path);
+  const normalized = stripTrailingSlash(stripLocalePrefix(path));
   return REDIRECTS[normalized] ?? normalized;
 }
 

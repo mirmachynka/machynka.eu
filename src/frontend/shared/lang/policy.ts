@@ -17,4 +17,5 @@ export const LANG_ROUTING = normalizeLocaleRouting({
     defaultLocale: DEFAULT_LANG,
     locales: [...SUPPORTED_LANGS],
     storageKey: "machynka-lang",
+    strategy: "prefix-all",
 });

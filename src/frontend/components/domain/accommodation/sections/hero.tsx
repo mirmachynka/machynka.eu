@@ -5,6 +5,8 @@ import { Button } from "#cgroy6iibw7w";
 import type { Accommodation } from "#2ajuusged5jk";
 import { ICON_ARROW_RIGHT } from "#gpkp4b4vfavh";
 import { PageHero } from "./../../../chrome/page_hero";
+import { langHref } from "./../../../../shared/lang/href";
+import { useLang } from "#n99t4onl5ufo";
 
 type HeroProps = {
   accommodation: Accommodation;
@@ -15,9 +17,11 @@ type HeroProps = {
 };
 
 export function AccommodationHero({ accommodation, detail, mapAddress, name, tr }: HeroProps) {
+  const lang = useLang();
+
   return (
     <PageHero
-    back={{ href: "/#ubytovani", label: tr("common.backToAccommodation") }}
+    back={{ href: langHref("/#ubytovani", lang), label: tr("common.backToAccommodation") }}
     lead={detail}
     title={name}
     actions={(

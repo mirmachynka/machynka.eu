@@ -16,13 +16,15 @@ import { createAccommodationTranslator } from "./accommodation/translator";
 import { ICON_ARROW_UP_RIGHT } from "#gpkp4b4vfavh";
 import { accommodations, type Accommodation } from "#2ajuusged5jk";
 import { useLang } from "#n99t4onl5ufo";
+import { langHref } from "./../../shared/lang/href";
+import type { Lang } from "./../../shared/lang/policy";
 
-function PropertyCard({ property, ta, tr }: { property: Accommodation; ta: I18nTranslator; tr: I18nTranslator }) {
+function PropertyCard({ lang, property, ta, tr }: { lang: Lang; property: Accommodation; ta: I18nTranslator; tr: I18nTranslator }) {
   const name = ta(`accommodations.${property.id}.name`);
   const description = ta(`accommodations.${property.id}.description`);
 
   return (
-    <Card as="a" className="column" href={property.path} softRedirect>
+    <Card as="a" className="column" href={langHref(property.path, lang)} softRedirect>
     <Frame ratio="16 / 10">
     <FrameCover src={property.exteriorImage} alt={name} loading="lazy" />
     <FrameScrim />
@@ -73,7 +75,7 @@ export function PropertiesSection() {
 
     <div className="grid gap-md">
     {accommodations.map((property) => (
-          <PropertyCard key={property.path} property={property} ta={ta} tr={tr} />
+          <PropertyCard key={property.path} lang={lang} property={property} ta={ta} tr={tr} />
     ))}
     </div>
     </div>

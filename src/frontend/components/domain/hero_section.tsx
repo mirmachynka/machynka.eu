@@ -7,6 +7,7 @@ import { ICON_ARROW_RIGHT } from "#gpkp4b4vfavh";
 import { MapBackdrop } from "#x3jm3224vb0o";
 import { accommodations } from "#2ajuusged5jk";
 import { useLang } from "#n99t4onl5ufo";
+import { langHref } from "./../../shared/lang/href";
 
 export function HeroSection() {
   const lang = useLang();
@@ -33,11 +34,11 @@ export function HeroSection() {
     <p className="text-muted" data-hero-lead="" data-home-hero-text="">{tr("hero.text")}</p>
 
     <div className="inline-row wrap gap-sm" data-hero-actions="">
-    <Button href="/#ubytovani" variant="primary">
+    <Button href={langHref("/#ubytovani", lang)} variant="primary">
     <span>{tr("hero.primary")}</span>
     <Icon spec={ICON_ARROW_RIGHT} />
     </Button>
-    <Button href="/#kontakt" variant="outline">
+    <Button href={langHref("/#kontakt", lang)} variant="outline">
     <span>{tr("hero.secondary")}</span>
     </Button>
     </div>

@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.1.0
+
+- Every language has its own URL. Each page is prerendered at `/cs/...` and `/en/...`, and the language menu navigates between them instead of swapping the text in place, so the address bar names the language on screen and a page can be linked or shared in either one. Internal links carry the language they were rendered in, so following one never changes it.
+- The unprefixed paths are still served and still hold Czech, so every link written before the prefixes existed resolves to the same page. They name the prefixed URL as canonical, so search engines see one page rather than two.
+- A link opened in one language is no longer switched to another before it paints. The boot script reads the language from the URL ahead of the saved preference, which previously won and moved the visitor back.
+
 All notable changes to `machynka-eu` will be documented here.
 
 This project follows semantic versioning once published.

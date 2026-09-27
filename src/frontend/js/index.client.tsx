@@ -2,9 +2,11 @@ import {
   bindFrontendRuntime,
   configureLocaleRouting,
   configureSpa,
+  currentRoutePath,
   setCurrentLocale,
   SITE_FOOTER_ROOT_SELECTOR,
   SITE_HEADER_ROOT_SELECTOR,
+  softRedirect,
 } from "@trebired/frontend";
 import "@trebired/frontend/static-icons";
 import { createBrowserLog } from "@trebired/logger/browser";
@@ -17,6 +19,8 @@ import { Header } from "#d19rad2krym3";
 import { hydrateChromeRoots } from "#pgsley9n980u";
 import { mountContentIsland } from "#6zkiijbcfna0";
 import { LANG_ROUTING } from "./../shared/lang/policy";
+import type { Lang } from "./../shared/lang/policy";
+import { langHref } from "./../shared/lang/href";
 
 configureLocaleRouting(LANG_ROUTING);
 
@@ -37,6 +41,12 @@ function observed(node: ReactElement) {
 
 configureSpa({});
 
+function switchLocale(lang: string) {
+  setCurrentLocale(lang);
+  const target = langHref(currentRoutePath(), lang as Lang);
+  return softRedirect(`${target}${window.location.hash}`);
+}
+
 void hydrateChromeRoots([
     [SITE_HEADER_ROOT_SELECTOR, observed(<Header />)],
     [SITE_FOOTER_ROOT_SELECTOR, observed(<Footer />)],
@@ -45,7 +55,7 @@ void hydrateChromeRoots([
         icons: { mode: "static" },
         locale: {
           persistLocale: async() => ({ ok: true }),
-          refresh: (lang) => setCurrentLocale(lang),
+          refresh: (lang) => switchLocale(String(lang)),
         },
     });
     mountContentIsland("live_content");

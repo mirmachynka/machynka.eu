@@ -31,7 +31,7 @@ export function Header() {
     brand={<img src="/logo.svg" alt="MACHYNKA s.r.o." />}
     closeIcon={<Icon spec={ICON_CLOSE} />}
     labels={{ closeMenu: tr("menu.close"), navigation: tr("footer.navigation"), openMenu: tr("menu.open") }}
-    links={navItems(tr)}
+    links={navItems(tr, lang)}
     menuActions={(
         <>
         <HeaderPhone className="inline-row fit-content gap-xs font-bold" />
