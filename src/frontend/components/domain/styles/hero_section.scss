@@ -4,12 +4,14 @@
   justify-content: center;
   min-height: calc(100vh - 5rem);
   overflow: hidden;
+  padding-inline: var(--band-gutter, 1rem);
   background: var(--neutral-900);
 }
 
 [data-home-hero-inner] {
   position: relative;
   display: flex;
+  width: min(var(--band-max, 80rem), 100%);
   min-height: calc(100vh - 5rem);
   align-items: center;
 }
