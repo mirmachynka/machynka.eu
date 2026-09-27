@@ -20,6 +20,7 @@ This project follows semantic versioning once published.
 - Hover easing was set to 120ms, short enough to read as no easing at all, and the back link had none. Both are on one 220ms timing now.
 - A text link hovered to white, which was right on the dark footer and invisible the moment the same component sat on a white card. It hovers to the brand red, which holds on either.
 - The home hero was a plain dark section rather than an inverse band, so it never rescoped muted text and its lead rendered in the light theme's grey on near-black while every other hero lead was legible. All three heroes now share one colour and one scale.
+- The hero's calls to action wrapped onto separate lines on a phone but each button kept its own text width, so they sat ragged under a full-width heading. They stack and fill the column, inside the hero's padding.
 - The scrollbar is the browser's again. The site had been recolouring the thumb since before the stylesheets were consolidated, and that was carried across rather than questioned.
 
 ### Changed
