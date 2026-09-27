@@ -1,34 +1,15 @@
-.benefit-card {
-  gap: var(--tbf-gap-lg);
-  padding: 1.5rem;
-}
-
-.benefit-card-icon {
+[data-tile="contrast"] {
   --icon-tile-size: 3.5rem;
   --icon-tile-bg: var(--neutral-800);
   --icon-tile-color: var(--white-500);
 }
 
-:where(.benefit-card) h3 {
-  overflow-wrap: break-word;
-  font-size: 1.125rem;
-  font-weight: 900;
-  text-transform: uppercase;
+[data-on-dark] {
   color: var(--white-500);
 }
 
-:where(.benefit-card) p {
-  font-size: 0.875rem;
-  line-height: 1.6;
-  color: var(--neutral-400);
-}
-
 @media (min-width: 640px) {
-  .benefit-card {
-    padding: 2.5rem;
-  }
-
-  :where(.benefit-card) h3 {
+  h3[data-on-dark] {
     font-size: 1.25rem;
   }
 }

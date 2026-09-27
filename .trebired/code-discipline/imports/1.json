@@ -44,7 +44,6 @@
   "#ko1s2pcqme9v": "./src/frontend/components/domain/properties_section.tsx",
   "#l4l0r3zyfxh7": "./src/frontend/ssr/entry.tsx",
   "#l5fyaqigsm8q": "./src/frontend/components/chrome/nav_items.ts",
-  "#l8hssk9dgnjw": "./src/frontend/components/domain/accommodation/styles/rules_section.scss",
   "#lu28xyaiq63v": "./src/frontend/components/domain/accommodation/sections/hero.tsx",
   "#lub199gl3q3w": "./.trebired/frontend/palette.ts",
   "#m7bw89v4qsjy": "./src/frontend/components/domain/accommodation/numbers.ts",

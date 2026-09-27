@@ -17,10 +17,10 @@ export function Footer() {
     tone="inverse"
     brand={(
         <>
-        <a href="/" className="site-footer-brand" data-tbf-soft-redirect="">
-        <img src="/footer-logo.svg" alt="MACHYNKA s.r.o." className="tbf-logo site-footer-logo" />
+        <a href="/" className="inline-row fit-content" data-brand="" data-tbf-soft-redirect="">
+        <img src="/footer-logo.svg" alt="MACHYNKA s.r.o." className="tbf-logo" data-footer-logo="" />
         </a>
-        <a href={phoneHref(contactInfo.accommodationPhone)} className="inline-row fit-content gap-xs site-footer-phone">
+        <a href={phoneHref(contactInfo.accommodationPhone)} className="inline-row fit-content gap-xs font-bold" data-strong="">
         <Icon spec={ICON_PHONE} />
         {contactInfo.accommodationPhone}
         </a>
@@ -41,7 +41,7 @@ export function Footer() {
             <Icon spec={ICON_MAP_PIN} />
             <span>{address.street}, {address.postalCode} {address.city}</span>
             </span>
-            <a href={`mailto:${contactInfo.email}`} className="inline-row fit-content gap-xs site-footer-email">
+            <a href={`mailto:${contactInfo.email}`} className="inline-row fit-content gap-xs" data-hover-bright="">
             <Icon spec={ICON_MAIL} />
             {contactInfo.email}
             </a>

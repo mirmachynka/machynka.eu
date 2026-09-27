@@ -1,25 +1,23 @@
-.about-section-grid {
+[data-split] {
   align-items: center;
   gap: 4rem;
 }
 
-.about-section-text {
-  font-size: 1rem;
+[data-copy] {
   line-height: 1.6;
-  color: var(--neutral-600);
 }
 
-.about-section-stat {
+[data-fact] {
   background: var(--neutral-100);
   padding: 1.25rem;
 }
 
-.about-section-stat .icon-glyph {
+[data-fact] .icon-glyph {
   font-size: 1.5rem;
   color: var(--neutral-900);
 }
 
-:where(.about-section-stat) div {
+[data-fact] div {
   overflow-wrap: break-word;
   font-size: 0.75rem;
   font-weight: 900;
@@ -28,56 +26,58 @@
   color: var(--neutral-900);
 }
 
-.about-section-quote-card {
+[data-quote-card] {
   background: var(--neutral-900);
   padding: 1.5rem;
 }
 
-.about-section-quote-border {
+[data-quote-rule] {
   border-left: 4px solid var(--primary-500);
   padding-left: 1.25rem;
 }
 
-.about-section-quote {
+[data-quote] {
   overflow-wrap: break-word;
   font-size: 1.5rem;
   font-weight: 900;
-  line-height: 1.2;
+  line-height: 1.3;
   color: var(--white-500);
 }
 
-.about-section-quote-source {
-  font-size: 0.875rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: color-mix(in oklch, var(--white-500), transparent 30%);
+[data-quote-source] {
+  color: var(--neutral-500);
 }
 
 @media (min-width: 380px) {
-  .about-section-quote {
+  [data-quote] {
     font-size: 1.875rem;
   }
 }
 
 @media (min-width: 640px) {
-  .about-section-text {
+  [data-copy] {
     font-size: 1.125rem;
   }
 
-  .about-section-stat {
+  [data-fact] {
     padding: 1.5rem;
   }
 
-  .about-section-quote-card {
+  [data-quote-card] {
     padding: 3rem;
   }
 
-  .about-section-quote-border {
+  [data-quote-rule] {
     padding-left: 2rem;
   }
 
-  .about-section-quote {
+  [data-quote] {
     font-size: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  [data-split] {
+    grid-template-columns: repeat(2, 1fr);
   }
 }

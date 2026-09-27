@@ -2,26 +2,24 @@
   border-top: 1px solid var(--neutral-800);
 }
 
-.site-footer-brand {
-  display: inline-flex;
+[data-brand],
+[data-strong] {
   color: var(--white-500);
 }
 
-.site-footer-logo {
+[data-footer-logo] {
   --tbf-surf-logo-root-height: 3rem;
 }
 
-.site-footer-phone {
-  color: var(--white-500);
-  font-weight: 900;
+[data-strong] {
   letter-spacing: 0.02em;
 }
 
-.site-footer-email {
+[data-hover-bright] {
   color: inherit;
   transition: color 0.2s ease;
 }
 
-.site-footer-email:hover {
+[data-hover-bright]:hover {
   color: var(--white-500);
 }

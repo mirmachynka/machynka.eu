@@ -4,12 +4,12 @@ All notable changes to `machynka-eu` will be documented here.
 
 This project follows semantic versioning once published.
 
-## 2.1.0
+## 2.2.0
 
 - The language switcher is the package's `LocaleSwitcher` rather than a hand-built popover, its chip sized through `shell.language.trigger`.
 - Section headings are a `heading.variants.section` entry in the frontend config instead of a class with four breakpoint overrides, and every stacked or inline wrapper in the sections, panels, property cards and accommodation pages is a package layout utility. Images and map embeds sit in the package's `frame`, badges and room tags are `pill`s, and small caps labels are `label-caps`.
-- Panels, cards and rooms take their heading and body styling from element rules scoped to the container rather than a class per line of text, the six copies of the square icon tile become one, and both map embeds share a frame.
-- Half the stylesheet is gone: 1878 lines across 14 files down to 955 across 11, and 182 class names down to 81.
+- The site no longer defines a single CSS class. Layout, spacing and text come from package utilities, type scales and surfaces from the frontend config, and the handful of things a utility cannot express — gradient scrims, the map backdrop, the container-query hero title, hover colour swaps — hang off data attributes on the elements that own them.
+- The stylesheet is down from 1878 lines across 14 files to 714 across 10, and from 182 class names to none.
 
 ## 2.0.0
 

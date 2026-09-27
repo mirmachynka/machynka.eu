@@ -11,11 +11,17 @@ type OtherPanelProps = {
 
 export function AccommodationOtherPanel({ related, tr }: OtherPanelProps) {
   return (
-    <div className="column gap-md accommodation-panel">
-    <h2>{tr("accommodationPage.otherOption")}</h2>
+    <div className="column gap-md" data-panel="">
+    <h2 className="tbf-heading--panel">{tr("accommodationPage.otherOption")}</h2>
     <div className="column gap-sm">
     {related.map((item) => (
-          <a key={item.path} href={item.path} className="accommodation-other-link" data-tbf-soft-redirect="">
+          <a
+          key={item.path}
+          className="inline-row between gap-sm border-top padding-top-md"
+          data-row-link=""
+          data-tbf-soft-redirect=""
+          href={item.path}
+          >
           <span>{tr(`accommodations.${item.id}.name`)}</span>
           <Icon spec={ICON_ARROW_RIGHT} />
           </a>

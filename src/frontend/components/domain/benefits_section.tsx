@@ -21,22 +21,22 @@ export function BenefitsSection() {
   return (
     <Section tone="inverse">
     <div className="tbf-container column gap-lg">
-    <h2 className="tbf-heading--section section-title-light center">{tr("benefits.title")}</h2>
+    <h2 className="tbf-heading--section center" data-on-dark="">{tr("benefits.title")}</h2>
 
     <CardTable
     items={BENEFIT_ITEMS}
     columns={3}
     tone="dark"
-    itemClassName="benefit-card"
+    itemClassName="column gap-lg"
     getKey={(item) => item.key}
     renderItem={({ key, icon }) => (
         <>
-        <div className="icon-tile benefit-card-icon">
+        <div data-tile="contrast">
         <Icon spec={icon} />
         </div>
         <div className="column gap-sm">
-        <h3>{tr(`benefits.items.${key}.title`)}</h3>
-        <p>{tr(`benefits.items.${key}.description`)}</p>
+        <h3 className="tbf-heading--tile" data-on-dark="">{tr(`benefits.items.${key}.title`)}</h3>
+        <p className="text-sm">{tr(`benefits.items.${key}.description`)}</p>
         </div>
         </>
     )}

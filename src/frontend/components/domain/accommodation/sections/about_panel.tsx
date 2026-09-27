@@ -18,9 +18,9 @@ type AboutPanelProps = {
 
 export function AccommodationAboutPanel({ accommodation, baseKey, description, name, tr }: AboutPanelProps) {
   return (
-    <div className="column gap-md accommodation-panel accommodation-panel-dark">
-    <Icon spec={ICON_BUILDING} className="accommodation-panel-icon" />
-    <h2>{name}</h2>
+    <div className="column gap-md" data-panel="dark">
+    <Icon spec={ICON_BUILDING} data-panel-icon="" />
+    <h2 className="tbf-heading--panel">{name}</h2>
     <p>{description}</p>
     <div className="column gap-sm">
     {numbers(STAY_INFO_COUNT).map((itemNumber) => (
@@ -29,16 +29,16 @@ export function AccommodationAboutPanel({ accommodation, baseKey, description, n
           {tr(`${baseKey}.stayInfo.item${itemNumber}`)}
           </div>
     ))}
-    <p className="contact-panel-note">{tr("common.receptionNote")}</p>
+    <p data-note="">{tr("common.receptionNote")}</p>
     </div>
     {accommodation.contact && (
         <div className="column gap-sm">
-        <a href={phoneHref(accommodation.contact.phone)} className="accommodation-contact-row">
+        <a href={phoneHref(accommodation.contact.phone)} className="inline-row gap-sm text-sm font-bold" data-contact-row="">
         <Icon spec={ICON_PHONE} />
         {accommodation.contact.phone}
         </a>
         {accommodation.contact.operatorPhone && (
-            <a href={phoneHref(accommodation.contact.operatorPhone)} className="accommodation-contact-row">
+            <a href={phoneHref(accommodation.contact.operatorPhone)} className="inline-row gap-sm text-sm font-bold" data-contact-row="">
             <Icon spec={ICON_PHONE} />
             {tr("accommodationPage.operator")}: {accommodation.contact.operatorPhone}
             </a>

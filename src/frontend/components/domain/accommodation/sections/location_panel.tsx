@@ -12,12 +12,12 @@ type LocationPanelProps = {
 
 export function AccommodationLocationPanel({ mapAddress, mapEmbedUrl, name, tr }: LocationPanelProps) {
   return (
-    <div className="column gap-md accommodation-panel">
-    <Icon spec={ICON_MAP_PIN} className="accommodation-panel-icon" />
-    <h2>{tr("accommodationPage.locationTitle")}</h2>
+    <div className="column gap-md" data-panel="">
+    <Icon spec={ICON_MAP_PIN} data-panel-icon="" />
+    <h2 className="tbf-heading--panel">{tr("accommodationPage.locationTitle")}</h2>
     <p>{mapAddress}</p>
-    <div className="map-box">
-    <MapEmbed src={mapEmbedUrl} className="map-box-frame" title={tr("accommodationPage.mapTitle", { name })} />
+    <div data-map="">
+    <MapEmbed src={mapEmbedUrl} data-map-frame="" title={tr("accommodationPage.mapTitle", { name })} />
     </div>
     </div>
   );

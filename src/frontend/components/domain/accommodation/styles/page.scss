@@ -1,131 +1,72 @@
-.accommodation-hero {
+[data-hero] {
+  --tbf-surf-section-root-py: 3rem;
+  --tbf-surf-section-root-py-lg: 5rem;
   position: relative;
-  display: flex;
-  justify-content: center;
   min-height: 70vh;
   overflow: hidden;
-  padding: 3rem 1rem 4rem;
-  background: var(--neutral-900);
 }
 
-.accommodation-hero-inner {
+[data-hero-inner] {
   position: relative;
   z-index: 10;
-  display: grid;
   gap: 3rem;
-  width: 100%;
-  max-width: 80rem;
 }
 
-.accommodation-back-link {
-  display: flex;
-  width: fit-content;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.875rem;
-  font-weight: 900;
-  text-transform: uppercase;
-  color: var(--neutral-400);
-  transition: color 180ms ease;
-}
-
-.accommodation-back-link:hover {
+[data-back]:hover {
   color: var(--white-500);
 }
 
-.accommodation-back-link .icon-glyph {
-  font-size: 1rem;
-}
-
-.accommodation-hero-title {
-  overflow-wrap: break-word;
-  font-size: 2.75rem;
-  font-weight: 900;
-  line-height: 1;
-  text-transform: uppercase;
-  color: var(--white-500);
-}
-
-.accommodation-hero-detail {
+[data-lead] {
   max-width: 42rem;
-  font-size: 1rem;
   font-weight: 500;
   line-height: 1.6;
-  color: var(--neutral-400);
 }
 
-.accommodation-hero-image-wrap {
+[data-portrait] {
   --tbf-surf-frame-root-ratio: 4 / 5;
   --tbf-surf-frame-root-bg: var(--neutral-800);
   --tbf-surf-frame-root-border: 0;
   --tbf-surf-frame-root-radius: 0;
 }
 
-.accommodation-hero-image {
+[data-cover] {
   position: absolute;
   inset: 0;
   height: 100%;
-  width: 100%;
   object-fit: cover;
 }
 
-.accommodation-hero-image-scrim {
+[data-scrim] {
   position: absolute;
   inset: 0;
   background: linear-gradient(to top, color-mix(in oklch, var(--neutral-900), transparent 65%), transparent, transparent);
 }
 
-.accommodation-hero-address {
+[data-address] {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  display: flex;
-  flex-direction: column;
-  gap: var(--tbf-gap-xs);
+  z-index: 1;
   background: var(--primary-500);
   padding: 1.25rem;
-}
-
-.accommodation-hero-address-text {
-  overflow-wrap: break-word;
   font-size: 1.125rem;
   font-weight: 900;
   line-height: 1.2;
   color: var(--white-500);
 }
 
-.accommodation-hero-address-label {
-  overflow-wrap: break-word;
-  font-size: 0.75rem;
-  font-weight: 700;
-  line-height: 1.2;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
+[data-on-primary] {
   color: color-mix(in srgb, white 70%, transparent);
 }
 
-.accommodation-feature-icon {
+[data-tile="soft"] {
   --icon-tile-size: 3.5rem;
-  --icon-tile-glyph: 1.5rem;
   --icon-tile-bg: var(--neutral-100);
   --icon-tile-color: var(--neutral-900);
 }
 
-:where(.accommodation-feature-cell) h3 {
-  overflow-wrap: break-word;
-  font-size: 1rem;
-  font-weight: 900;
-  text-transform: uppercase;
-  color: var(--neutral-900);
-}
-
-.accommodation-room-cell {
-  gap: var(--tbf-gap-lg);
-  padding: 1.5rem;
-}
-
-.accommodation-room-tag {
+[data-tag] {
   border: 0;
   border-radius: 0;
   padding: 0.5rem 0.75rem;
@@ -134,64 +75,26 @@
   text-transform: uppercase;
 }
 
-.accommodation-room-tag-dark {
+[data-tag="solid"] {
   background: var(--neutral-900);
   color: var(--white-500);
 }
 
-.accommodation-room-tag-light {
+[data-tag="soft"] {
   background: var(--neutral-100);
   color: var(--neutral-900);
 }
 
-:where(.accommodation-room-cell) h3 {
-  overflow-wrap: break-word;
-  font-size: 1.25rem;
-  font-weight: 900;
-  text-transform: uppercase;
-  color: var(--neutral-900);
-}
-
-:where(.accommodation-room-cell) p {
-  line-height: 1.6;
-  color: var(--neutral-600);
-}
-
-@media (min-width: 640px) {
-  .accommodation-hero {
-    padding: 4rem 3rem 5rem;
-  }
-
-  .accommodation-hero-title {
-    font-size: 3.25rem;
-  }
-}
-
-@media (min-width: 768px) {
-  .accommodation-hero-title {
-    font-size: 4.5rem;
-    letter-spacing: 0.02em;
-  }
-}
-
 @media (min-width: 1024px) {
-  .accommodation-hero {
-    padding-inline: 5rem;
-  }
-
-  .accommodation-hero-inner {
+  [data-hero-inner] {
     grid-template-columns: minmax(0, 1fr) minmax(300px, 0.55fr);
     align-items: start;
     gap: 4rem;
   }
 
-  .accommodation-hero-media {
+  [data-hero-media] {
     justify-self: end;
     width: 100%;
     max-width: 520px;
-  }
-
-  .accommodation-hero-title {
-    font-size: 6rem;
   }
 }

@@ -17,7 +17,7 @@ export function AccommodationGallery({ images, name, tr }: GalleryProps) {
 
     <div className="grid auto-md gap-sm">
     {images.map((image, index) => (
-          <ExpandableImage key={image} src={image} alt={name} images={images} index={index} className="tbf-frame accommodation-gallery-item" />
+          <ExpandableImage key={image} src={image} alt={name} images={images} index={index} className="tbf-frame width-full" data-gallery-item="" />
     ))}
     </div>
     </div>

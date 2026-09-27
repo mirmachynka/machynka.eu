@@ -18,21 +18,21 @@ export function HeroSection() {
   const totalRooms = accommodations.reduce((sum, item) => sum + item.rooms, 0);
 
   return (
-    <section className="hero-section">
+    <section data-home-hero="">
     <MapBackdrop />
 
-    <div className="hero-section-inner">
-    <div className="column gap-lg hero-section-content">
-    <div className="column gap-lg hero-section-copy">
-    <h1 className="hero-section-title" style={{ "--hero-title-chars": titleChars } as CSSProperties}>
-    <span className="hero-section-title-top">{titleTop}</span>
+    <div className="tbf-container" data-home-hero-inner="">
+    <div className="column gap-lg" data-home-hero-content="">
+    <div className="column gap-lg" data-home-hero-copy="">
+    <h1 data-home-hero-title="" style={{ "--hero-title-chars": titleChars } as CSSProperties}>
+    <span data-nowrap="">{titleTop}</span>
     <br />
-    <span className="hero-section-title-accent">{titleAccent}</span>
+    <span data-accent="">{titleAccent}</span>
     </h1>
 
-    <p className="hero-section-text">{tr("hero.text")}</p>
+    <p className="text-muted" data-home-hero-text="">{tr("hero.text")}</p>
 
-    <div className="inline-row wrap gap-sm hero-section-actions">
+    <div className="inline-row wrap gap-sm">
     <Button href="/#ubytovani" variant="primary">
     <span>{tr("hero.primary")}</span>
     <Icon spec={ICON_ARROW_RIGHT} />
@@ -43,12 +43,12 @@ export function HeroSection() {
     </div>
     </div>
 
-    <div className="grid cols-2 gap-sm hero-section-stats">
-    <div className="column gap-xs hero-section-stat">
+    <div className="grid cols-2 gap-sm" data-stats="">
+    <div className="column gap-xs" data-stat="">
     <div>{totalRooms}</div>
     <div>{tr("hero.stats.rooms")}</div>
     </div>
-    <div className="column gap-xs hero-section-stat">
+    <div className="column gap-xs" data-stat="">
     <div>{accommodations.length}</div>
     <div>{tr("hero.stats.objects")}</div>
     </div>

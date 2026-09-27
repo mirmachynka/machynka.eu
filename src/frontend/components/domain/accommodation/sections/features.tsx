@@ -20,13 +20,13 @@ export function AccommodationFeatures({ accommodation, baseKey, tr }: FeaturesPr
     items={accommodation.features}
     columns={2}
     getKey={(feature) => feature.label}
-    itemClassName="column gap-md accommodation-feature-cell"
+    itemClassName="column gap-md"
     renderItem={(feature, index) => (
         <>
-        <div className="icon-tile accommodation-feature-icon">
+        <div data-tile="soft">
         <Icon spec={feature.icon} />
         </div>
-        <h3>{tr(`${baseKey}.features.feature${index + 1}`)}</h3>
+        <h3 className="tbf-heading--tile">{tr(`${baseKey}.features.feature${index + 1}`)}</h3>
         </>
     )}
     />

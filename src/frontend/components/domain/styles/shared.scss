@@ -1,8 +1,4 @@
-.section-title-light {
-  color: var(--white-500);
-}
-
-.icon-tile {
+[data-tile] {
   display: flex;
   height: var(--icon-tile-size, 3rem);
   width: var(--icon-tile-size, 3rem);
@@ -12,51 +8,31 @@
   background: var(--icon-tile-bg, transparent);
 }
 
-.icon-tile .icon-glyph {
+[data-tile] .icon-glyph {
   font-size: var(--icon-tile-glyph, 1.5rem);
   color: var(--icon-tile-color, currentColor);
 }
 
-.map-box {
-  position: relative;
-  min-height: var(--map-box-height, 420px);
-  overflow: hidden;
-  border-radius: 1rem;
-  background: var(--surface-2);
-}
-
-.map-box-plain {
-  --map-box-height: 360px;
-  border-radius: 0;
-  background: var(--neutral-100);
-}
-
-.map-box-frame {
-  position: absolute;
-  inset: 0;
-}
-
-.map-backdrop {
+[data-backdrop] {
   position: absolute;
   inset: 0;
   pointer-events: none;
 }
 
-.map-backdrop-image {
+[data-backdrop-image] {
   height: 100%;
-  width: 100%;
   object-fit: cover;
   object-position: 55% 50%;
   opacity: 0.8;
 }
 
-.map-backdrop-scrim {
+[data-backdrop-scrim] {
   position: absolute;
   inset: 0;
   background: color-mix(in oklch, var(--neutral-900), transparent 72%);
 }
 
-.map-backdrop-glow {
+[data-backdrop-glow] {
   position: absolute;
   inset: 0;
   background: radial-gradient(
@@ -68,7 +44,7 @@
 }
 
 @media (min-width: 768px) {
-  .map-backdrop-image {
+  [data-backdrop-image] {
     object-position: 95% 50%;
   }
 }

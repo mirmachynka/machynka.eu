@@ -1,14 +1,14 @@
-.property-card {
+[data-tile-card] {
   background: var(--white-500);
   border: 1px solid var(--neutral-200);
   transition: border-color 180ms ease;
 }
 
-.property-card:hover {
+[data-tile-card]:hover {
   border-color: var(--neutral-900);
 }
 
-.property-card-media {
+[data-media] {
   --tbf-surf-frame-root-ratio: 16 / 10;
   --tbf-surf-frame-root-bg: var(--neutral-900);
   --tbf-surf-frame-root-border: 0;
@@ -16,22 +16,15 @@
   display: block;
 }
 
-.property-card-image {
-  position: absolute;
-  inset: 0;
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  transition: transform 700ms ease;
-}
-
-.property-card:hover .property-card-image {
+[data-tile-card]:hover [data-cover] {
   transform: scale(1.05);
 }
 
-.property-card-scrim {
-  position: absolute;
-  inset: 0;
+[data-tile-card] [data-cover] {
+  transition: transform 700ms ease;
+}
+
+[data-tile-card] [data-scrim] {
   background: linear-gradient(
     to top,
     color-mix(in oklch, var(--neutral-950, var(--neutral-900)), transparent 55%),
@@ -40,7 +33,7 @@
   );
 }
 
-.property-card-badge {
+[data-badge] {
   position: absolute;
   left: 1.5rem;
   top: 1.5rem;
@@ -56,7 +49,7 @@
   color: var(--white-500);
 }
 
-.property-card-arrow {
+[data-corner-arrow] {
   position: absolute;
   bottom: 1.5rem;
   right: 1.5rem;
@@ -70,51 +63,39 @@
   transition: background-color 180ms ease;
 }
 
-.property-card-arrow .icon-glyph {
+[data-corner-arrow] .icon-glyph {
   font-size: 1.5rem;
   color: var(--neutral-900);
   transition: color 180ms ease;
 }
 
-.property-card:hover .property-card-arrow {
+[data-tile-card]:hover [data-corner-arrow] {
   background: var(--primary-500);
 }
 
-.property-card:hover .property-card-arrow .icon-glyph {
+[data-tile-card]:hover [data-corner-arrow] .icon-glyph {
   color: var(--white-500);
 }
 
-.property-card-body {
+[data-card-body] {
   padding: 1.5rem;
 }
 
-:where(.property-card) h3 {
-  overflow-wrap: break-word;
-  font-size: 1.25rem;
-  font-weight: 900;
-  text-transform: uppercase;
+[data-card-body] h3 {
   color: var(--neutral-900);
 }
 
-:where(.property-card) p {
+[data-card-body] p {
   line-height: 1.6;
-  color: var(--neutral-600);
 }
 
-.property-card-features {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 1rem;
-  row-gap: 1.25rem;
-}
-
-.property-card-feature-icon {
+[data-tile="mute"] {
   --icon-tile-glyph: 1.25rem;
   --icon-tile-bg: var(--neutral-100);
   --icon-tile-color: var(--neutral-700);
 }
 
-.property-card-feature span {
+[data-feature] span {
   display: block;
   overflow-wrap: break-word;
   font-size: 0.625rem;
@@ -127,11 +108,7 @@
 }
 
 @media (min-width: 640px) {
-  .property-card-body {
+  [data-card-body] {
     padding: 2rem;
-  }
-
-  .property-card-features {
-    grid-template-columns: repeat(4, 1fr);
   }
 }

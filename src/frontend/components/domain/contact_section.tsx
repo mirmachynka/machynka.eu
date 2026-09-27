@@ -10,26 +10,26 @@ import { useLang } from "#n99t4onl5ufo";
 function ContactLinks({ tr }: { tr: I18nTranslator }) {
   return (
     <div className="column gap-sm">
-    <a href={phoneHref(contactInfo.accommodationPhone)} className="inline-row gap-sm contact-link">
-    <div className="icon-tile contact-link-icon">
+    <a href={phoneHref(contactInfo.accommodationPhone)} className="inline-row gap-sm" data-action-row="">
+    <div data-tile="plain">
     <Icon spec={ICON_PHONE} />
     </div>
     <div className="column grow gap-xs2">
     <div className="label-caps">{tr("contactSection.accommodationPhone")}</div>
-    <div className="contact-link-value">{contactInfo.accommodationPhone}</div>
+    <div data-action-value="">{contactInfo.accommodationPhone}</div>
     </div>
-    <Icon spec={ICON_ARROW_RIGHT} className="contact-link-arrow" />
+    <Icon spec={ICON_ARROW_RIGHT} data-action-arrow="" />
     </a>
 
-    <a href={`mailto:${contactInfo.email}`} className="inline-row gap-sm contact-link">
-    <div className="icon-tile contact-link-icon">
+    <a href={`mailto:${contactInfo.email}`} className="inline-row gap-sm" data-action-row="">
+    <div data-tile="plain">
     <Icon spec={ICON_MAIL} />
     </div>
     <div className="column grow gap-xs2">
     <div className="label-caps">{tr("contactSection.emailLabel")}</div>
-    <div className="contact-link-value contact-link-value-email">{contactInfo.email}</div>
+    <div data-action-value="email">{contactInfo.email}</div>
     </div>
-    <Icon spec={ICON_ARROW_RIGHT} className="contact-link-arrow" />
+    <Icon spec={ICON_ARROW_RIGHT} data-action-arrow="" />
     </a>
     </div>
   );
@@ -37,11 +37,11 @@ function ContactLinks({ tr }: { tr: I18nTranslator }) {
 
 function ContactAddressPanel({ tr }: { tr: I18nTranslator }) {
   return (
-    <div className="column gap-md contact-panel">
-    <h3>{tr("contactSection.contactAddress")}</h3>
+    <div className="column gap-md" data-panel="dark">
+    <h3 className="tbf-heading--panel">{tr("contactSection.contactAddress")}</h3>
     <div className="column gap-sm">
     <div className="inline-row top gap-sm">
-    <div className="icon-tile contact-panel-icon">
+    <div data-tile="inset">
     <Icon spec={ICON_MAP_PIN} />
     </div>
     <div className="column gap-sm">
@@ -52,7 +52,7 @@ function ContactAddressPanel({ tr }: { tr: I18nTranslator }) {
     {contactInfo.contactAddress.postalCode} {contactInfo.contactAddress.city}
     </div>
     </div>
-    <p className="contact-panel-note">{tr("contactSection.receptionNote")}</p>
+    <p data-note="">{tr("contactSection.receptionNote")}</p>
     </div>
     </div>
     <div className="border-top padding-top-md">
@@ -60,7 +60,7 @@ function ContactAddressPanel({ tr }: { tr: I18nTranslator }) {
     </div>
     {contactInfo.branchAddresses.map((address) => (
           <div key={address.name} className="inline-row top gap-sm">
-          <div className="icon-tile contact-panel-icon">
+          <div data-tile="inset">
           <Icon spec={ICON_MAP_PIN} />
           </div>
           <div>
@@ -79,10 +79,10 @@ function ContactAddressPanel({ tr }: { tr: I18nTranslator }) {
 
 function ContactOperatorPanel({ tr }: { tr: I18nTranslator }) {
   return (
-    <div className="column gap-md contact-panel">
-    <h3>{tr("contactSection.operator")}</h3>
+    <div className="column gap-md" data-panel="dark">
+    <h3 className="tbf-heading--panel">{tr("contactSection.operator")}</h3>
     <div className="inline-row top gap-sm">
-    <div className="icon-tile contact-panel-icon">
+    <div data-tile="inset">
     <Icon spec={ICON_BUILDING} />
     </div>
     <div className="column gap-sm">
@@ -115,18 +115,18 @@ export function ContactSection() {
   return (
     <Section id="kontakt">
     <div className="tbf-container column gap-lg">
-    <h2 className="tbf-heading--section contact-section-title">{tr("contactSection.title")}</h2>
+    <h2 className="tbf-heading--section">{tr("contactSection.title")}</h2>
 
-    <div className="grid gap-lg contact-section-grid">
+    <div className="grid" data-split="">
     <div className="column gap-lg">
-    <p className="contact-section-text">{tr("contactSection.text")}</p>
+    <p className="text-muted" data-copy="narrow">{tr("contactSection.text")}</p>
 
     <ContactLinks tr={tr} />
 
-    <div className="map-box map-box-plain">
+    <div data-map="plain">
     <MapEmbed
     src={contactInfo.contactAddress.mapEmbedUrl}
-    className="map-box-frame"
+    data-map-frame=""
     title={`${tr("contactSection.contactAddress")}: ${contactInfo.contactAddress.street}`}
     />
     </div>

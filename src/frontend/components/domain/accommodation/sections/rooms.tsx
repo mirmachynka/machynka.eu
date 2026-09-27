@@ -19,17 +19,17 @@ export function AccommodationRooms({ baseKey, roomCount, tr }: RoomsProps) {
     <CardTable
     items={numbers(roomCount)}
     getKey={(roomNumber) => roomNumber}
-    itemClassName="column accommodation-room-cell"
+    itemClassName="column gap-lg"
     renderItem={(roomNumber) => (
         <>
         <div className="inline-row wrap gap-xs">
-        <span className="pill accommodation-room-tag accommodation-room-tag-dark">
+        <span className="pill" data-tag="solid">
         {tr(`${baseKey}.rooms.room${roomNumber}.capacity`)}
         </span>
-        <span className="pill accommodation-room-tag accommodation-room-tag-light">{tr(`${baseKey}.rooms.room${roomNumber}.size`)}</span>
+        <span className="pill" data-tag="soft">{tr(`${baseKey}.rooms.room${roomNumber}.size`)}</span>
         </div>
         <div className="column gap-sm">
-        <h3>{tr(`${baseKey}.rooms.room${roomNumber}.name`)}</h3>
+        <h3 className="tbf-heading--panel">{tr(`${baseKey}.rooms.room${roomNumber}.name`)}</h3>
         <p>{tr(`${baseKey}.rooms.room${roomNumber}.description`)}</p>
         </div>
         </>

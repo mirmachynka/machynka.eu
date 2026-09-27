@@ -1,46 +1,43 @@
-.contact-section-grid {
-  gap: 4rem;
-}
-
-.contact-section-text {
+[data-copy="narrow"] {
   max-width: 28rem;
   line-height: 1.6;
-  color: var(--neutral-600);
 }
 
-.contact-link {
+[data-action-row] {
   background: var(--neutral-100);
   padding: 1rem;
   transition: background-color 180ms ease;
 }
 
-.contact-link:hover {
+[data-action-row]:hover {
   background: var(--primary-500);
 }
 
-.contact-link-icon {
+[data-tile="plain"] {
   --icon-tile-bg: var(--white-500);
   --icon-tile-color: var(--neutral-900);
 }
 
-.contact-link-value {
+[data-tile="inset"] {
+  --icon-tile-size: 2.5rem;
+  --icon-tile-glyph: 1rem;
+  --icon-tile-bg: var(--neutral-800);
+  --icon-tile-color: var(--primary-500);
+}
+
+[data-action-value] {
   font-size: 1.25rem;
   font-weight: 900;
   color: var(--neutral-900);
   transition: color 180ms ease;
 }
 
-.contact-link-value-email {
+[data-action-value="email"] {
   overflow-wrap: anywhere;
   font-size: 1.125rem;
 }
 
-.contact-link:hover .contact-link-value,
-.contact-link:hover .contact-link-arrow {
-  color: var(--white-500);
-}
-
-.contact-link-arrow {
+[data-action-arrow] {
   height: 1.25rem;
   width: 1.25rem;
   flex-shrink: 0;
@@ -48,73 +45,37 @@
   transition: color 180ms ease;
 }
 
-.contact-panel {
-  --tbf-text-muted: var(--neutral-400);
-  background: var(--neutral-900);
-  color: var(--white-500);
-  padding: 1.5rem;
-}
-
-:where(.contact-panel) h3 {
-  overflow-wrap: break-word;
-  font-size: 1.125rem;
-  font-weight: 900;
-  text-transform: uppercase;
+[data-action-row]:hover [data-action-value],
+[data-action-row]:hover [data-action-arrow] {
   color: var(--white-500);
 }
 
-.contact-panel-icon {
-  --icon-tile-size: 2.5rem;
-  --icon-tile-glyph: 1rem;
-  --icon-tile-bg: var(--neutral-800);
-  --icon-tile-color: var(--primary-500);
-}
-
-.contact-panel-note {
-  max-width: 28rem;
-  background: var(--primary-500);
-  padding: 1rem;
-  font-size: 0.875rem;
-  font-weight: 700;
-  line-height: 1.6;
-  color: var(--white-500);
+[data-map="plain"] {
+  --map-height: 360px;
+  border-radius: 0;
+  background: var(--neutral-100);
 }
 
 @media (min-width: 640px) {
-  .contact-section-text {
+  [data-copy="narrow"] {
     font-size: 1.125rem;
   }
 
-  .contact-link {
+  [data-action-row] {
     gap: 1.5rem;
     padding: 1.5rem;
   }
 
-  .contact-link-icon {
+  [data-tile="plain"] {
     --icon-tile-size: 4rem;
   }
 
-  .contact-link-value,
-  .contact-link-value-email {
+  [data-action-value] {
     font-size: 1.5rem;
   }
 
-  .contact-link-arrow {
+  [data-action-arrow] {
     height: 1.5rem;
     width: 1.5rem;
-  }
-
-  .contact-panel {
-    padding: 2.5rem;
-  }
-
-  :where(.contact-panel) h3 {
-    font-size: 1.25rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .contact-section-grid {
-    grid-template-columns: repeat(2, 1fr);
   }
 }
