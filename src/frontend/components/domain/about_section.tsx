@@ -6,8 +6,8 @@ import { useLang } from "#n99t4onl5ufo";
 
 const FACTS = [
   { icon: ICON_BUILDING, key: "objects" },
-  { icon: ICON_USERS, key: "rooms" },
   { icon: ICON_AWARD, key: "years" },
+  { icon: ICON_USERS, key: "rooms" },
 ] as const;
 
 export function AboutSection() {
@@ -26,7 +26,7 @@ export function AboutSection() {
     <p>{tr("about.text2")}</p>
     </div>
 
-    <div className="grid auto-sm gap-sm">
+    <div className="grid auto-sm gap-sm stretch">
     {FACTS.map((fact) => (
           <Card key={fact.key} tone="muted">
           <CardBody className="column center gap-sm hor-center">

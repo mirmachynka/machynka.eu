@@ -21,7 +21,7 @@ export default defineMessages({
       stats: {
         objects: "2 Properties",
         rooms: "24 Rooms",
-        years: "15+ Years",
+        years: "15+ Years experience",
       },
     },
     properties: {

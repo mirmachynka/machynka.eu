@@ -63,9 +63,7 @@ function ContactAddressPanel({ tr }: { tr: I18nTranslator }) {
     </Card>
     </div>
     </div>
-    <div className="border-top padding-top-md">
     <div className="label-caps">{tr("contactSection.accommodationAddresses")}</div>
-    </div>
     {contactInfo.branchAddresses.map((address) => (
           <div key={address.name} className="inline-row top gap-sm">
           <IconTile size="sm" glyph="accent" tone="inverse">
