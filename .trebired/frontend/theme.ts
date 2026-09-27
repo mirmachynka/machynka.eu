@@ -26,7 +26,7 @@ export const semantics = {
     bg: semantic.highlight,
     text: semantic.surface1,
   },
-  transitionFast: "120ms",
+  transitionFast: "220ms",
 } satisfies NonNullable<FrontendDesignConfig["semantics"]>;
 
 export const runtime = {

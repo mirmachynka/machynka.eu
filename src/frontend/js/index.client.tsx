@@ -1,4 +1,11 @@
-import { bindFrontendRuntime, configureLocaleRouting, configureSpa, SITE_FOOTER_ROOT_SELECTOR, SITE_HEADER_ROOT_SELECTOR } from "@trebired/frontend";
+import {
+  bindFrontendRuntime,
+  configureLocaleRouting,
+  configureSpa,
+  setCurrentLocale,
+  SITE_FOOTER_ROOT_SELECTOR,
+  SITE_HEADER_ROOT_SELECTOR,
+} from "@trebired/frontend";
 import "@trebired/frontend/static-icons";
 import { createBrowserLog } from "@trebired/logger/browser";
 import { LogErrorBoundary, LogProvider } from "@trebired/logger/browser/react";
@@ -34,6 +41,12 @@ void hydrateChromeRoots([
     [document.querySelector(SITE_HEADER_ROOT_SELECTOR), observed(<Header />)],
     [document.querySelector(SITE_FOOTER_ROOT_SELECTOR), observed(<Footer />)],
 ]).then(() => {
-    bindFrontendRuntime(document, { icons: { mode: "static" } });
+    bindFrontendRuntime(document, {
+        icons: { mode: "static" },
+        locale: {
+          persistLocale: async() => ({ ok: true }),
+          refresh: (lang) => setCurrentLocale(lang),
+        },
+    });
     mountContentIsland("live_content");
 });

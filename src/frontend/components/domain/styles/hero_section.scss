@@ -75,6 +75,15 @@
   gap: 3rem;
 }
 
+[data-back] {
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+}
+
+[data-back] .icon-glyph {
+  font-size: 1.15rem;
+}
+
 [data-back]:hover {
   color: var(--white-500);
 }
