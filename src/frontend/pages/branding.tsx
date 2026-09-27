@@ -123,6 +123,7 @@ export function BrandingPage() {
     <PageHero
     back={{ href: "/", label: tr("branding.back") }}
     lead={tr("branding.lead")}
+    size="compact"
     title={tr("branding.title")}
     />
 

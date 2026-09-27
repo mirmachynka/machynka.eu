@@ -4,17 +4,20 @@ import type { ReactNode } from "react";
 import { ICON_ARROW_LEFT } from "#gpkp4b4vfavh";
 import { MapBackdrop } from "#x3jm3224vb0o";
 
+type PageHeroSize = "compact" | "full";
+
 type PageHeroProps = {
   actions?: ReactNode;
   back?: { href: string; label: string };
   lead: string;
   media?: ReactNode;
+  size?: PageHeroSize;
   title: string;
 };
 
-export function PageHero({ actions, back, lead, media, title }: PageHeroProps) {
+export function PageHero({ actions, back, lead, media, size = "full", title }: PageHeroProps) {
   return (
-    <PageBand tone="inverse" data-hero="">
+    <PageBand tone="inverse" data-hero={size}>
     <MapBackdrop />
 
     <div className="grid" data-hero-inner="">
@@ -31,7 +34,7 @@ export function PageHero({ actions, back, lead, media, title }: PageHeroProps) {
         </a>
       ) : null}
     <h1 className="tbf-heading--page">{title}</h1>
-    <p className="text-muted">{lead}</p>
+    <p className="text-muted" data-hero-lead="">{lead}</p>
     {actions ? <div className="inline-row wrap gap-sm">{actions}</div> : null}
     </div>
 

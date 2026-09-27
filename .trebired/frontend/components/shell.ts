@@ -31,7 +31,7 @@ export const shell = {
   },
   language: {
     trigger: {
-      borderColor: token.color("neutral", "500"),
+      borderColor: token.color("neutral", "400"),
       fontSize: "0.78rem",
       fontWeight: "900",
       gap: "0.55rem",

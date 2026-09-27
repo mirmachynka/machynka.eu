@@ -1,10 +1,12 @@
 [data-home-hero] {
+  --tbf-text-muted: color-mix(in srgb, currentColor 62%, transparent);
   position: relative;
   display: flex;
   justify-content: center;
   min-height: calc(100vh - 5rem);
   overflow: hidden;
   padding-inline: var(--tbf-surf-band-root-px);
+  color: var(--white-500);
   background: var(--neutral-900);
 }
 
@@ -48,6 +50,9 @@
 
 [data-home-hero-text] {
   max-width: 36rem;
+}
+
+[data-hero-lead] {
   font-weight: 500;
   line-height: 1.6;
 }
@@ -65,8 +70,11 @@
 
 [data-hero] {
   position: relative;
-  min-height: 70vh;
   overflow: hidden;
+}
+
+[data-hero="full"] {
+  min-height: 70vh;
 }
 
 [data-hero-inner] {
@@ -135,7 +143,7 @@
     padding-block: 8rem;
   }
 
-  [data-home-hero-text] {
+  [data-hero-lead] {
     font-size: 1.25rem;
   }
 

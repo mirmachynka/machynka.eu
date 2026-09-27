@@ -30,7 +30,7 @@ export function HeroSection() {
     <span data-accent="">{titleAccent}</span>
     </h1>
 
-    <p className="text-muted" data-home-hero-text="">{tr("hero.text")}</p>
+    <p className="text-muted" data-hero-lead="" data-home-hero-text="">{tr("hero.text")}</p>
 
     <div className="inline-row wrap gap-sm">
     <Button href="/#ubytovani" variant="primary">
