@@ -1,11 +1,11 @@
 <div align="center">
 
+<p>
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="src/frontend/public/footer-logo.svg">
   <img src="src/frontend/public/logo.svg" alt="machynka.eu" width="360">
 </picture>
-
-<br>
+</p>
 
 **The public accommodation site for MACHYNKA s.r.o. in Bučovice: apartment and guesthouse listings, room and price tables, photo galleries, house rules, and direct contact, in Czech and English.**
 
