@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.2.1
+
+- The three figures about the business stack on a phone rather than pairing up. Three of them across two columns left one alone on a second row; they read as a list.
+
 ## 3.2.0
 
 - Text no longer runs off the side of a phone. A card table asked for a 30rem column, which laid out a 480px track inside a 358px screen; the page clips horizontal overflow, so the text was cut rather than wrapped. Columns now stay inside the width they are given, and the rules, prices and room descriptions read in full.

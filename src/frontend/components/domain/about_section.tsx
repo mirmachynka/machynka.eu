@@ -26,7 +26,7 @@ export function AboutSection() {
     <p>{tr("about.text2")}</p>
     </div>
 
-    <div className="grid auto-sm gap-sm stretch">
+    <div className="grid auto-sm gap-sm stretch stack-mobile">
     {FACTS.map((fact) => (
           <Card key={fact.key} tone="muted">
           <CardBody className="column center gap-sm hor-center">
