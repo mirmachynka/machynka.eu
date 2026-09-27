@@ -115,6 +115,9 @@
       "#ko1s2pcqme9v": [
         "../../../src/frontend/components/domain/properties_section.tsx"
       ],
+      "#ku6hnjoctyty": [
+        "../../../src/frontend/components/chrome/page_hero.tsx"
+      ],
       "#l4l0r3zyfxh7": [
         "../../../src/frontend/ssr/entry.tsx"
       ],

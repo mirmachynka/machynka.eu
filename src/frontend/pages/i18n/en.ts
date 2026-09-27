@@ -4,6 +4,7 @@ export default defineMessages({
     branding: {
       title: "Brand",
       lead: "The MACHYNKA s.r.o. logo, its clear space and the backgrounds it is allowed on. These rules apply to print and to the web alike.",
+      back: "Back to home",
       marksTitle: "The logo on a background",
       marks: {
         light: "Light background",

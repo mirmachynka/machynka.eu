@@ -4,6 +4,7 @@ export default defineMessages({
     branding: {
       title: "Značka",
       lead: "Logo MACHYNKA s.r.o., jeho ochranná zóna a povolená pozadí. Tato pravidla platí pro tisk i pro web.",
+      back: "Zpět na úvod",
       marksTitle: "Logo na pozadí",
       marks: {
         light: "Světlé pozadí",

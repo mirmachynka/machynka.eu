@@ -37,6 +37,7 @@
   "#jpydwvtclrzh": "./src/frontend/components/chrome/footer.tsx",
   "#kiu1y3iria5w": "./src/frontend/components/domain/accommodation/sections/rooms.tsx",
   "#ko1s2pcqme9v": "./src/frontend/components/domain/properties_section.tsx",
+  "#ku6hnjoctyty": "./src/frontend/components/chrome/page_hero.tsx",
   "#l4l0r3zyfxh7": "./src/frontend/ssr/entry.tsx",
   "#l5fyaqigsm8q": "./src/frontend/components/chrome/nav_items.ts",
   "#lrhwun1698ec": "./src/frontend/pages/i18n/en.ts",

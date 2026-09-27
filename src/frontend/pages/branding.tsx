@@ -2,11 +2,14 @@ import { createLocalTranslator, type I18nTranslator } from "@trebired/i18n";
 import type { CSSProperties } from "react";
 import { BrandCanvas, Card, CardBody, Frame, HairlineCell, HairlinePanel, PageBand } from "@trebired/frontend/react";
 
+import { PageHero } from "./../components/chrome/page_hero";
+
 import { useLang } from "#n99t4onl5ufo";
 
-const CLEAR_SPACE = "2.5rem";
+const CLEAR_SPACE = "1.25rem";
 const MIN_HEIGHT = "2rem";
 const RULE_COUNT = 4;
+const SWATCH_GUIDE = "var(--neutral-300)";
 
 const MARKS = [
   { key: "light", logo: "/logo.svg", tone: undefined },
@@ -80,7 +83,13 @@ function BrandingPalette({ tr }: { tr: I18nTranslator }) {
     <HairlinePanel min="14rem">
     {PALETTE.map((swatch) => (
           <HairlineCell key={swatch.key} className="column gap-sm">
-          <Frame ratio="3 / 1" style={{ "--tbf-surf-frame-root-bg": swatch.value } as CSSProperties} />
+          <Frame
+          ratio="3 / 1"
+          style={{
+              "--tbf-surf-frame-root-bg": swatch.value,
+              "--tbf-surf-frame-root-border": `1px dashed ${SWATCH_GUIDE}`,
+            } as CSSProperties}
+          />
           <span className="tbf-heading--tile">{tr(`branding.palette.${swatch.key}`)}</span>
           </HairlineCell>
     ))}
@@ -111,12 +120,11 @@ export function BrandingPage() {
 
   return (
     <main className="column">
-    <PageBand tone="inverse">
-    <div className="column gap-md">
-    <h1 className="tbf-heading--page">{tr("branding.title")}</h1>
-    <p className="text-muted">{tr("branding.lead")}</p>
-    </div>
-    </PageBand>
+    <PageHero
+    back={{ href: "/", label: tr("branding.back") }}
+    lead={tr("branding.lead")}
+    title={tr("branding.title")}
+    />
 
     <BrandingMarks tr={tr} />
     <BrandingRules tr={tr} />

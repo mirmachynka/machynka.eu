@@ -78,6 +78,7 @@
 [data-back] {
   font-size: 0.9rem;
   letter-spacing: 0.08em;
+  transition: color var(--tbf-transition-fast, 220ms) ease;
 }
 
 [data-back] .icon-glyph {
