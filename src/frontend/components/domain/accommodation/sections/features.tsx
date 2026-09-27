@@ -23,10 +23,10 @@ export function AccommodationFeatures({ accommodation, baseKey, tr }: FeaturesPr
     itemClassName="column gap-md accommodation-feature-cell"
     renderItem={(feature, index) => (
         <>
-        <div className="accommodation-feature-icon">
+        <div className="icon-tile accommodation-feature-icon">
         <Icon spec={feature.icon} />
         </div>
-        <h3 className="accommodation-feature-title">{tr(`${baseKey}.features.feature${index + 1}`)}</h3>
+        <h3>{tr(`${baseKey}.features.feature${index + 1}`)}</h3>
         </>
     )}
     />

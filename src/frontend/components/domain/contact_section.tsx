@@ -11,7 +11,7 @@ function ContactLinks({ tr }: { tr: I18nTranslator }) {
   return (
     <div className="column gap-sm">
     <a href={phoneHref(contactInfo.accommodationPhone)} className="inline-row gap-sm contact-link">
-    <div className="contact-link-icon">
+    <div className="icon-tile contact-link-icon">
     <Icon spec={ICON_PHONE} />
     </div>
     <div className="column grow gap-xs2">
@@ -22,7 +22,7 @@ function ContactLinks({ tr }: { tr: I18nTranslator }) {
     </a>
 
     <a href={`mailto:${contactInfo.email}`} className="inline-row gap-sm contact-link">
-    <div className="contact-link-icon">
+    <div className="icon-tile contact-link-icon">
     <Icon spec={ICON_MAIL} />
     </div>
     <div className="column grow gap-xs2">
@@ -38,17 +38,17 @@ function ContactLinks({ tr }: { tr: I18nTranslator }) {
 function ContactAddressPanel({ tr }: { tr: I18nTranslator }) {
   return (
     <div className="column gap-md contact-panel">
-    <h3 className="contact-panel-title">{tr("contactSection.contactAddress")}</h3>
+    <h3>{tr("contactSection.contactAddress")}</h3>
     <div className="column gap-sm">
     <div className="inline-row top gap-sm">
-    <div className="contact-panel-icon">
+    <div className="icon-tile contact-panel-icon">
     <Icon spec={ICON_MAP_PIN} />
     </div>
     <div className="column gap-sm">
     <div className="column gap-xs2">
-    <div className="contact-panel-name">{tr("contactSection.label")}</div>
-    <div className="contact-panel-detail">{contactInfo.contactAddress.street}</div>
-    <div className="contact-panel-detail">
+    <div className="font-bold">{tr("contactSection.label")}</div>
+    <div className="text-sm text-muted">{contactInfo.contactAddress.street}</div>
+    <div className="text-sm text-muted">
     {contactInfo.contactAddress.postalCode} {contactInfo.contactAddress.city}
     </div>
     </div>
@@ -60,13 +60,13 @@ function ContactAddressPanel({ tr }: { tr: I18nTranslator }) {
     </div>
     {contactInfo.branchAddresses.map((address) => (
           <div key={address.name} className="inline-row top gap-sm">
-          <div className="contact-panel-icon">
+          <div className="icon-tile contact-panel-icon">
           <Icon spec={ICON_MAP_PIN} />
           </div>
           <div>
-          <div className="contact-panel-name">{address.name}</div>
-          <div className="contact-panel-detail">{address.street}</div>
-          <div className="contact-panel-detail">
+          <div className="font-bold">{address.name}</div>
+          <div className="text-sm text-muted">{address.street}</div>
+          <div className="text-sm text-muted">
           {address.city} {address.postalCode}
           </div>
           </div>
@@ -80,14 +80,14 @@ function ContactAddressPanel({ tr }: { tr: I18nTranslator }) {
 function ContactOperatorPanel({ tr }: { tr: I18nTranslator }) {
   return (
     <div className="column gap-md contact-panel">
-    <h3 className="contact-panel-title">{tr("contactSection.operator")}</h3>
+    <h3>{tr("contactSection.operator")}</h3>
     <div className="inline-row top gap-sm">
-    <div className="contact-panel-icon">
+    <div className="icon-tile contact-panel-icon">
     <Icon spec={ICON_BUILDING} />
     </div>
     <div className="column gap-sm">
     <div className="column gap-xs2">
-    <div className="contact-panel-name">{contactInfo.operator.name}</div>
+    <div className="font-bold">{contactInfo.operator.name}</div>
     <div>{tr("contactSection.representedBy", { name: contactInfo.operator.representedBy })}</div>
     <div>{contactInfo.operator.street}</div>
     <div>
@@ -123,10 +123,10 @@ export function ContactSection() {
 
     <ContactLinks tr={tr} />
 
-    <div className="contact-section-map">
+    <div className="map-box map-box-plain">
     <MapEmbed
     src={contactInfo.contactAddress.mapEmbedUrl}
-    className="contact-section-map-frame"
+    className="map-box-frame"
     title={`${tr("contactSection.contactAddress")}: ${contactInfo.contactAddress.street}`}
     />
     </div>

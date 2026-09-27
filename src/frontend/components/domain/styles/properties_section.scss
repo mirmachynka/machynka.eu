@@ -88,7 +88,7 @@
   padding: 1.5rem;
 }
 
-.property-card-title {
+:where(.property-card) h3 {
   overflow-wrap: break-word;
   font-size: 1.25rem;
   font-weight: 900;
@@ -96,7 +96,7 @@
   color: var(--neutral-900);
 }
 
-.property-card-description {
+:where(.property-card) p {
   line-height: 1.6;
   color: var(--neutral-600);
 }
@@ -109,17 +109,9 @@
 }
 
 .property-card-feature-icon {
-  display: flex;
-  height: 3rem;
-  width: 3rem;
-  align-items: center;
-  justify-content: center;
-  background: var(--neutral-100);
-}
-
-.property-card-feature-icon .icon-glyph {
-  font-size: 1.25rem;
-  color: var(--neutral-700);
+  --icon-tile-glyph: 1.25rem;
+  --icon-tile-bg: var(--neutral-100);
+  --icon-tile-color: var(--neutral-700);
 }
 
 .property-card-feature span {

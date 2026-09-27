@@ -19,7 +19,7 @@ export function AccommodationRooms({ baseKey, roomCount, tr }: RoomsProps) {
     <CardTable
     items={numbers(roomCount)}
     getKey={(roomNumber) => roomNumber}
-    itemClassName="accommodation-room-cell"
+    itemClassName="column accommodation-room-cell"
     renderItem={(roomNumber) => (
         <>
         <div className="inline-row wrap gap-xs">
@@ -29,8 +29,8 @@ export function AccommodationRooms({ baseKey, roomCount, tr }: RoomsProps) {
         <span className="pill accommodation-room-tag accommodation-room-tag-light">{tr(`${baseKey}.rooms.room${roomNumber}.size`)}</span>
         </div>
         <div className="column gap-sm">
-        <h3 className="accommodation-room-title">{tr(`${baseKey}.rooms.room${roomNumber}.name`)}</h3>
-        <p className="accommodation-room-description">{tr(`${baseKey}.rooms.room${roomNumber}.description`)}</p>
+        <h3>{tr(`${baseKey}.rooms.room${roomNumber}.name`)}</h3>
+        <p>{tr(`${baseKey}.rooms.room${roomNumber}.description`)}</p>
         </div>
         </>
     )}

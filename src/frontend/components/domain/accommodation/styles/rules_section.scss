@@ -4,12 +4,6 @@
   color: var(--neutral-600);
 }
 
-.accommodation-rules-cell {
-  display: flex;
-  flex-direction: column;
-  gap: var(--tbf-gap-sm);
-}
-
 .accommodation-rules-title {
   overflow-wrap: break-word;
   font-size: 1rem;
@@ -19,11 +13,7 @@
 }
 
 .accommodation-rules-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
   list-style: none;
-  padding: 0;
 }
 
 .accommodation-rules-list li {

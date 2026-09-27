@@ -1,7 +1,5 @@
 .contact-section-grid {
-  display: grid;
   gap: 4rem;
-  grid-template-columns: 1fr;
 }
 
 .contact-section-text {
@@ -11,9 +9,6 @@
 }
 
 .contact-link {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
   background: var(--neutral-100);
   padding: 1rem;
   transition: background-color 180ms ease;
@@ -24,21 +19,9 @@
 }
 
 .contact-link-icon {
-  display: flex;
-  height: 3rem;
-  width: 3rem;
-  flex-shrink: 0;
-  align-items: center;
-  justify-content: center;
-  background: var(--white-500);
+  --icon-tile-bg: var(--white-500);
+  --icon-tile-color: var(--neutral-900);
 }
-
-.contact-link-icon .icon-glyph {
-  font-size: 1.5rem;
-  color: var(--neutral-900);
-}
-
-.contact-link:hover
 
 .contact-link-value {
   font-size: 1.25rem;
@@ -52,7 +35,8 @@
   font-size: 1.125rem;
 }
 
-.contact-link:hover .contact-link-value {
+.contact-link:hover .contact-link-value,
+.contact-link:hover .contact-link-arrow {
   color: var(--white-500);
 }
 
@@ -64,31 +48,14 @@
   transition: color 180ms ease;
 }
 
-.contact-link:hover .contact-link-arrow {
-  color: var(--white-500);
-}
-
-.contact-section-map {
-  position: relative;
-  min-height: 360px;
-  overflow: hidden;
-  background: var(--neutral-100);
-}
-
-.contact-section-map-frame {
-  position: absolute;
-  inset: 0;
-}
-
 .contact-panel {
-  display: flex;
-  flex-direction: column;
-  gap: var(--tbf-gap-md);
+  --tbf-text-muted: var(--neutral-400);
   background: var(--neutral-900);
+  color: var(--white-500);
   padding: 1.5rem;
 }
 
-.contact-panel-title {
+:where(.contact-panel) h3 {
   overflow-wrap: break-word;
   font-size: 1.125rem;
   font-weight: 900;
@@ -97,28 +64,10 @@
 }
 
 .contact-panel-icon {
-  display: flex;
-  height: 2.5rem;
-  width: 2.5rem;
-  flex-shrink: 0;
-  align-items: center;
-  justify-content: center;
-  background: var(--neutral-800);
-}
-
-.contact-panel-icon .icon-glyph {
-  font-size: 1rem;
-  color: var(--primary-500);
-}
-
-.contact-panel-name {
-  font-weight: 700;
-  color: var(--white-500);
-}
-
-.contact-panel-detail {
-  font-size: 0.875rem;
-  color: var(--neutral-400);
+  --icon-tile-size: 2.5rem;
+  --icon-tile-glyph: 1rem;
+  --icon-tile-bg: var(--neutral-800);
+  --icon-tile-color: var(--primary-500);
 }
 
 .contact-panel-note {
@@ -142,14 +91,10 @@
   }
 
   .contact-link-icon {
-    height: 4rem;
-    width: 4rem;
+    --icon-tile-size: 4rem;
   }
 
-  .contact-link-value {
-    font-size: 1.5rem;
-  }
-
+  .contact-link-value,
   .contact-link-value-email {
     font-size: 1.5rem;
   }
@@ -163,10 +108,9 @@
     padding: 2.5rem;
   }
 
-  .contact-panel-title {
+  :where(.contact-panel) h3 {
     font-size: 1.25rem;
   }
-
 }
 
 @media (min-width: 1024px) {

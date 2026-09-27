@@ -2,6 +2,40 @@
   color: var(--white-500);
 }
 
+.icon-tile {
+  display: flex;
+  height: var(--icon-tile-size, 3rem);
+  width: var(--icon-tile-size, 3rem);
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  background: var(--icon-tile-bg, transparent);
+}
+
+.icon-tile .icon-glyph {
+  font-size: var(--icon-tile-glyph, 1.5rem);
+  color: var(--icon-tile-color, currentColor);
+}
+
+.map-box {
+  position: relative;
+  min-height: var(--map-box-height, 420px);
+  overflow: hidden;
+  border-radius: 1rem;
+  background: var(--surface-2);
+}
+
+.map-box-plain {
+  --map-box-height: 360px;
+  border-radius: 0;
+  background: var(--neutral-100);
+}
+
+.map-box-frame {
+  position: absolute;
+  inset: 0;
+}
+
 .map-backdrop {
   position: absolute;
   inset: 0;

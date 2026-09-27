@@ -106,20 +106,13 @@
 }
 
 .accommodation-feature-icon {
-  display: flex;
-  height: 3.5rem;
-  width: 3.5rem;
-  align-items: center;
-  justify-content: center;
-  background: var(--neutral-100);
+  --icon-tile-size: 3.5rem;
+  --icon-tile-glyph: 1.5rem;
+  --icon-tile-bg: var(--neutral-100);
+  --icon-tile-color: var(--neutral-900);
 }
 
-.accommodation-feature-icon .icon-glyph {
-  font-size: 1.5rem;
-  color: var(--neutral-900);
-}
-
-.accommodation-feature-title {
+:where(.accommodation-feature-cell) h3 {
   overflow-wrap: break-word;
   font-size: 1rem;
   font-weight: 900;
@@ -128,8 +121,6 @@
 }
 
 .accommodation-room-cell {
-  display: flex;
-  flex-direction: column;
   gap: var(--tbf-gap-lg);
   padding: 1.5rem;
 }
@@ -153,7 +144,7 @@
   color: var(--neutral-900);
 }
 
-.accommodation-room-title {
+:where(.accommodation-room-cell) h3 {
   overflow-wrap: break-word;
   font-size: 1.25rem;
   font-weight: 900;
@@ -161,7 +152,7 @@
   color: var(--neutral-900);
 }
 
-.accommodation-room-description {
+:where(.accommodation-room-cell) p {
   line-height: 1.6;
   color: var(--neutral-600);
 }

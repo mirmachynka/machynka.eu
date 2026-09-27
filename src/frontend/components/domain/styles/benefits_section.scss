@@ -4,20 +4,12 @@
 }
 
 .benefit-card-icon {
-  display: flex;
-  height: 3.5rem;
-  width: 3.5rem;
-  align-items: center;
-  justify-content: center;
-  background: var(--neutral-800);
+  --icon-tile-size: 3.5rem;
+  --icon-tile-bg: var(--neutral-800);
+  --icon-tile-color: var(--white-500);
 }
 
-.benefit-card-icon .icon-glyph {
-  font-size: 1.5rem;
-  color: var(--white-500);
-}
-
-.benefit-card-title {
+:where(.benefit-card) h3 {
   overflow-wrap: break-word;
   font-size: 1.125rem;
   font-weight: 900;
@@ -25,7 +17,7 @@
   color: var(--white-500);
 }
 
-.benefit-card-description {
+:where(.benefit-card) p {
   font-size: 0.875rem;
   line-height: 1.6;
   color: var(--neutral-400);
@@ -36,7 +28,7 @@
     padding: 2.5rem;
   }
 
-  .benefit-card-title {
+  :where(.benefit-card) h3 {
     font-size: 1.25rem;
   }
 }

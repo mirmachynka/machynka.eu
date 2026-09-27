@@ -23,14 +23,14 @@ function PropertyCard({ property, ta, tr }: { property: Accommodation; ta: I18nT
 
     <div className="column gap-lg property-card-body">
     <div className="column gap-sm">
-    <h3 className="property-card-title">{name}</h3>
-    <p className="property-card-description">{description}</p>
+    <h3>{name}</h3>
+    <p>{description}</p>
     </div>
 
     <div className="property-card-features">
     {property.features.map((feature, featureIndex) => (
           <div key={feature.label} className="column hor-center gap-xs property-card-feature">
-          <div className="property-card-feature-icon">
+          <div className="icon-tile property-card-feature-icon">
           <Icon spec={feature.icon} />
           </div>
           <span>{ta(`accommodations.${property.id}.features.feature${featureIndex + 1}`)}</span>

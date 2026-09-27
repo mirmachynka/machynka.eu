@@ -45,12 +45,12 @@ export function HeroSection() {
 
     <div className="grid cols-2 gap-sm hero-section-stats">
     <div className="column gap-xs hero-section-stat">
-    <div className="hero-section-stat-value">{totalRooms}</div>
-    <div className="hero-section-stat-label">{tr("hero.stats.rooms")}</div>
+    <div>{totalRooms}</div>
+    <div>{tr("hero.stats.rooms")}</div>
     </div>
     <div className="column gap-xs hero-section-stat">
-    <div className="hero-section-stat-value">{accommodations.length}</div>
-    <div className="hero-section-stat-label">{tr("hero.stats.objects")}</div>
+    <div>{accommodations.length}</div>
+    <div>{tr("hero.stats.objects")}</div>
     </div>
     </div>
     </div>

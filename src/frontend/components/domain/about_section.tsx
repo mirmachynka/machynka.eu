@@ -23,25 +23,23 @@ export function AboutSection() {
     <div className="grid auto-sm gap-sm about-section-stats">
     <div className="column hor-center gap-sm about-section-stat">
     <Icon spec={ICON_BUILDING} />
-    <div className="about-section-stat-label">{tr("about.stats.objects")}</div>
+    <div>{tr("about.stats.objects")}</div>
     </div>
     <div className="column hor-center gap-sm about-section-stat">
     <Icon spec={ICON_USERS} />
-    <div className="about-section-stat-label">{tr("about.stats.rooms")}</div>
+    <div>{tr("about.stats.rooms")}</div>
     </div>
     <div className="column hor-center gap-sm about-section-stat">
     <Icon spec={ICON_AWARD} />
-    <div className="about-section-stat-label">{tr("about.stats.years")}</div>
+    <div>{tr("about.stats.years")}</div>
     </div>
     </div>
     </div>
 
-    <div className="about-section-quote-wrap">
     <div className="about-section-quote-card">
-    <div className="about-section-quote-border">
+    <div className="column gap-md about-section-quote-border">
     <p className="about-section-quote">"{tr("about.quote")}"</p>
     <p className="about-section-quote-source">{tr("about.quoteSource")}</p>
-    </div>
     </div>
     </div>
     </div>

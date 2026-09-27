@@ -61,7 +61,6 @@
 
 .hero-section-text {
   max-width: 36rem;
-  font-size: 1rem;
   font-weight: 500;
   line-height: 1.6;
   color: var(--neutral-400);
@@ -76,14 +75,14 @@
   padding-left: 0.75rem;
 }
 
-.hero-section-stat-value {
+:where(.hero-section-stat) > div:first-child {
   font-size: 1.875rem;
   font-weight: 900;
   line-height: 1;
   color: var(--white-500);
 }
 
-.hero-section-stat-label {
+:where(.hero-section-stat) > div + div {
   overflow-wrap: break-word;
   font-size: 0.625rem;
   font-weight: 700;
@@ -93,7 +92,7 @@
 }
 
 @media (min-width: 380px) {
-  .hero-section-stat-value {
+  :where(.hero-section-stat) > div:first-child {
     font-size: 2.25rem;
   }
 }
@@ -111,11 +110,11 @@
     padding-left: 1rem;
   }
 
-  .hero-section-stat-value {
+  :where(.hero-section-stat) > div:first-child {
     font-size: 3rem;
   }
 
-  .hero-section-stat-label {
+  :where(.hero-section-stat) > div + div {
     font-size: 0.75rem;
     letter-spacing: 0.1em;
   }

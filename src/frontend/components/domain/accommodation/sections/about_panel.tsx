@@ -20,11 +20,11 @@ export function AccommodationAboutPanel({ accommodation, baseKey, description, n
   return (
     <div className="column gap-md accommodation-panel accommodation-panel-dark">
     <Icon spec={ICON_BUILDING} className="accommodation-panel-icon" />
-    <h2 className="accommodation-panel-title accommodation-panel-title-light">{name}</h2>
-    <p className="accommodation-panel-text-light">{description}</p>
+    <h2>{name}</h2>
+    <p>{description}</p>
     <div className="column gap-sm">
     {numbers(STAY_INFO_COUNT).map((itemNumber) => (
-          <div key={itemNumber} className="inline-row top gap-sm">
+          <div key={itemNumber} className="inline-row top gap-sm text-sm font-bold">
           <Icon spec={ICON_CLOCK} />
           {tr(`${baseKey}.stayInfo.item${itemNumber}`)}
           </div>

@@ -31,12 +31,12 @@ export function BenefitsSection() {
     getKey={(item) => item.key}
     renderItem={({ key, icon }) => (
         <>
-        <div className="benefit-card-icon">
+        <div className="icon-tile benefit-card-icon">
         <Icon spec={icon} />
         </div>
         <div className="column gap-sm">
-        <h3 className="benefit-card-title">{tr(`benefits.items.${key}.title`)}</h3>
-        <p className="benefit-card-description">{tr(`benefits.items.${key}.description`)}</p>
+        <h3>{tr(`benefits.items.${key}.title`)}</h3>
+        <p>{tr(`benefits.items.${key}.description`)}</p>
         </div>
         </>
     )}

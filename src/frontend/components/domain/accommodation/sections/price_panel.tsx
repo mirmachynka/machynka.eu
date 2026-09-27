@@ -24,10 +24,10 @@ export function AccommodationPricePanel({ accommodation, baseKey, priceGroupItem
   return (
     <div className="column gap-md accommodation-panel">
     <Icon spec={ICON_RECEIPT} className="accommodation-panel-icon" />
-    <h2 className="accommodation-panel-title">{tr("accommodationPage.priceTitle")}</h2>
+    <h2>{tr("accommodationPage.priceTitle")}</h2>
     <div className="column gap-sm">
     {numbers(PRICE_NOTES_COUNT).map((itemNumber) => (
-          <p key={itemNumber} className="accommodation-panel-text">
+          <p key={itemNumber}>
           {tr(`${baseKey}.priceNotes.item${itemNumber}`)}
           </p>
     ))}

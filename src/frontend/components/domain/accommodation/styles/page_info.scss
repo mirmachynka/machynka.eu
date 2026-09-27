@@ -12,6 +12,7 @@
 
 .accommodation-panel-dark {
   background: var(--neutral-900);
+  color: var(--neutral-300);
 }
 
 .accommodation-panel-icon {
@@ -20,7 +21,7 @@
   color: var(--primary-500);
 }
 
-.accommodation-panel-title {
+:where(.accommodation-panel) h2 {
   overflow-wrap: break-word;
   font-size: 1.25rem;
   font-weight: 900;
@@ -28,17 +29,16 @@
   color: var(--neutral-900);
 }
 
-.accommodation-panel-title-light {
-  color: var(--white-500);
-}
-
-.accommodation-panel-text {
+:where(.accommodation-panel) p {
   line-height: 1.6;
   color: var(--neutral-600);
 }
 
-.accommodation-panel-text-light {
-  line-height: 1.6;
+:where(.accommodation-panel-dark) h2 {
+  color: var(--white-500);
+}
+
+:where(.accommodation-panel-dark) p {
   color: var(--neutral-400);
 }
 
@@ -47,19 +47,7 @@
   color: var(--primary-500);
 }
 
-.contact-panel-note {
-  background: var(--primary-500);
-  padding: 1rem;
-  font-size: 0.875rem;
-  font-weight: 700;
-  line-height: 1.6;
-  color: var(--white-500);
-}
-
 .accommodation-contact-row {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
   font-size: 0.875rem;
   font-weight: 700;
   color: var(--neutral-300);
@@ -68,24 +56,6 @@
 
 .accommodation-contact-row:hover {
   color: var(--white-500);
-}
-
-.accommodation-contact-row .icon-glyph {
-  font-size: 1rem;
-  color: var(--primary-500);
-}
-
-.accommodation-map {
-  position: relative;
-  min-height: 420px;
-  overflow: hidden;
-  border-radius: 1rem;
-  background: var(--surface-2);
-}
-
-.accommodation-map-frame {
-  position: absolute;
-  inset: 0;
 }
 
 .accommodation-price-group-title {
@@ -129,14 +99,7 @@
 }
 
 @media (min-width: 640px) {
-  .accommodation-gallery,
-
-  .accommodation-panel,
-  .accommodation-panel-dark {
+  .accommodation-panel {
     padding: 2.5rem;
   }
-}
-
-@media (min-width: 1024px) {
-
 }

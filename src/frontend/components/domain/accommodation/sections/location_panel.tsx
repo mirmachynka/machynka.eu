@@ -14,10 +14,10 @@ export function AccommodationLocationPanel({ mapAddress, mapEmbedUrl, name, tr }
   return (
     <div className="column gap-md accommodation-panel">
     <Icon spec={ICON_MAP_PIN} className="accommodation-panel-icon" />
-    <h2 className="accommodation-panel-title">{tr("accommodationPage.locationTitle")}</h2>
-    <p className="accommodation-panel-text">{mapAddress}</p>
-    <div className="accommodation-map">
-    <MapEmbed src={mapEmbedUrl} className="accommodation-map-frame" title={tr("accommodationPage.mapTitle", { name })} />
+    <h2>{tr("accommodationPage.locationTitle")}</h2>
+    <p>{mapAddress}</p>
+    <div className="map-box">
+    <MapEmbed src={mapEmbedUrl} className="map-box-frame" title={tr("accommodationPage.mapTitle", { name })} />
     </div>
     </div>
   );
