@@ -13,6 +13,9 @@
       "#10mmcc87u9zo": [
         "../../bundler/config.ts"
       ],
+      "#23uhxx7pz71z": [
+        "../../../src/frontend/pages/i18n/cs.ts"
+      ],
       "#2ajuusged5jk": [
         "../../../src/frontend/shared/accommodations.ts"
       ],
@@ -118,6 +121,9 @@
       "#l5fyaqigsm8q": [
         "../../../src/frontend/components/chrome/nav_items.ts"
       ],
+      "#lrhwun1698ec": [
+        "../../../src/frontend/pages/i18n/en.ts"
+      ],
       "#lu28xyaiq63v": [
         "../../../src/frontend/components/domain/accommodation/sections/hero.tsx"
       ],
@@ -168,6 +174,9 @@
       ],
       "#t9wb9dxoiy82": [
         "../../../src/bin/frontend/seo.ts"
+      ],
+      "#tqayq7et7ncm": [
+        "../../../src/frontend/pages/branding.tsx"
       ],
       "#u9zjrs7575vy": [
         "../../../src/bin/frontend/options.ts"

@@ -12,3 +12,7 @@ export function navItems(tr: I18nTranslator): NavItem[] {
     { href: "/#kontakt", label: tr("nav.contact") },
   ];
 }
+
+export function footerNavItems(tr: I18nTranslator): NavItem[] {
+  return [...navItems(tr), { href: "/znacka", label: tr("nav.brand") }];
+}

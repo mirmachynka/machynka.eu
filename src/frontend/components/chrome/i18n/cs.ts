@@ -11,12 +11,14 @@ export default defineMessages({
     nav: {
       accommodation: "Ubytování",
       about: "O nás",
+      brand: "Značka",
       contact: "Kontakt",
     },
     footer: {
       text: "Pohodlné ubytování v Bučovicích pro pracovní cesty, návštěvy města i delší pobyty.",
       navigation: "Navigace",
       contactLabel: "Kontakt",
+      legacyNotice: "Toto je nový oficiální web společnosti MACHYNKA s.r.o. Starý web machynka.cz je neoficiální, zastaralý a nefunkční.",
       rights: "Všechna práva vyhrazena.",
     },
 });

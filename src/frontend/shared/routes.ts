@@ -31,6 +31,16 @@ const ROUTES: Record<string, Record<SupportedLang, RouteMeta>> = {
       description: "MACHYNKA s.r.o. poskytuje ubytování v Bučovicích v Apartmánech Libuše a Penzionu Machynka.",
     },
   },
+  "/znacka": {
+    en: {
+      title: pageTitle("Brand"),
+      description: "The MACHYNKA s.r.o. logo, its clear space, the backgrounds it is allowed on and the brand colours.",
+    },
+    cs: {
+      title: pageTitle("Značka"),
+      description: "Logo MACHYNKA s.r.o., jeho ochranná zóna, povolená pozadí a barvy značky.",
+    },
+  },
   "/ubytovani/apartmany-libuse": {
     en: {
       title: pageTitle("Apartmány Libuše"),

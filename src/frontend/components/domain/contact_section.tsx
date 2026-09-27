@@ -135,6 +135,7 @@ export function ContactSection() {
     <ContactLinks tr={tr} />
 
     <MapEmbed
+    aspectRatio="16 / 10"
     src={contactInfo.contactAddress.mapEmbedUrl}
     title={`${tr("contactSection.contactAddress")}: ${contactInfo.contactAddress.street}`}
     />

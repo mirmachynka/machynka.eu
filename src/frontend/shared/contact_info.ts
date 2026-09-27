@@ -1,7 +1,9 @@
+export const legacyDomain = "machynka.cz";
+
 export const contactInfo = {
   accommodationPhone: "702 099 227",
   operatorPhone: "602 739 317",
-  email: `miroslav@${PRODUCT_DOMAIN}`,
+  email: "miroslav@machynka.cz",
   contactAddress: {
     street: "Sokolovská 793",
     city: "Bučovice",

@@ -1,10 +1,19 @@
-import { createLocalTranslator } from "@trebired/i18n";
+import { createLocalTranslator, type I18nTranslator } from "@trebired/i18n";
 import { Icon, SiteFooter, TextLink } from "@trebired/frontend/react";
 
 import { contactInfo, phoneHref } from "#aequr96wfpxz";
 import { ICON_MAIL, ICON_MAP_PIN, ICON_PHONE } from "#gpkp4b4vfavh";
 import { useLang } from "#n99t4onl5ufo";
-import { navItems } from "./nav_items";
+import { footerNavItems } from "./nav_items";
+
+function FooterNote({ tr }: { tr: I18nTranslator }) {
+  return (
+    <div className="column gap-xs">
+    <p>© 2026 MACHYNKA s.r.o. {tr("footer.rights")}</p>
+    <p className="text-sm">{tr("footer.legacyNotice")}</p>
+    </div>
+  );
+}
 
 export function Footer() {
   const lang = useLang();
@@ -30,7 +39,7 @@ export function Footer() {
         {
           heading: tr("footer.navigation"),
           key: "navigation",
-          links: navItems(tr).map((link) => ({ href: link.href, label: link.label })),
+          links: footerNavItems(tr).map((link) => ({ href: link.href, label: link.label })),
         },
         {
           heading: tr("footer.contactLabel"),
@@ -49,7 +58,7 @@ export function Footer() {
           ),
         },
     ]}
-    note={<p>© 2026 MACHYNKA s.r.o. {tr("footer.rights")}</p>}
+    note={<FooterNote tr={tr} />}
     tagline={tr("footer.text")}
     />
   );

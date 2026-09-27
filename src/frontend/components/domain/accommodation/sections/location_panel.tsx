@@ -19,7 +19,7 @@ export function AccommodationLocationPanel({ mapAddress, mapEmbedUrl, name, tr }
     </IconTile>
     <h2 className="tbf-heading--panel">{tr("accommodationPage.locationTitle")}</h2>
     <p className="text-muted">{mapAddress}</p>
-    <MapEmbed src={mapEmbedUrl} title={tr("accommodationPage.mapTitle", { name })} />
+    <MapEmbed aspectRatio="4 / 3" src={mapEmbedUrl} title={tr("accommodationPage.mapTitle", { name })} />
     </CardBody>
     </Card>
   );
