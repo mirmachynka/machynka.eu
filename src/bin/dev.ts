@@ -6,7 +6,16 @@ import {
   buildStaticShell,
   createBunStaticAssetHandler,
 } from "@trebired/bundler/frontend-app";
-import { createLocaleBootScript, createLocaleShellRoutes } from "@trebired/frontend";
+import {
+  configureFrontendLanguage,
+  createLocaleBootScript,
+  createLocaleShellRoutes,
+  ERROR_STATUSES,
+  errorRoutePath,
+  errorShellFileName,
+} from "@trebired/frontend";
+import { frontendConfigCheck } from "@trebired/frontend/config";
+import { language } from "./../../.trebired/frontend/language";
 import { readProcessEnvValue } from "@trebired/env";
 import { createLog } from "@trebired/logger";
 import { runStartup } from "@trebired/startup";
@@ -41,12 +50,13 @@ async function rebuild() {
       rootDir: process.cwd(),
       ssr: false,
   });
+  configureFrontendLanguage(language);
   const build = await buildFrontendApp({ ...config, target: "client" });
   const routeBodies = await renderRouteBodies(config.supportedI18nLanguages || []);
   const strategy = seoConfig.localeStrategy;
   const routes = createLocaleShellRoutes({
       meta: siteShellMeta,
-      paths: allRoutePaths(),
+      paths: [...allRoutePaths(), ...ERROR_STATUSES.map(errorRoutePath)],
       render: (routePath, locale) => routeBodies[routePath]?.[locale] || "",
       routing: LANG_ROUTING,
       strategy,
@@ -54,12 +64,17 @@ async function rebuild() {
   const shell = await buildStaticShell({
       build,
       config,
-      meta: { bootScripts: [createLocaleBootScript(LANG_ROUTING, { strategy })], lang: "cs" },
+      meta: { bootScripts: [createLocaleBootScript(LANG_ROUTING, { language, strategy })], lang: "cs" },
       routes,
   });
 
   for (const file of shell.files) {
     await Bun.write(file.outFile, file.html);
+  }
+
+  for (const status of ERROR_STATUSES) {
+    const file = shell.files.find((entry) => entry.path === errorRoutePath(status));
+    if (file) await Bun.write(`${config.clientOutDir}/${errorShellFileName(status)}`, file.html);
   }
 
   return config;
@@ -73,7 +88,7 @@ function serve(config: ServedConfig) {
           mode: "development",
           publicDir: typeof config.publicDir === "string" ? config.publicDir : undefined,
           rootDir: String(config.rootDir || process.cwd()),
-          spaFallback: "index.html",
+          spaFallback: "404.html",
       }),
   });
 }
@@ -85,6 +100,7 @@ let built: ServedConfig | null = null;
 let server: ReturnType<typeof serve>|null = null;
 
 await runStartup({
+    checks: [frontendConfigCheck()],
     bootstrap: {
       subsystems: [
         {

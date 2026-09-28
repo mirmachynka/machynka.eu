@@ -1,5 +1,7 @@
 import { LiveIslandMount, LocaleProvider } from "@trebired/frontend/react";
-import { siteFooterRootHtml, siteHeaderRootHtml } from "@trebired/frontend";
+import { configureFrontendLanguage, isErrorRoutePath, siteBodyHtml } from "@trebired/frontend";
+import { language } from "./../../../.trebired/frontend/language";
+import { canonicalPath, routeExists } from "#y4hpoyu2xriv";
 import { buildStaticIconCache, createServerIconRenderer, withIconServerRenderer } from "@trebired/frontend/server";
 import { renderToString } from "react-dom/server";
 import type { ReactElement } from "react";
@@ -10,6 +12,8 @@ import { Header } from "#d19rad2krym3";
 import { PageContent } from "#iacmuxrimql0";
 
 const iconRenderer = createServerIconRenderer(buildStaticIconCache(ALL_ICON_SPECS));
+
+configureFrontendLanguage(language);
 
 export function renderRouteBody(path: string, locale: string): string {
   const localized = (node: ReactElement) => renderToString(
@@ -23,6 +27,8 @@ export function renderRouteBody(path: string, locale: string): string {
         </LiveIslandMount>,
       );
       const footer = localized(<Footer />);
-      return `${siteHeaderRootHtml(header)}${content}${siteFooterRootHtml(footer)}`;
+      const route = canonicalPath(path);
+      const chrome = !isErrorRoutePath(route) && routeExists(route);
+      return siteBodyHtml({ chrome, content, footer, header, path });
   });
 }

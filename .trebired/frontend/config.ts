@@ -3,13 +3,14 @@ import { defineConfig } from "@trebired/frontend/config";
 import { ALL_ICON_SPECS } from "#gpkp4b4vfavh";
 
 import { components } from "./components";
+import { language } from "./language";
 import { palette } from "./palette";
 import { systems } from "./systems";
 import { interactions, runtime, semantics } from "./theme";
 import { breakpoints } from "./typography";
 
 export default defineConfig({
-    forVersion: "16.2.0",
+    forVersion: "17.1.0",
     assets: {
       favicon: {
         default: "src/brand/favicon.svg",
@@ -35,6 +36,7 @@ export default defineConfig({
       },
     },
     components,
+    language,
     design: {
       breakpoints,
       interactions,

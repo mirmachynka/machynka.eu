@@ -1,3 +1,4 @@
+import { ERROR_STATUSES, errorRoutePath } from "@trebired/frontend";
 import { bundle } from "@trebired/bundler";
 import path from "node:path";
 
@@ -39,7 +40,7 @@ export async function renderRouteBodies(
   const mod = (await import(`${entryPath}?t=${Date.now()}`)) as { renderRouteBody: (routePath: string, locale: string) => string };
 
   const bodies: Record<string, Record<string, string>> = {};
-  for (const routePath of allRoutePaths()) {
+  for (const routePath of [...allRoutePaths(), ...ERROR_STATUSES.map(errorRoutePath)]) {
     const rendered = LANG_ROUTING.locales.map((locale) => [locale, mod.renderRouteBody(routePath, locale)]);
     bodies[routePath] = Object.fromEntries(rendered);
   }

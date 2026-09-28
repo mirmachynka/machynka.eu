@@ -94,6 +94,9 @@
       "#gqbmqapv1gar": [
         "../../../src/frontend/components/primitives/card_table.tsx"
       ],
+      "#ha8f04nf4nl0": [
+        "../../../src/frontend/pages/error.tsx"
+      ],
       "#huyczbizz5kz": [
         "../../../src/frontend/components/domain/accommodation/rules_section.tsx"
       ],
@@ -168,6 +171,9 @@
       ],
       "#qgzpr96e58ai": [
         "../../../src/frontend/components/domain/i18n/en.ts"
+      ],
+      "#r3fcigc9g9pr": [
+        "../../frontend/language.ts"
       ],
       "#rjehr8ul9d44": [
         "../../frontend/components/index.ts"
