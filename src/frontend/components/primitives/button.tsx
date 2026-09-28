@@ -1,29 +1,19 @@
-import { frontendClassName, surfaceClass } from "@trebired/frontend";
-import type { AnchorHTMLAttributes, ReactNode } from "react";
+import { Button as FrontendButton } from "@trebired/frontend/react";
+import type { ReactNode } from "react";
 
-type ButtonVariant = "dark" | "outline" | "primary" | "white";
+type ButtonVariant = "ghost" | "primary" | "secondary";
 
-type ButtonProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
+type ButtonProps = {
   children: ReactNode;
   className?: string;
   href: string;
   variant?: ButtonVariant;
 };
 
-const TONE_BY_VARIANT: Record<ButtonVariant, string> = {
-  dark: "dark",
-  outline: "outline",
-  primary: "highlight",
-  white: "white",
-};
-
-export function Button({ children, className, href, variant = "primary", ...rest }: ButtonProps) {
-  const base = surfaceClass(frontendClassName("button"), { size: "lg", tone: TONE_BY_VARIANT[variant] });
-  const classes = [base, `btn-${variant}`, className].filter(Boolean).join(" ");
-
+export function Button({ children, className, href, variant = "primary" }: ButtonProps) {
   return (
-    <a href={href} className={classes} data-tbf-soft-redirect="" {...rest}>
+    <FrontendButton className={className} href={href} softRedirect variant={variant}>
     {children}
-    </a>
+    </FrontendButton>
   );
 }

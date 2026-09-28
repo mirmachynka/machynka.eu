@@ -38,7 +38,7 @@ export function HeroSection() {
     <span>{tr("hero.primary")}</span>
     <Icon spec={ICON_ARROW_RIGHT} />
     </Button>
-    <Button href={langHref("/#kontakt", lang)} variant="outline">
+    <Button href={langHref("/#kontakt", lang)} variant="secondary">
     <span>{tr("hero.secondary")}</span>
     </Button>
     </div>

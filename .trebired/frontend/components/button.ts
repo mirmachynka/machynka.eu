@@ -12,41 +12,34 @@ export const button = {
     border: `2px solid ${semantic.borderSurface2}`,
     color: semantic.textColor,
     fontFamily: ui.fontSans,
+    fontSize: "1rem",
     fontWeight: "900",
     gap: "0.5rem",
+    height: "3.5rem",
     letterSpacing: "0.025em",
     paddingBlock: "0",
+    paddingInline: "1.375rem",
     radius: "0",
     textTransform: "uppercase",
     whiteSpace: "normal",
   },
-  sizes: {
-    lg: {
-      fontSize: "1rem",
-      height: "3.5rem",
-      paddingInline: "1.375rem",
-    },
-  },
-  tones: {
-    chip: {
-      borderWidth: "1px",
-    },
-    dark: {
-      background: neutral("900"),
-      borderColor: neutral("900"),
-      color: white,
+  variants: {
+    ghost: {
+      background: white,
+      borderColor: white,
+      color: neutral("900"),
       states: {
         hover: {
-          background: neutral("800"),
-          borderColor: neutral("800"),
-          color: white,
+          background: neutral("200"),
+          borderColor: neutral("200"),
+          color: neutral("900"),
         },
       },
     },
-    highlight: {
+    primary: {
       background: semantic.highlight,
-      borderWidth: "0",
       borderColor: semantic.highlight,
+      borderWidth: "0",
       color: semantic.surface1,
       states: {
         hover: {
@@ -56,7 +49,7 @@ export const button = {
         },
       },
     },
-    outline: {
+    secondary: {
       background: "transparent",
       borderColor: white,
       color: white,
@@ -64,18 +57,6 @@ export const button = {
         hover: {
           background: white,
           borderColor: white,
-          color: neutral("900"),
-        },
-      },
-    },
-    white: {
-      background: white,
-      borderColor: white,
-      color: neutral("900"),
-      states: {
-        hover: {
-          background: neutral("200"),
-          borderColor: neutral("200"),
           color: neutral("900"),
         },
       },
