@@ -6,7 +6,7 @@ import { PropertiesSection } from "#ko1s2pcqme9v";
 
 export function HomePage() {
   return (
-    <main className="column">
+    <main className="tbf-column">
     <HeroSection />
     <AboutSection />
     <PropertiesSection />

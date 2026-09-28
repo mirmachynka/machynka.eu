@@ -13,12 +13,12 @@ type LocationPanelProps = {
 export function AccommodationLocationPanel({ mapAddress, mapEmbedUrl, name, tr }: LocationPanelProps) {
   return (
     <Card>
-    <CardBody className="column gap-md">
+    <CardBody className="tbf-column tbf-gap-md">
     <IconTile glyph="accent" tone="muted">
     <Icon spec={ICON_MAP_PIN} />
     </IconTile>
     <h2 className="tbf-heading--panel">{tr("accommodationPage.locationTitle")}</h2>
-    <p className="text-muted">{mapAddress}</p>
+    <p className="tbf-text-muted">{mapAddress}</p>
     <MapEmbed aspectRatio="4 / 3" src={mapEmbedUrl} title={tr("accommodationPage.mapTitle", { name })} />
     </CardBody>
     </Card>

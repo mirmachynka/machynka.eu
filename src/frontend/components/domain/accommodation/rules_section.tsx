@@ -22,12 +22,12 @@ type RulesSectionProps = {
 export function AccommodationRulesSection({ intro, tr, title }: RulesSectionProps) {
   return (
     <Card>
-    <CardBody className="column gap-md">
+    <CardBody className="tbf-column tbf-gap-md">
     <IconTile glyph="accent" tone="muted">
     <Icon spec={ICON_CLIPBOARD} />
     </IconTile>
     <h2 className="tbf-heading--panel">{title}</h2>
-    <p className="text-muted">{intro}</p>
+    <p className="tbf-text-muted">{intro}</p>
     <CardTable
     items={RULE_SECTIONS}
     itemClassName="column gap-sm"
@@ -35,7 +35,7 @@ export function AccommodationRulesSection({ intro, tr, title }: RulesSectionProp
     renderItem={(section) => (
         <>
         <h3 className="tbf-heading--tile">{tr(`accommodationRules.items.${section.key}.title`)}</h3>
-        <ul className="column gap-sm text-sm text-muted list-plain">
+        <ul className="tbf-column tbf-gap-sm tbf-text-sm tbf-text-muted tbf-list-plain">
         {Array.from({ length: section.itemCount }, (_, index) => index + 1).map((itemNumber) => (
               <li key={itemNumber}>{tr(`accommodationRules.items.${section.key}.items.item${itemNumber}`)}</li>
         ))}

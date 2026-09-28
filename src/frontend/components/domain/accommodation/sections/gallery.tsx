@@ -12,10 +12,10 @@ export function AccommodationGallery({ images, name, tr }: GalleryProps) {
 
   return (
     <PageBand>
-    <div className="column gap-lg">
+    <div className="tbf-column tbf-gap-lg">
     <h2 className="tbf-heading--section">{tr("accommodationPage.galleryTitle")}</h2>
 
-    <div className="grid cols-3 gap-sm">
+    <div className="tbf-grid tbf-cols-3 tbf-gap-sm">
     {images.map((image, index) => (
           <ExpandableImage
           key={image}
@@ -23,7 +23,7 @@ export function AccommodationGallery({ images, name, tr }: GalleryProps) {
           alt={name}
           images={images}
           index={index}
-          className="width-full"
+          className="tbf-width-full"
           ratio="4 / 3"
           />
     ))}

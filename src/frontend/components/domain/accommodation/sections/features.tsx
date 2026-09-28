@@ -13,7 +13,7 @@ type FeaturesProps = {
 export function AccommodationFeatures({ accommodation, baseKey, tr }: FeaturesProps) {
   return (
     <PageBand>
-    <div className="column gap-lg">
+    <div className="tbf-column tbf-gap-lg">
     <h2 className="tbf-heading--section">{tr("accommodationPage.featuresTitle")}</h2>
 
     <CardTable

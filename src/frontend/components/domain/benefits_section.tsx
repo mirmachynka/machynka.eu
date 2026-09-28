@@ -20,7 +20,7 @@ export function BenefitsSection() {
 
   return (
     <PageBand tone="inverse">
-    <div className="column gap-lg">
+    <div className="tbf-column tbf-gap-lg">
     <h2 className="tbf-heading--section">{tr("benefits.title")}</h2>
 
     <CardTable
@@ -34,9 +34,9 @@ export function BenefitsSection() {
         <IconTile size="lg" tone="inverse">
         <Icon spec={icon} />
         </IconTile>
-        <div className="column gap-sm">
+        <div className="tbf-column tbf-gap-sm">
         <h3 className="tbf-heading--tile">{tr(`benefits.items.${key}.title`)}</h3>
-        <p className="text-sm text-muted">{tr(`benefits.items.${key}.description`)}</p>
+        <p className="tbf-text-sm tbf-text-muted">{tr(`benefits.items.${key}.description`)}</p>
         </div>
         </>
     )}

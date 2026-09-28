@@ -24,7 +24,7 @@ function PropertyCard({ lang, property, ta, tr }: { lang: Lang; property: Accomm
   const description = ta(`accommodations.${property.id}.description`);
 
   return (
-    <Card as="a" className="column" href={langHref(property.path, lang)} softRedirect>
+    <Card as="a" className="tbf-column" href={langHref(property.path, lang)} softRedirect>
     <Frame ratio="16 / 10">
     <FrameCover src={property.exteriorImage} alt={name} loading="lazy" />
     <FrameScrim />
@@ -36,27 +36,27 @@ function PropertyCard({ lang, property, ta, tr }: { lang: Lang; property: Accomm
     </FrameAction>
     </Frame>
 
-    <CardBody className="column gap-lg">
-    <div className="column gap-sm">
+    <CardBody className="tbf-column tbf-gap-lg">
+    <div className="tbf-column tbf-gap-sm">
     <h3 className="tbf-heading--panel">{name}</h3>
-    <p className="text-muted">{description}</p>
+    <p className="tbf-text-muted">{description}</p>
     </div>
 
-    <div className="grid cols-2 gap-sm">
+    <div className="tbf-grid tbf-cols-2 tbf-gap-sm">
     {property.features.map((feature, featureIndex) => (
-          <div key={feature.label} className="column center hor-center gap-xs">
+          <div key={feature.label} className="tbf-column tbf-center tbf-hor-center tbf-gap-xs">
           <IconTile tone="muted">
           <Icon spec={feature.icon} />
           </IconTile>
-          <span className="label-caps">
+          <span className="tbf-label-caps">
           {ta(`accommodations.${property.id}.features.feature${featureIndex + 1}`)}
           </span>
           </div>
     ))}
     </div>
 
-    <div className="inline-row wrap between gap-sm border-top padding-top-md">
-    <span className="text-sm text-muted">{property.address}</span>
+    <div className="tbf-inline-row tbf-wrap tbf-between tbf-gap-sm tbf-border-top tbf-padding-top-md">
+    <span className="tbf-text-sm tbf-text-muted">{property.address}</span>
     </div>
     </CardBody>
     </Card>
@@ -70,10 +70,10 @@ export function PropertiesSection() {
 
   return (
     <PageBand id="ubytovani" tone="muted">
-    <div className="column gap-lg">
+    <div className="tbf-column tbf-gap-lg">
     <h2 className="tbf-heading--section">{tr("properties.title")}</h2>
 
-    <div className="grid gap-md">
+    <div className="tbf-grid tbf-gap-md">
     {accommodations.map((property) => (
           <PropertyCard key={property.path} lang={lang} property={property} ta={ta} tr={tr} />
     ))}

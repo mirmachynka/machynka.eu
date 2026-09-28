@@ -20,12 +20,12 @@ export function PageHero({ actions, back, lead, media, size = "full", title }: P
     <PageBand tone="inverse" data-hero={size}>
     <MapBackdrop />
 
-    <div className="grid" data-hero-inner="">
-    <div className="column gap-lg">
+    <div className="tbf-grid" data-hero-inner="">
+    <div className="tbf-column tbf-gap-lg">
     {back ? (
         <a
         href={back.href}
-        className="inline-row fit-content gap-xs label-caps"
+        className="tbf-inline-row tbf-fit-content tbf-gap-xs tbf-label-caps"
         data-back=""
         data-tbf-soft-redirect=""
         >
@@ -34,8 +34,8 @@ export function PageHero({ actions, back, lead, media, size = "full", title }: P
         </a>
       ) : null}
     <h1 className="tbf-heading--page">{title}</h1>
-    <p className="text-muted" data-hero-lead="">{lead}</p>
-    {actions ? <div className="inline-row wrap gap-sm" data-hero-actions="">{actions}</div> : null}
+    <p className="tbf-text-muted" data-hero-lead="">{lead}</p>
+    {actions ? <div className="tbf-inline-row tbf-wrap tbf-gap-sm" data-hero-actions="">{actions}</div> : null}
     </div>
 
     {media ? <div data-hero-media="">{media}</div> : null}

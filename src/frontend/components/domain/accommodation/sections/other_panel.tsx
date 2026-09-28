@@ -16,13 +16,13 @@ export function AccommodationOtherPanel({ related, tr }: OtherPanelProps) {
 
   return (
     <Card>
-    <CardBody className="column gap-md">
+    <CardBody className="tbf-column tbf-gap-md">
     <h2 className="tbf-heading--panel">{tr("accommodationPage.otherOption")}</h2>
-    <div className="column gap-sm">
+    <div className="tbf-column tbf-gap-sm">
     {related.map((item) => (
           <TextLink
           key={item.path}
-          className="inline-row between gap-sm border-top padding-top-md font-bold"
+          className="tbf-inline-row tbf-between tbf-gap-sm tbf-border-top tbf-padding-top-md tbf-font-bold"
           href={langHref(item.path, lang)}
           softRedirect
           >

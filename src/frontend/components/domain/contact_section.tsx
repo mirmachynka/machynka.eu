@@ -24,14 +24,14 @@ function ContactLinks({ tr }: { tr: I18nTranslator }) {
   ];
 
   return (
-    <div className="column gap-sm">
+    <div className="tbf-column tbf-gap-sm">
     {links.map((link) => (
           <ActionRow key={link.href} href={link.href} arrow={<Icon spec={ICON_ARROW_RIGHT} />}>
           <IconTile size="lg" tone="surface">
           <Icon spec={link.icon} />
           </IconTile>
-          <div className="column grow gap-xs2">
-          <div className="label-caps">{link.label}</div>
+          <div className="tbf-column tbf-grow tbf-gap-xs2">
+          <div className="tbf-label-caps">{link.label}</div>
           <div className="tbf-action-row__value">{link.value}</div>
           </div>
           </ActionRow>
@@ -47,14 +47,14 @@ function AddressRow({ city, name, postalCode, street }: {
     street: string;
 }) {
   return (
-    <div className="inline-row top gap-sm">
+    <div className="tbf-inline-row tbf-top tbf-gap-sm">
     <IconTile size="sm" glyph="accent" tone="inverse">
     <Icon spec={ICON_MAP_PIN} />
     </IconTile>
-    <div className="column gap-xs2">
-    <div className="font-bold">{name}</div>
-    <div className="text-sm text-muted">{street}</div>
-    <div className="text-sm text-muted">{postalCode} {city}</div>
+    <div className="tbf-column tbf-gap-xs2">
+    <div className="tbf-font-bold">{name}</div>
+    <div className="tbf-text-sm tbf-text-muted">{street}</div>
+    <div className="tbf-text-sm tbf-text-muted">{postalCode} {city}</div>
     </div>
     </div>
   );
@@ -65,8 +65,8 @@ function ContactAddressPanel({ tr }: { tr: I18nTranslator }) {
 
   return (
     <Card tone="inverse">
-    <CardBody className="column gap-md">
-    <div className="column gap-sm">
+    <CardBody className="tbf-column tbf-gap-md">
+    <div className="tbf-column tbf-gap-sm">
     <h3 className="tbf-heading--panel">{tr("contactSection.contactAddress")}</h3>
     <AddressRow
     city={address.city}
@@ -75,11 +75,11 @@ function ContactAddressPanel({ tr }: { tr: I18nTranslator }) {
     street={address.street}
     />
     <Card tone="accent">
-    <CardBody className="text-sm font-bold" padding="sm">{tr("contactSection.receptionNote")}</CardBody>
+    <CardBody className="tbf-text-sm tbf-font-bold" padding="sm">{tr("contactSection.receptionNote")}</CardBody>
     </Card>
     </div>
 
-    <div className="column gap-sm">
+    <div className="tbf-column tbf-gap-sm">
     <h4 className="tbf-heading--panel">{tr("contactSection.accommodationAddresses")}</h4>
     {contactInfo.branchAddresses.map((branch) => (
           <AddressRow
@@ -99,22 +99,22 @@ function ContactAddressPanel({ tr }: { tr: I18nTranslator }) {
 function ContactOperatorPanel({ tr }: { tr: I18nTranslator }) {
   return (
     <Card tone="inverse">
-    <CardBody className="column gap-md">
+    <CardBody className="tbf-column tbf-gap-md">
     <h3 className="tbf-heading--panel">{tr("contactSection.operator")}</h3>
-    <div className="inline-row top gap-sm">
+    <div className="tbf-inline-row tbf-top tbf-gap-sm">
     <IconTile size="sm" glyph="accent" tone="inverse">
     <Icon spec={ICON_BUILDING} />
     </IconTile>
-    <div className="column gap-sm">
-    <div className="column gap-xs2">
-    <div className="font-bold">{contactInfo.operator.name}</div>
+    <div className="tbf-column tbf-gap-sm">
+    <div className="tbf-column tbf-gap-xs2">
+    <div className="tbf-font-bold">{contactInfo.operator.name}</div>
     <div>{tr("contactSection.representedBy", { name: contactInfo.operator.representedBy })}</div>
     <div>{contactInfo.operator.street}</div>
     <div>
     {contactInfo.operator.city} {contactInfo.operator.postalCode}
     </div>
     </div>
-    <div className="column gap-xs2">
+    <div className="tbf-column tbf-gap-xs2">
     <div>
     {tr("contactSection.companyId")}: {contactInfo.operator.companyId}
     </div>
@@ -135,12 +135,12 @@ export function ContactSection() {
 
   return (
     <PageBand id="kontakt">
-    <div className="column gap-lg">
+    <div className="tbf-column tbf-gap-lg">
     <h2 className="tbf-heading--section">{tr("contactSection.title")}</h2>
 
-    <div className="grid gap-lg">
-    <div className="column gap-lg">
-    <p className="text-muted">{tr("contactSection.text")}</p>
+    <div className="tbf-grid tbf-gap-lg">
+    <div className="tbf-column tbf-gap-lg">
+    <p className="tbf-text-muted">{tr("contactSection.text")}</p>
 
     <ContactLinks tr={tr} />
 
@@ -151,7 +151,7 @@ export function ContactSection() {
     />
     </div>
 
-    <div className="column gap-md">
+    <div className="tbf-column tbf-gap-md">
     <ContactAddressPanel tr={tr} />
     <ContactOperatorPanel tr={tr} />
 

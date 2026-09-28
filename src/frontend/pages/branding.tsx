@@ -27,9 +27,9 @@ const PALETTE = [
 function BrandingMarks({ tr }: { tr: I18nTranslator }) {
   return (
     <PageBand>
-    <div className="column gap-lg">
+    <div className="tbf-column tbf-gap-lg">
     <h2 className="tbf-heading--section">{tr("branding.marksTitle")}</h2>
-    <div className="grid gap-md">
+    <div className="tbf-grid tbf-gap-md">
     {MARKS.map((mark) => (
           <BrandCanvas
           key={mark.key}
@@ -50,17 +50,17 @@ function BrandingMarks({ tr }: { tr: I18nTranslator }) {
 function BrandingRules({ tr }: { tr: I18nTranslator }) {
   return (
     <PageBand tone="muted">
-    <div className="grid gap-lg">
+    <div className="tbf-grid tbf-gap-lg">
     <Card>
-    <CardBody className="column gap-md">
+    <CardBody className="tbf-column tbf-gap-md">
     <h2 className="tbf-heading--panel">{tr("branding.clearSpaceTitle")}</h2>
-    <p className="text-muted">{tr("branding.clearSpaceText")}</p>
+    <p className="tbf-text-muted">{tr("branding.clearSpaceText")}</p>
     </CardBody>
     </Card>
     <Card>
-    <CardBody className="column gap-md">
+    <CardBody className="tbf-column tbf-gap-md">
     <h2 className="tbf-heading--panel">{tr("branding.minSizeTitle")}</h2>
-    <p className="text-muted">{tr("branding.minSizeText")}</p>
+    <p className="tbf-text-muted">{tr("branding.minSizeText")}</p>
     <BrandCanvas guides={false} height="8rem" spec={`min ${MIN_HEIGHT}`}>
     <img
     src="/logo.svg"
@@ -79,11 +79,11 @@ function BrandingRules({ tr }: { tr: I18nTranslator }) {
 function BrandingPalette({ tr }: { tr: I18nTranslator }) {
   return (
     <PageBand>
-    <div className="column gap-lg">
+    <div className="tbf-column tbf-gap-lg">
     <h2 className="tbf-heading--section">{tr("branding.paletteTitle")}</h2>
     <HairlinePanel min="14rem">
     {PALETTE.map((swatch) => (
-          <HairlineCell key={swatch.key} className="column gap-sm">
+          <HairlineCell key={swatch.key} className="tbf-column tbf-gap-sm">
           <Frame
           ratio="3 / 1"
           style={{
@@ -91,9 +91,9 @@ function BrandingPalette({ tr }: { tr: I18nTranslator }) {
               "--tbf-surf-frame-root-border": `1px dashed ${SWATCH_GUIDE}`,
             } as CSSProperties}
           />
-          <div className="column gap-xs2">
+          <div className="tbf-column tbf-gap-xs2">
           <span className="tbf-heading--tile">{tr(`branding.palette.${swatch.key}`)}</span>
-          <span className="text-sm text-muted">{swatch.hex}</span>
+          <span className="tbf-text-sm tbf-text-muted">{swatch.hex}</span>
           </div>
           </HairlineCell>
     ))}
@@ -106,9 +106,9 @@ function BrandingPalette({ tr }: { tr: I18nTranslator }) {
 function BrandingDonts({ tr }: { tr: I18nTranslator }) {
   return (
     <PageBand tone="muted">
-    <div className="column gap-lg">
+    <div className="tbf-column tbf-gap-lg">
     <h2 className="tbf-heading--section">{tr("branding.rulesTitle")}</h2>
-    <ul className="column gap-sm text-muted list-plain">
+    <ul className="tbf-column tbf-gap-sm tbf-text-muted tbf-list-plain">
     {Array.from({ length: RULE_COUNT }, (_, index) => index + 1).map((item) => (
           <li key={item}>{tr(`branding.rules.item${item}`)}</li>
     ))}
@@ -123,7 +123,7 @@ export function BrandingPage() {
   const tr = createLocalTranslator(import.meta.url, lang);
 
   return (
-    <main className="column">
+    <main className="tbf-column">
     <PageHero
     back={{ href: langHref("/", lang), label: tr("branding.back") }}
     lead={tr("branding.lead")}

@@ -23,14 +23,14 @@ export function AccommodationPricePanel({ accommodation, baseKey, priceGroupItem
 
   return (
     <Card>
-    <CardBody className="column gap-md">
+    <CardBody className="tbf-column tbf-gap-md">
     <IconTile glyph="accent" tone="muted">
     <Icon spec={ICON_RECEIPT} />
     </IconTile>
     <h2 className="tbf-heading--panel">{tr("accommodationPage.priceTitle")}</h2>
-    <div className="column gap-sm">
+    <div className="tbf-column tbf-gap-sm">
     {numbers(PRICE_NOTES_COUNT).map((itemNumber) => (
-          <p key={itemNumber} className="text-muted">
+          <p key={itemNumber} className="tbf-text-muted">
           {tr(`${baseKey}.priceNotes.item${itemNumber}`)}
           </p>
     ))}
@@ -43,9 +43,9 @@ export function AccommodationPricePanel({ accommodation, baseKey, priceGroupItem
     renderItem={(group) => (
         <>
         <h3 className="tbf-heading--tile">{tr(`${baseKey}.priceGroups.group${group.groupNumber}.name`)}</h3>
-        <div className="column gap-sm">
+        <div className="tbf-column tbf-gap-sm">
         {numbers(group.itemCount).map((itemNumber) => (
-              <p key={itemNumber} className="text-sm font-bold text-muted">
+              <p key={itemNumber} className="tbf-text-sm tbf-font-bold tbf-text-muted">
               {tr(`${baseKey}.priceGroups.group${group.groupNumber}.items.item${itemNumber}`)}
               </p>
         ))}
@@ -53,7 +53,7 @@ export function AccommodationPricePanel({ accommodation, baseKey, priceGroupItem
         </>
     )}
     />
-    <div className="column gap-sm">
+    <div className="tbf-column tbf-gap-sm">
     <Button href={phoneHref(reservationPhone)} variant="primary">
     <span>{tr("common.callForPrice")}</span>
     <Icon spec={ICON_PHONE} />

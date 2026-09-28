@@ -23,17 +23,17 @@ export function HeroSection() {
     <MapBackdrop />
 
     <div data-home-hero-inner="">
-    <div className="column gap-lg" data-home-hero-content="">
-    <div className="column gap-lg" data-home-hero-copy="">
+    <div className="tbf-column tbf-gap-lg" data-home-hero-content="">
+    <div className="tbf-column tbf-gap-lg" data-home-hero-copy="">
     <h1 data-home-hero-title="" style={{ "--hero-title-chars": titleChars } as CSSProperties}>
     <span data-nowrap="">{titleTop}</span>
     <br />
     <span data-accent="">{titleAccent}</span>
     </h1>
 
-    <p className="text-muted" data-hero-lead="" data-home-hero-text="">{tr("hero.text")}</p>
+    <p className="tbf-text-muted" data-hero-lead="" data-home-hero-text="">{tr("hero.text")}</p>
 
-    <div className="inline-row wrap gap-sm" data-hero-actions="">
+    <div className="tbf-inline-row tbf-wrap tbf-gap-sm" data-hero-actions="">
     <Button href={langHref("/#ubytovani", lang)} variant="primary">
     <span>{tr("hero.primary")}</span>
     <Icon spec={ICON_ARROW_RIGHT} />
@@ -44,14 +44,14 @@ export function HeroSection() {
     </div>
     </div>
 
-    <div className="grid cols-2 gap-sm" data-stats="">
-    <AccentRule className="column gap-xs" data-stat="">
+    <div className="tbf-grid tbf-cols-2 tbf-gap-sm" data-stats="">
+    <AccentRule className="tbf-column tbf-gap-xs" data-stat="">
     <div>{totalRooms}</div>
-    <div className="label-caps">{tr("hero.stats.rooms")}</div>
+    <div className="tbf-label-caps">{tr("hero.stats.rooms")}</div>
     </AccentRule>
-    <AccentRule className="column gap-xs" data-stat="">
+    <AccentRule className="tbf-column tbf-gap-xs" data-stat="">
     <div>{accommodations.length}</div>
-    <div className="label-caps">{tr("hero.stats.objects")}</div>
+    <div className="tbf-label-caps">{tr("hero.stats.objects")}</div>
     </AccentRule>
     </div>
     </div>

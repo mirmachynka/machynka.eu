@@ -16,20 +16,20 @@ export function AboutSection() {
 
   return (
     <PageBand id="o-nas">
-    <div className="column gap-lg">
+    <div className="tbf-column tbf-gap-lg">
     <h2 className="tbf-heading--section">{tr("about.title")}</h2>
 
-    <div className="grid gap-lg">
-    <div className="column gap-lg">
+    <div className="tbf-grid tbf-gap-lg">
+    <div className="tbf-column tbf-gap-lg">
     <div className="tbf-prose">
     <p>{tr("about.text1")}</p>
     <p>{tr("about.text2")}</p>
     </div>
 
-    <div className="grid auto-sm gap-sm stretch stack-mobile">
+    <div className="tbf-grid tbf-auto-sm tbf-gap-sm tbf-stretch tbf-stack-mobile">
     {FACTS.map((fact) => (
           <Card key={fact.key} tone="muted">
-          <CardBody className="column center gap-sm hor-center">
+          <CardBody className="tbf-column tbf-center tbf-gap-sm tbf-hor-center">
           <IconTile>
           <Icon spec={fact.icon} />
           </IconTile>
@@ -42,9 +42,9 @@ export function AboutSection() {
 
     <Card tone="inverse">
     <CardBody>
-    <AccentRule className="column gap-md">
+    <AccentRule className="tbf-column tbf-gap-md">
     <p className="tbf-heading--quote">"{tr("about.quote")}"</p>
-    <p className="label-caps">{tr("about.quoteSource")}</p>
+    <p className="tbf-label-caps">{tr("about.quoteSource")}</p>
     </AccentRule>
     </CardBody>
     </Card>

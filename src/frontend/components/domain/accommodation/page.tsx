@@ -35,15 +35,15 @@ export function AccommodationPage({ accommodation }: AccommodationPageProps) {
   const detail = tr(`${baseKey}.detail`);
 
   return (
-    <main className="column">
+    <main className="tbf-column">
     <AccommodationHero accommodation={accommodation} detail={detail} mapAddress={mapAddress} name={name} tr={tr} />
     <AccommodationFeatures accommodation={accommodation} baseKey={baseKey} tr={tr} />
     <AccommodationRooms baseKey={baseKey} roomCount={meta.roomCount} tr={tr} />
     <AccommodationGallery images={accommodation.galleryImages} name={name} tr={tr} />
 
     <PageBand tone="muted">
-    <div className="column gap-lg">
-    <div className="grid auto-lg gap-md" id="kontakt">
+    <div className="tbf-column tbf-gap-lg">
+    <div className="tbf-grid tbf-auto-lg tbf-gap-md" id="kontakt">
     <AccommodationAboutPanel accommodation={accommodation} baseKey={baseKey} description={description} name={name} tr={tr} />
     <AccommodationLocationPanel mapAddress={mapAddress} mapEmbedUrl={accommodation.mapEmbedUrl} name={name} tr={tr} />
     </div>

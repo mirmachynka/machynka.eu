@@ -19,31 +19,34 @@ type AboutPanelProps = {
 export function AccommodationAboutPanel({ accommodation, baseKey, description, name, tr }: AboutPanelProps) {
   return (
     <Card tone="inverse">
-    <CardBody className="column gap-md">
+    <CardBody className="tbf-column tbf-gap-md">
     <IconTile glyph="accent" tone="inverse">
     <Icon spec={ICON_BUILDING} />
     </IconTile>
     <h2 className="tbf-heading--panel">{name}</h2>
-    <p className="text-muted">{description}</p>
-    <div className="column gap-sm">
+    <p className="tbf-text-muted">{description}</p>
+    <div className="tbf-column tbf-gap-sm">
     {numbers(STAY_INFO_COUNT).map((itemNumber) => (
-          <div key={itemNumber} className="inline-row top gap-sm text-sm font-bold">
+          <div key={itemNumber} className="tbf-inline-row tbf-top tbf-gap-sm tbf-text-sm tbf-font-bold">
           <Icon spec={ICON_CLOCK} />
           {tr(`${baseKey}.stayInfo.item${itemNumber}`)}
           </div>
     ))}
     <Card tone="accent">
-    <CardBody className="text-sm font-bold" padding="sm">{tr("common.receptionNote")}</CardBody>
+    <CardBody className="tbf-text-sm tbf-font-bold" padding="sm">{tr("common.receptionNote")}</CardBody>
     </Card>
     </div>
     {accommodation.contact && (
-        <div className="column gap-sm">
-        <TextLink className="inline-row fit-content gap-sm text-sm font-bold" href={phoneHref(accommodation.contact.phone)}>
+        <div className="tbf-column tbf-gap-sm">
+        <TextLink className="tbf-inline-row tbf-fit-content tbf-gap-sm tbf-text-sm tbf-font-bold" href={phoneHref(accommodation.contact.phone)}>
         <Icon spec={ICON_PHONE} />
         {accommodation.contact.phone}
         </TextLink>
         {accommodation.contact.operatorPhone && (
-            <TextLink className="inline-row fit-content gap-sm text-sm font-bold" href={phoneHref(accommodation.contact.operatorPhone)}>
+            <TextLink
+            className="tbf-inline-row tbf-fit-content tbf-gap-sm tbf-text-sm tbf-font-bold"
+            href={phoneHref(accommodation.contact.operatorPhone)}
+            >
             <Icon spec={ICON_PHONE} />
             {tr("accommodationPage.operator")}: {accommodation.contact.operatorPhone}
             </TextLink>

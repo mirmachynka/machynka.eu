@@ -34,9 +34,9 @@ export function AccommodationHero({ accommodation, detail, mapAddress, name, tr 
         <Frame ratio="4 / 5">
         <FrameCover src={accommodation.exteriorImage} alt={name} />
         <FrameScrim />
-        <FrameCaption className="column gap-xs2">
-        <p className="font-bold">{mapAddress}</p>
-        <p className="label-caps">{tr("common.accommodationInBucovice")}</p>
+        <FrameCaption className="tbf-column tbf-gap-xs2">
+        <p className="tbf-font-bold">{mapAddress}</p>
+        <p className="tbf-label-caps">{tr("common.accommodationInBucovice")}</p>
         </FrameCaption>
         </Frame>
     )}
