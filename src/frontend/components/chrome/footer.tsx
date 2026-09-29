@@ -11,7 +11,7 @@ function FooterNote({ tr }: { tr: I18nTranslator }) {
   return (
     <div className="tbf-column tbf-gap-xs">
     <p>© 2026 MACHYNKA s.r.o. {tr("footer.rights")}</p>
-    <p className="tbf-text-sm">{tr("footer.legacyNotice", { email: contactInfo.email })}</p>
+    <p className="tbf-text-sm">{tr("footer.legacyNotice", { email: contactInfo.email, legacyEmail: contactInfo.legacyEmail })}</p>
     </div>
   );
 }

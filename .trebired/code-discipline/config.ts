@@ -8,7 +8,7 @@ export default defineConfig({
     rules: {
       bannedPatterns: {
         patterns: [
-          { value: "machynka.eu", allowedFiles: ["package.json", "netlify.toml"] },
+          { value: "machynka.eu", allowedFiles: ["package.json", "netlify.toml", "src/frontend/shared/contact_info.ts"] },
         ],
       },
     },

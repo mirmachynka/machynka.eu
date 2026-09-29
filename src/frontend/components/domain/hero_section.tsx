@@ -3,7 +3,7 @@ import { AccentRule, Icon } from "@trebired/frontend/react";
 import type { CSSProperties } from "react";
 
 import { Button } from "#cgroy6iibw7w";
-import { ICON_ARROW_RIGHT } from "#gpkp4b4vfavh";
+import { ICON_ARROW_RIGHT, ICON_PHONE } from "#gpkp4b4vfavh";
 import { MapBackdrop } from "#x3jm3224vb0o";
 import { accommodations } from "#2ajuusged5jk";
 import { useLang } from "#n99t4onl5ufo";
@@ -40,11 +40,12 @@ export function HeroSection() {
     </Button>
     <Button href={langHref("/#kontakt", lang)} variant="secondary">
     <span>{tr("hero.secondary")}</span>
+    <Icon spec={ICON_PHONE} />
     </Button>
     </div>
     </div>
 
-    <div className="tbf-grid tbf-cols-2 tbf-gap-sm" data-stats="">
+    <div className="tbf-inline-row tbf-gap-lg" data-stats="">
     <AccentRule className="tbf-column tbf-gap-xs" data-stat="">
     <div>{totalRooms}</div>
     <div className="tbf-label-caps">{tr("hero.stats.rooms")}</div>

@@ -21,7 +21,8 @@ export default defineMessages({
       contactLabel: "Contact",
       legacyNotice: "This is the new official website of MACHYNKA s.r.o."
       +" The old machynka.cz site is unofficial, outdated and broken."
-      +" The email address {{email}} does stay in use, keep writing to it.",
+      +" Always write to us at {{email}}, it is the only address to use."
+      +" Do not write to the old address {{legacyEmail}} any more.",
       rights: "All rights reserved.",
     },
 });

@@ -27,7 +27,7 @@ export const surfaces = {
     root: {
       bg: white,
       border: `1px solid ${token.color("neutral", "200")}`,
-      padding: "clamp(1.5rem, 3vw, 2.5rem)",
+      padding: "17px",
     },
     states: { hover: { border: ink } },
     tones: {

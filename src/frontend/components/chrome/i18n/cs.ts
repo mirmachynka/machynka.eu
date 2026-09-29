@@ -21,7 +21,8 @@ export default defineMessages({
       contactLabel: "Kontakt",
       legacyNotice: "Toto je nový oficiální web společnosti MACHYNKA s.r.o."
       +" Starý web machynka.cz je neoficiální, zastaralý a nefunkční."
-      +" E-mailová adresa {{email}} ale platí dál, používejte ji i nadále.",
+      +" Pište nám vždy na {{email}}, je to jediná platná adresa."
+      +" Na starou adresu {{legacyEmail}} už nepište.",
       rights: "Všechna práva vyhrazena.",
     },
 });

@@ -35,9 +35,9 @@ export const shell = {
       fontSize: "0.78rem",
       fontWeight: "900",
       gap: "0.55rem",
-      height: "2.25rem",
+      height: "1.75rem",
       letterSpacing: "0.06em",
-      padding: "0 0.75rem",
+      padding: "0 0.625rem",
     },
   },
   header: {

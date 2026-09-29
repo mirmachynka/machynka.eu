@@ -1,5 +1,20 @@
 # Changelog
 
+## 3.3.0
+
+- Write to `info@machynka.eu`. It is the address everywhere on the site now, and the footer says plainly that it is the only one to use and that the old `miroslav@machynka.cz` should not be written to any more.
+- The site has error pages. A wrong or dead address used to answer with the homepage under the wrong URL; it now shows the status, an explanation and a way back, in both languages, with no header or footer around it.
+- A chosen language survives a reload. Picking Czech on an `/en` page used to be forgotten the moment the page loaded again, because the address outranked the choice.
+- The header marks where you are. The link for the current page is highlighted, and on the homepage the mark follows the section you are reading, handing back to Home when you return to the top.
+- The hero title is larger and the same size in both languages. English was being shrunk by a third to fit "ACCOMMODATION" into a narrow column.
+- The two figures under the hero sit side by side at every width, including on a phone.
+- The "contact us" button carries an icon, like the one beside it.
+- Cards are less padded, 17px rather than 40px, and a photograph at the top of a card reaches its edges instead of floating inside a frame of background.
+- The language picker is shorter.
+- The scrollbar follows the device, not the site, and no longer flashes the wrong colour on load. Every page reserves room for it, so the page edge no longer shifts between routes.
+- The menu button animates open and closed.
+- The browser console names Trebired once per page, on every Trebired site rather than only the ones on the newest frontend.
+
 ## 3.2.1
 
 - The three figures about the business stack on a phone rather than pairing up. Three of them across two columns left one alone on a second row; they read as a list.
