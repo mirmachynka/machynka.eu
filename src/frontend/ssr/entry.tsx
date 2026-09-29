@@ -1,7 +1,8 @@
-import { LiveIslandMount, LocaleProvider } from "@trebired/frontend/react";
-import { configureFrontendLanguage, isErrorRoutePath, siteBodyHtml } from "@trebired/frontend";
+import { LiveIslandMount, LocaleProvider, RenderCurrentUrlProvider } from "@trebired/frontend/react";
+import { configureFrontendLanguage, configureLocaleRouting, isErrorRoutePath, siteBodyHtml } from "@trebired/frontend";
 import { language } from "./../../../.trebired/frontend/language";
 import { canonicalPath, routeExists } from "#y4hpoyu2xriv";
+import { LANG_ROUTING } from "./../shared/lang/policy";
 import { buildStaticIconCache, createServerIconRenderer, withIconServerRenderer } from "@trebired/frontend/server";
 import { renderToString } from "react-dom/server";
 import type { ReactElement } from "react";
@@ -14,10 +15,13 @@ import { PageContent } from "#iacmuxrimql0";
 const iconRenderer = createServerIconRenderer(buildStaticIconCache(ALL_ICON_SPECS));
 
 configureFrontendLanguage(language);
+configureLocaleRouting(LANG_ROUTING);
 
 export function renderRouteBody(path: string, locale: string): string {
   const localized = (node: ReactElement) => renderToString(
-    <LocaleProvider locale={locale}>{node}</LocaleProvider>,
+    <RenderCurrentUrlProvider currentUrl={path}>
+    <LocaleProvider locale={locale}>{node}</LocaleProvider>
+    </RenderCurrentUrlProvider>,
   );
   return withIconServerRenderer(iconRenderer, () => {
       const header = localized(<Header />);

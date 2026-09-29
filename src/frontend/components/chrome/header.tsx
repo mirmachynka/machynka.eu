@@ -2,7 +2,7 @@ import { createLocalTranslator } from "@trebired/i18n";
 import { Icon, SiteHeader } from "@trebired/frontend/react";
 
 import { contactInfo, phoneHref } from "#aequr96wfpxz";
-import { ICON_MENU, ICON_PHONE, ICON_CLOSE } from "#gpkp4b4vfavh";
+import { ICON_PHONE } from "#gpkp4b4vfavh";
 import { useLang } from "#n99t4onl5ufo";
 import { LangSwitcher } from "./lang_switcher";
 import { navItems } from "./nav_items";
@@ -29,7 +29,6 @@ export function Header() {
         </>
     )}
     brand={<img src="/logo.svg" alt="MACHYNKA s.r.o." />}
-    closeIcon={<Icon spec={ICON_CLOSE} />}
     labels={{ closeMenu: tr("menu.close"), navigation: tr("footer.navigation"), openMenu: tr("menu.open") }}
     links={navItems(tr, lang)}
     menuActions={(
@@ -38,7 +37,6 @@ export function Header() {
         <LangSwitcher />
         </>
     )}
-    menuIcon={<Icon spec={ICON_MENU} />}
     softRedirect
     />
   );
