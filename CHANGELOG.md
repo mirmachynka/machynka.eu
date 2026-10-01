@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.3.8
+
+- Chrome laid over the page changes colour smoothly rather than snapping, and each part of it is read against what it covers rather than the whole menu taking one colour.
+
 ## 3.3.7
 
 - Keeps the logo flush with the edge of the header, now that the frontend fixes that position for every site built on it.
