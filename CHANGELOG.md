@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.3.4
+
+- The header is the right colour in the first frame after a reload. Reloading part-way down a page used to paint it from the page's own colours and correct it a moment later, once the browser had worked out what was actually behind it.
+- The footer no longer flickers between black and white while the page settles.
+
 ## 3.3.3
 
 - The site runs on the current frontend. Nothing about it looks different: the work in that release is for chrome that floats over changing content, and this site's header sits on its own background.

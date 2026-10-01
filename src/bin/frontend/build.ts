@@ -6,6 +6,7 @@ import {
   buildStaticShell,
 } from "@trebired/bundler/frontend-app";
 import {
+  createContrastBootScript,
   createLocaleBootScript,
   createLocaleShellRoutes,
   ERROR_STATUSES,
@@ -56,7 +57,7 @@ const routes = createLocaleShellRoutes({
 const shell = await buildStaticShell({
     build,
     config,
-    meta: { bootScripts: [createLocaleBootScript(LANG_ROUTING, { language, strategy })], lang: "cs" },
+    meta: { bootScripts: [createContrastBootScript(), createLocaleBootScript(LANG_ROUTING, { language, strategy })], lang: "cs" },
     routes,
 });
 
