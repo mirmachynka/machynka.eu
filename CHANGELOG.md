@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.3.5
+
+- The small arrow beside the logo keeps its colour instead of fading to nearly nothing a moment after the page opens.
+
 ## 3.3.4
 
 - The header is the right colour in the first frame after a reload. Reloading part-way down a page used to paint it from the page's own colours and correct it a moment later, once the browser had worked out what was actually behind it.
