@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.3.6
+
+- The logo keeps its place in the header, which every site built on the same frontend now shares.
+
 ## 3.3.5
 
 - The small arrow beside the logo keeps its colour instead of fading to nearly nothing a moment after the page opens.
