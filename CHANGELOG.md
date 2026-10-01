@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.3.2
+
+- The page you are on is actually marked in the phone menu. Every link there was drawn in the same colour, so nothing could stand out, and 3.3.1 claimed this was fixed when it was not.
+- The home link no longer stays marked beside the page you are on. Under a language prefix the home address is `/cs`, which is the start of `/cs/znacka`, so it matched every page on the site.
+- Links in the menu are the links in the header: same colour, size, weight, spacing and the same mark on the current page.
+
 ## 3.3.1
 
 - The email address stays on one line on a phone instead of breaking in the middle of itself.

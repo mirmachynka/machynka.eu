@@ -56,7 +56,7 @@ export const shell = {
       background: token.color("white", "500"),
       border,
       footer: { border },
-      link: { color: token.color("neutral", "900"), fontWeight: "700", padding: "0.25rem 0" },
+      link: { padding: "0.25rem 0" },
       linksGap: "0.5rem",
     },
     paddingInline: "var(--tbf-container-px)",
