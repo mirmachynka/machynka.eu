@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.3.9
+
+- Each part of the chrome is read against the whole of what it covers, so a logo or a link takes the opposite of whatever most of its background is rather than of one point behind its middle.
+- Menus that open over the page keep a solid panel and readable text wherever they open.
+
 ## 3.3.8
 
 - Chrome laid over the page changes colour smoothly rather than snapping, and each part of it is read against what it covers rather than the whole menu taking one colour.
