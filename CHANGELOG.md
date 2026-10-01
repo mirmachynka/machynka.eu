@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.3.7
+
+- Keeps the logo flush with the edge of the header, now that the frontend fixes that position for every site built on it.
+
 ## 3.3.6
 
 - The logo keeps its place in the header, which every site built on the same frontend now shares.
