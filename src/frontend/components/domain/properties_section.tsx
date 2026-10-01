@@ -42,7 +42,7 @@ function PropertyCard({ lang, property, ta, tr }: { lang: Lang; property: Accomm
     <p className="tbf-text-muted">{description}</p>
     </div>
 
-    <div className="tbf-grid tbf-cols-2 tbf-gap-sm">
+    <div className="tbf-grid tbf-cols-2 tbf-cols-hold tbf-gap-sm">
     {property.features.map((feature, featureIndex) => (
           <div key={feature.label} className="tbf-column tbf-center tbf-hor-center tbf-gap-xs">
           <IconTile tone="muted">

@@ -1,5 +1,12 @@
 # Changelog
 
+## 3.3.1
+
+- The email address stays on one line on a phone instead of breaking in the middle of itself.
+- The small facility tiles inside a property card stay two across on a phone rather than stacking into a list.
+- The "what we offer" panel is ruled only between its cells. The outer edges were drawn as well, which showed on the dark band and hid against the light one.
+- Links in the phone menu match the links in the header, so the mark on the current page looks the same in both.
+
 ## 3.3.0
 
 - Write to `info@machynka.eu`. It is the address everywhere on the site now, and the footer says plainly that it is the only one to use and that the old `miroslav@machynka.cz` should not be written to any more.
