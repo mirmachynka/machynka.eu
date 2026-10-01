@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.3.3
+
+- The site runs on the current frontend. Nothing about it looks different: the work in that release is for chrome that floats over changing content, and this site's header sits on its own background.
+- The links in the phone menu follow the header at every width, rather than copying a link the phone has hidden.
+
 ## 3.3.2
 
 - The page you are on is actually marked in the phone menu. Every link there was drawn in the same colour, so nothing could stand out, and 3.3.1 claimed this was fixed when it was not.
