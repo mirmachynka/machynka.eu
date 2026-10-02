@@ -14,7 +14,7 @@ const SWATCH_GUIDE = "var(--neutral-300)";
 
 const MARKS = [
   { file: "machynka-logo.svg", key: "light", logo: "/logo.svg", tone: undefined },
-  { file: "machynka-logo.svg", key: "muted", logo: "/logo.svg", tone: "muted" },
+  { file: undefined, key: "muted", logo: "/logo.svg", tone: "muted" },
   { file: "machynka-logo-inverse.svg", key: "dark", logo: "/footer-logo.svg", tone: "inverse" },
 ] as const;
 
@@ -41,7 +41,7 @@ function BrandingMarks({ tr }: { tr: I18nTranslator }) {
     <div className="tbf-grid tbf-gap-md">
     {MARKS.map((mark) => (
           <BrandCanvas
-          action={<DownloadButton file={mark.file} href={mark.logo} label={tr("branding.download")} />}
+          action={mark.file ? <DownloadButton file={mark.file} href={mark.logo} label={tr("branding.download")} /> : undefined}
           caption={tr(`branding.marks.${mark.key}`)}
           clearSpace={CLEAR_SPACE}
           key={mark.key}
@@ -71,12 +71,7 @@ function BrandingRules({ tr }: { tr: I18nTranslator }) {
     <CardBody className="tbf-column tbf-gap-md">
     <h2 className="tbf-heading--panel">{tr("branding.minSizeTitle")}</h2>
     <p className="tbf-text-muted">{tr("branding.minSizeText")}</p>
-    <BrandCanvas
-    action={<DownloadButton file="machynka-logo.svg" href="/logo.svg" label={tr("branding.download")} />}
-    guides={false}
-    height="8rem"
-    spec={`min ${MIN_HEIGHT}`}
-    >
+    <BrandCanvas guides={false} height="8rem" spec={`min ${MIN_HEIGHT}`}>
     <img
     src="/logo.svg"
     alt="MACHYNKA s.r.o."
