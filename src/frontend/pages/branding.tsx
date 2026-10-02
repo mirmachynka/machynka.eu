@@ -1,6 +1,6 @@
 import { createLocalTranslator, type I18nTranslator } from "@trebired/i18n";
 import type { CSSProperties } from "react";
-import { BrandCanvas, Card, CardBody, Frame, HairlineCell, HairlinePanel, PageBand } from "@trebired/frontend/react";
+import { BrandCanvas, Button, Card, CardBody, Frame, HairlineCell, HairlinePanel, PageBand } from "@trebired/frontend/react";
 
 import { PageHero } from "./../components/chrome/page_hero";
 
@@ -13,9 +13,9 @@ const RULE_COUNT = 4;
 const SWATCH_GUIDE = "var(--neutral-300)";
 
 const MARKS = [
-  { key: "light", logo: "/logo.svg", tone: undefined },
-  { key: "muted", logo: "/logo.svg", tone: "muted" },
-  { key: "dark", logo: "/footer-logo.svg", tone: "inverse" },
+  { file: "machynka-logo.svg", key: "light", logo: "/logo.svg", tone: undefined },
+  { file: "machynka-logo.svg", key: "muted", logo: "/logo.svg", tone: "muted" },
+  { file: "machynka-logo-inverse.svg", key: "dark", logo: "/footer-logo.svg", tone: "inverse" },
 ] as const;
 
 const PALETTE = [
@@ -23,6 +23,15 @@ const PALETTE = [
   { hex: "#D40924", key: "accent", value: "var(--primary-500)" },
   { hex: "#FFFFFF", key: "paper", value: "var(--white-500)" },
 ] as const;
+
+function DownloadButton({ file, href, label }: { file: string; href: string; label: string }) {
+  return (
+    <Button download={file} href={href} size="sm" variant="ghost">
+    <span aria-hidden>↓</span>
+    {label}
+    </Button>
+  );
+}
 
 function BrandingMarks({ tr }: { tr: I18nTranslator }) {
   return (
@@ -32,9 +41,10 @@ function BrandingMarks({ tr }: { tr: I18nTranslator }) {
     <div className="tbf-grid tbf-gap-md">
     {MARKS.map((mark) => (
           <BrandCanvas
-          key={mark.key}
+          action={<DownloadButton file={mark.file} href={mark.logo} label={tr("branding.download")} />}
           caption={tr(`branding.marks.${mark.key}`)}
           clearSpace={CLEAR_SPACE}
+          key={mark.key}
           spec={`clear ${CLEAR_SPACE}`}
           tone={mark.tone}
           >
@@ -61,7 +71,12 @@ function BrandingRules({ tr }: { tr: I18nTranslator }) {
     <CardBody className="tbf-column tbf-gap-md">
     <h2 className="tbf-heading--panel">{tr("branding.minSizeTitle")}</h2>
     <p className="tbf-text-muted">{tr("branding.minSizeText")}</p>
-    <BrandCanvas guides={false} height="8rem" spec={`min ${MIN_HEIGHT}`}>
+    <BrandCanvas
+    action={<DownloadButton file="machynka-logo.svg" href="/logo.svg" label={tr("branding.download")} />}
+    guides={false}
+    height="8rem"
+    spec={`min ${MIN_HEIGHT}`}
+    >
     <img
     src="/logo.svg"
     alt="MACHYNKA s.r.o."
