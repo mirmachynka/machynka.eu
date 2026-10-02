@@ -14,7 +14,6 @@ const SWATCH_GUIDE = "var(--neutral-300)";
 
 const MARKS = [
   { file: "machynka-logo.svg", key: "light", logo: "/logo.svg", tone: undefined },
-  { file: undefined, key: "muted", logo: "/logo.svg", tone: "muted" },
   { file: "machynka-logo-inverse.svg", key: "dark", logo: "/footer-logo.svg", tone: "inverse" },
 ] as const;
 
@@ -41,7 +40,7 @@ function BrandingMarks({ tr }: { tr: I18nTranslator }) {
     <div className="tbf-grid tbf-gap-md">
     {MARKS.map((mark) => (
           <BrandCanvas
-          action={mark.file ? <DownloadButton file={mark.file} href={mark.logo} label={tr("branding.download")} /> : undefined}
+          action={<DownloadButton file={mark.file} href={mark.logo} label={tr("branding.download")} />}
           caption={tr(`branding.marks.${mark.key}`)}
           clearSpace={CLEAR_SPACE}
           key={mark.key}

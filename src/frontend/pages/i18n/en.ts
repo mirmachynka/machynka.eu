@@ -9,7 +9,6 @@ export default defineMessages({
       marksTitle: "The logo on a background",
       marks: {
         light: "Light background",
-        muted: "Muted background",
         dark: "Dark background",
       },
       clearSpaceTitle: "Clear space",

@@ -9,7 +9,6 @@ export default defineMessages({
       marksTitle: "Logo na pozadí",
       marks: {
         light: "Světlé pozadí",
-        muted: "Tlumené pozadí",
         dark: "Tmavé pozadí",
       },
       clearSpaceTitle: "Ochranná zóna",
