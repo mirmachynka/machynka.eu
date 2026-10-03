@@ -6,19 +6,25 @@
   BUN_VERSION = "1.3.14"
 
 [[redirects]]
-from = "https://penzion.machynka.cz/*"
-to = "https://machynka.eu/:splat"
+from = "https://machynka.eu/*"
+to = "https://machynka.cz/:splat"
 status = 301
 force = true
 
 [[redirects]]
-from = "https://machynka.cz/*"
-to = "https://machynka.eu/:splat"
+from = "https://www.machynka.eu/*"
+to = "https://machynka.cz/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "https://penzion.machynka.cz/*"
+to = "https://machynka.cz/:splat"
 status = 301
 force = true
 
 [[redirects]]
 from = "https://www.machynka.cz/*"
-to = "https://machynka.eu/:splat"
+to = "https://machynka.cz/:splat"
 status = 301
 force = true
