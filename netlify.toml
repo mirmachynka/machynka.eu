@@ -6,13 +6,7 @@
   BUN_VERSION = "1.3.14"
 
 [[redirects]]
-from = "https://machynka.eu/*"
-to = "https://machynka.cz/:splat"
-status = 301
-force = true
-
-[[redirects]]
-from = "https://www.machynka.eu/*"
-to = "https://machynka.cz/:splat"
-status = 301
-force = true
+  from = "/*"
+  to = "https://machynka.cz/:splat"
+  status = 301
+  force = true

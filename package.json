@@ -13,7 +13,7 @@
     }
   },
   "name": "machynka-eu",
-  "version": "3.4.3",
+  "version": "3.4.4",
   "description": "Marketing site for MACHYNKA s.r.o. accommodation in Bučovice. React frontend, static build, no backend.",
   "type": "module",
   "private": true,
